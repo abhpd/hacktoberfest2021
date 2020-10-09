@@ -23,10 +23,6 @@ void dfs(int node,vector<bool> &vis)
 
 int main() 
 {
-	#ifndef ONLINE_JUDGE
-  freopen("input.txt","r",stdin);
-  freopen("output.txt","w",stdout);
-  #endif
 
 	int N,M; // N=number of nodes, M = number of edges
 	cout<<"Enter number of Nodes ";
