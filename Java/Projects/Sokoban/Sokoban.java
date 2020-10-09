@@ -1,3 +1,5 @@
+package Sokoban;
+
 import java.io.*;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
