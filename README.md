@@ -11,6 +11,13 @@ https://hacktoberfest.digitalocean.com/</p>
 
 -----
 
+### What can You contribute ⚠️ 
+* There are language Specific folders in the repository choose any you're comfortable with if not, make one.
+* Inside the language folder there will be multiple topic folders like Data Structures, Algorithms, Problems and projects.
+* Contribute any algorithm, data-structure implementation or your favourite problmes or projects.
+* Make sure your follow the below steps.
+-----
+
 ### Process are as follows :- 
 * Login using github @ [Hacktoberfest](https://hacktoberfest.digitalocean.com/)
 * Create four valid pull requests (PRs) between 1st - 31st October
@@ -27,7 +34,7 @@ git clone https://github.com/your-username/HacktoberFest2020.git
 ```markdown
 cd HacktoberFest2020
 ```
-* Pick a project or make a new one
+* Add/Create your project to the specific folder as described in what you can contribute section.
 * Make a new branch
 ```markdown
 git checkout -b branch-name
@@ -42,6 +49,10 @@ git push origin branch-name
 * Make a pull request.
 * Star the repository.
 
-> **Note:** "Please Don't make any changes to README.MD.
+### NOTE
+
+* Make Sure you commit your changes in a new branch.
+* Make Sure you Give proper name to your files describing the addition.
+* Also Make Sure you comment your code whereever necessary.
    
 <!--       END OF README           END OF README         END OF README         END OF README          END OF README           END OF README           END OF README      -->
