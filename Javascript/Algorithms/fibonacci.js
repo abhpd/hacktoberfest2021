@@ -1,7 +1,4 @@
 // Takes fibonacci length request as int, returns fibonacci array
-// Sample
-// let test = fibonacci(5);
-// console.log(test);
 function fibonacci(n) {
   const fibArray = [1];
 
@@ -25,3 +22,6 @@ function fibonacci(n) {
 
   return fibArray;
 }
+// Sample
+// let test = fibonacci(5);
+// console.log(test);
