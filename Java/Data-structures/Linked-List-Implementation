@@ -1,0 +1,109 @@
+package Linked_List;
+
+class Node{
+
+    int data;
+    Node next;
+
+    public Node(int data){
+        this.data = data;
+        next = null;
+    }
+}
+
+public class Implementing {
+
+    private static Node head;
+
+    static void addingBeginning(int data){
+        Node toAdd = new Node(data);
+        toAdd.next = head;
+        head = toAdd;
+    }
+    static void print(){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    static void insert(int data, int index){
+        Node toInsert = new Node(data);
+        Node temp = head;
+        if(index == 0){
+            head = toInsert;
+        }
+        else{
+            for(int i=0; i<index-1; i++){
+                if(temp.next != null)   temp = temp.next;
+                else    break;
+            }
+
+            toInsert.next = temp.next;
+            temp.next = toInsert;
+        }
+    }
+
+    static void delete(int index){
+        Node toDelete;
+        Node temp = head;
+        if(index == 0){
+            head = temp.next;
+            temp.next = null;
+        }
+        for(int i=0; i<index-1; i++){
+            temp = temp.next;
+        }
+
+        toDelete = temp.next;
+        temp.next = toDelete.next;
+        toDelete.next = null;
+
+    }
+
+    static void reverse(){
+        Node current = head;
+        Node previous = null;
+        Node next;
+
+        while(current != null){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+
+        }
+        head = previous;
+
+    }
+
+    static void recursionPrint(Node p){
+        if(p == null) return;
+
+        System.out.print(p.data + " ");
+        recursionPrint(p.next);
+    }
+
+    static void recursionReversePrint(Node p){
+        if(p == null) return;
+
+        recursionPrint(p.next);
+        System.out.print(p.data + " ");
+    }
+
+    static void reverseRecursion(Node p){
+        if(p.next == null){
+            head = p;
+            return;
+        }
+        reverseRecursion(p.next);
+        Node q = p.next;
+        q.next = p;
+        p.next = null;
+    }
+
+    public static void main(String[] args) {
+        
+    }
+}
