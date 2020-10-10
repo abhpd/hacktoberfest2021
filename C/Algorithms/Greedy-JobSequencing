@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+//define a data type job to store index, duration, loss
+//for each job
+typedef struct {
+    int index;
+    int t;
+    int loss;
+} job;
+job ar[10000];
+int n;
+//function to swap the two array elements
+void swap(int i,int j)
+{
+    job temp=ar[j];
+    ar[j]=ar[i];
+    ar[i]=temp;
+}
+//fn to sort the jobs in increasing order of loss/t
+void bubbleSort()
+{
+    int swapped;
+    for(int i=0;i<n-1;i++)
+    {
+        swapped=0;
+        for(int j=0;j<n-i-1;j++)
+        {
+            if(ar[j].loss*ar[j+1].t>ar[j+1].loss*ar[j].t)
+            {
+                swap(j+1,j);
+                swapped=1;
+            }
+        }
+        if (swapped == 0)
+        break;
+    }
+}
+//main function
+int main()
+{
+    printf("Enter the number of jobs: ");
+    scanf("%d",&n);
+    printf("Enter the number of hours required to finish each task :");
+    for(int i=0;i<n;i++)
+    {
+      ar[i].index=i+1;
+      scanf("%d",&ar[i].t);
+    }
+    printf("Enter the loss incurred for each hour of delay for each job: ");
+    for(int i=0;i<n;i++)
+    scanf("%d",&ar[i].loss);
+    bubbleSort();
+    printf("The jobs should be done in the following order: \n");
+    printf("%d",ar[0].index);
+    for(int i=1;i<n;i++)
+    printf(", %d",ar[i].index);
+    return 0;
+}
