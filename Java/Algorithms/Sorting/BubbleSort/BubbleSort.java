@@ -6,6 +6,8 @@ package BubbleSort;
 public class BubbleSort {
   public static void main(String[] args) {
     int[] originalArray = new int[10];
+
+    //Here Im making
     for (int i = 0; i < originalArray.length; i++) {
       originalArray[i] = (int) (Math.random() * 15);
     }
