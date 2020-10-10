@@ -1,0 +1,96 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <math.h>
+int n,adj[1000][1000],dist[1000][1000],front,rear;
+//function to add an element to the queue
+void enqueue(int item,int q[])
+{
+   if(rear==-1)
+   {
+     q[++rear]=item;
+     front++;
+   }
+   else
+   q[++rear]=item;
+}
+//function to remove first element from queue
+int dequeue(int q[])
+{
+   int k;
+   if((front>rear)||(front==-1))
+   return -1;
+   else
+   {
+      k=q[front++];
+      return(k);
+    }
+}
+//function to find the shortest distance between two vertices in the graph
+//using breadth first search and store the distance between nodes in a matrix
+void bfs(int s)
+{
+    int p;
+    int visited[n],q[10000];
+    for(int i=0;i<n;i++)
+    visited[i]=0;
+    front=-1,rear=-1;
+    enqueue(s,q);
+    visited[s]=1;
+    dist[s][s]=0;
+    p=dequeue(q);
+    while(p!=-1)
+    {
+        for(int i=0;i<n;i++)
+        {
+            if((adj[p][i]!=0)&&(visited[i]==0))
+            {
+               enqueue(i,q);
+               dist[i][s]=dist[p][s]+1;
+               dist[s][i]=dist[i][s];
+               visited[i]=1;
+            }
+        }
+        p=dequeue(q);
+
+    }
+}
+//function to print the distance mathrix where dist[i][j] is the distance between
+//node i and node j 
+void displayDistMatrix()
+{
+    printf("Note:\ndist[i][j] represents distnce between node i and node j\n");
+    printf("Distance 0 means that the ith node is unreachable from jth node\n");
+    printf("The distance matrix is:\n");
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            printf("%d ",dist[i][j]);
+        }
+        printf("\n");
+    }
+}
+//main function to perform bfs using adjacency matrix
+int main()
+{
+    int m,x,y;
+    printf("Enter the number of nodes: ");
+    scanf("%d",&n);
+    printf("Enter the number of edges: ");
+    scanf("%d",&m);
+    printf("Note:\nThe nodes are numbered from 0 to n-1\n");
+    printf("Enter the nodes x and y of the edge in undirected graph\n");
+    for(int i=0;i<m;i++)
+    {
+        printf("Enter edge %d\n",i+1);
+        scanf("%d %d",&x,&y);
+        adj[x][y]=1;
+        adj[y][x]=1;
+    }
+    for(int i=0;i<n;i++)
+    bfs(i);
+    displayDistMatrix();
+    return 0;
+}
