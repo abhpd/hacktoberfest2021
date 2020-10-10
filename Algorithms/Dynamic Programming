@@ -1,0 +1,53 @@
+//Name: Tanushree
+//Roll no.:1901CS64
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+//fn to find the longest alternating subsequence
+void longestAlternatingSubsequence(int ar[],int n)
+{
+    int len[n],max=0;//an array to store the length of subsequence ending at ar[i]
+    len[0]=1;
+    char *seq[1000];//an array of strings to store the subseqences ending at ar[i]
+    seq[0]=(char*)malloc(100);
+    sprintf(seq[0],"%d",ar[0]);
+    for(int i=1;i<n;i++)
+    {
+        seq[i]=(char*)malloc(100);
+        len[i]=1;
+        sprintf(seq[i],"%d",ar[i]);
+        for(int j=0;j<i;j++)
+        {
+            if(abs(ar[i])>abs(ar[j])&&len[i]<len[j]+1&&(ar[i]*ar[j]<0))
+            {
+                len[i]=len[j]+1;
+                sprintf(seq[i],"%s, %d",seq[j],ar[i]);
+            }
+            if(len[i]>max)
+            max=len[i];
+        }
+    }
+    printf("The longest alternating subsequence is:  [");
+    for(int i=0;i<n;i++)//loop to check the longest subsequence and print it
+    {
+        if(len[i]==max)
+        {
+        printf("%s]\n",seq[i]);
+        break;
+        }
+    }
+    printf("Length: %d\n",max);
+}
+//main function
+int main()
+{
+    int n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d",&n);
+    int ar[n];
+    printf("Enter the elements of the array: \n");
+    for(int i=0;i<n;i++)
+    scanf("%d",&ar[i]);
+    longestAlternatingSubsequence(ar,n);
+}
