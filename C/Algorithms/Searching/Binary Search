@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+//function to perform binary search
+bool binarySearch(int key, int ar[],int l,int r)
+{
+    int mid=(l+r)/2;
+    if(l>r)
+    return false;
+    if(key==ar[mid])
+    return true;
+    if(key<ar[mid])
+    binarySearch(key,ar,l,mid-1);
+    else
+    binarySearch(key,ar,mid+1,r);
+}
+//main function
+int main()
+{
+   int n,key;
+   printf("Enter the value of n: ");
+   scanf("%d",&n);
+   int ar[n];
+   printf("Enter the elements in the array: ");
+   for(int i=0;i<n;i++)
+   scanf("%d",&ar[i]);
+   printf("Enter the element to be searched: ");
+   scanf("%d",&key);
+   if(binarySearch(key,ar,0,n-1))
+   printf("The search element has been found");
+   else
+   printf("The search element is not present in the array");
+   return 0;
+}
