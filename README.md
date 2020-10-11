@@ -14,7 +14,7 @@ https://hacktoberfest.digitalocean.com/</p>
 ### What can You contribute ⚠️ 
 * There are language Specific folders in the repository choose any you're comfortable with if not, make one.
 * Inside the language folder there will be multiple topic folders like Data Structures, Algorithms, Problems and projects.
-* Contribute any algorithm, data-structure implementation or your favourite problmes or projects.
+* Contribute any algorithm, data-structure implementation or your favourite problems or projects.
 * Make sure your follow the below steps.
 -----
 
@@ -25,7 +25,7 @@ https://hacktoberfest.digitalocean.com/</p>
 ------
 ### How to Contribute to this repository
 
-* Fork the repository (Click the Fork button in the top right of this page, click your Profile Image)
+* Fork the repository (Click the Fork button in the top right most of this page, click your Profile Image)
 * Clone the forked repository to your local machine.
 ```markdown
 git clone https://github.com/your-username/HacktoberFest2020.git
