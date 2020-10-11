@@ -10,5 +10,5 @@ Logistic regression is algorithm, which is used to classify the objects into dif
 
 In this model I have use Iris flower classification
 
-you can dowanload the data set from below link - 
-https://www.kaggle.com/arshid/iris-flower-dataset?select=IRIS.csv
+you can dowanload the data set from below link -
+ https://www.kaggle.com/arshid/iris-flower-dataset?select=IRIS.csv
