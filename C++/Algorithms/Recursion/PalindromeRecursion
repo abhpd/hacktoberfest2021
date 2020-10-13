@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+bool helper(char *input,int start, int end){
+   if(start >= end){
+    // if starting index is greater than last index means strings contains palindrome. So returns true.
+       return true;
+   }
+   if(input[start] != input[end]){
+     // if starting and last indexes does not match string does not contains palindrome. So returns false.
+       return false;
+   }
+   //recursion incrementing first index and decrementing last index.
+   return helper(input,start+1,end-1);
+}
+bool checkPalindrome(char input[]) {
+
+    int n = 0;
+    for(int i = 0; input[i] != '\0'; i++){
+        n++;
+    }// to find the length of char array.
+    
+    //sending the first and last indexes for the palindrome.
+    return helper(input,0,n-1);
+}
+int main() {
+    char input[50];
+    cin >> input;
+    
+    if(checkPalindrome(input)) {
+        cout << "true" << endl;
+    }
+    else {
+        cout << "false" << endl;
+    }
+}
