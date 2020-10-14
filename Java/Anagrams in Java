@@ -1,0 +1,59 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Anagram {
+static int ENGLISH_ALPHABATES=26;
+
+    static boolean isAnagram(String a, String b) {
+
+			if(a.length() != b.length())
+			{
+				return false;
+			}
+			
+			//to prevent case sesnistiveness convert both strings to uppercase
+			a=a.toUpperCase();
+			b=b.toUpperCase();
+			
+					int[] alphabates1=new int[ENGLISH_ALPHABATES];
+			  Arrays.fill(alphabates1,0);
+					
+					
+					int[] alphabates2=new int[ENGLISH_ALPHABATES];
+  Arrays.fill(alphabates2,0);
+					
+ 
+					int i=0;
+					
+	 
+					
+					char[] s1=a.toCharArray();
+					char[] s2=b.toCharArray();
+					
+					for(i=0;i<s1.length && i<s2.length;i++)
+					{
+						alphabates1[s1[i]-65]++;
+						alphabates2[s2[i]-65]++;
+					}
+					
+					for(i=0;i<ENGLISH_ALPHABATES;i++)
+					{
+						if(alphabates1[i]!=alphabates2[i])
+						{
+							return false;
+						}
+					}
+				
+
+				return true;
+    }
+
+    public static void main(String[] args) {
+    
+        Scanner scan = new Scanner(System.in);
+        String a = scan.next();
+        String b = scan.next();
+        scan.close();
+        boolean ret = isAnagram(a, b);
+        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+    }
+}
