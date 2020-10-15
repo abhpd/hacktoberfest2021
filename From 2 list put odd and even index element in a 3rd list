@@ -1,0 +1,16 @@
+l1 = list(map(int,input().split()))
+l2 = list(map(int,input().split()))
+l3 = []
+
+oddl = l1[1::2]
+print('Elements at odd-index position from l1:')
+print(oddl)
+
+evenl = l2[0::2]
+print('Elements at even-index position from l2:')
+print(evenl)
+
+print('Final third list:')
+l3.extend(oddl)
+l3.extend(evenl)
+print(l3)
