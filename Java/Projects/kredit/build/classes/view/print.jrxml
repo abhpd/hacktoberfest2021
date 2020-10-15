@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="print" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="02320c5c-ff29-4017-8775-dd4ba3613532">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="tipe" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tipe]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="kwitansi" class="java.lang.Integer">
+		<fieldDescription><![CDATA[kwitansi]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[nama]]></fieldDescription>
+	</field>
+	<field name="noHp" class="java.lang.String">
+		<fieldDescription><![CDATA[noHp]]></fieldDescription>
+	</field>
+	<field name="angsuran" class="java.lang.Integer">
+		<fieldDescription><![CDATA[angsuran]]></fieldDescription>
+	</field>
+	<field name="barang" class="java.lang.String">
+		<fieldDescription><![CDATA[barang]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[alamat]]></fieldDescription>
+	</field>
+	<variable name="variable1" class="java.lang.Integer"/>
+	<variable name="variable2" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="247">
+			<rectangle>
+				<reportElement x="0" y="0" width="185" height="236" uuid="e89d756c-5ef6-4745-ae6a-b06698f50405"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="196" y="0" width="177" height="236" uuid="7f2abd1a-247d-457a-8ae2-bf4cfce26631"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="383" y="0" width="172" height="236" uuid="d9bd48b8-f53b-4360-863e-a70e146ce921"/>
+			</rectangle>
+			<line>
+				<reportElement x="3" y="206" width="181" height="1" uuid="0d3a21d2-5d67-448e-a624-b04c9b79398c"/>
+				<graphicElement>
+					<pen lineWidth="2.25" lineColor="#0099FF"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="3" y="233" width="181" height="1" uuid="6af5af94-dfa0-4624-84c5-6e78c603b831"/>
+				<graphicElement>
+					<pen lineWidth="2.25" lineColor="#0099FF"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="57" y="4" width="127" height="42" forecolor="#DD1F1F" uuid="0ece4b53-fc6d-431e-96a7-ff54ad52c68b"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KREDIT SUCCESS></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="101" width="183" height="1" uuid="f83ccef4-ac7c-427b-94b2-336aa497221e"/>
+			</line>
+			<image>
+				<reportElement x="1" y="2" width="68" height="47" uuid="07810203-8e84-4987-b45d-4c36f8cd5425"/>
+				<imageExpression><![CDATA["/mnt/Disk2/github/kredit/img/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="4" y="112" width="100" height="20" forecolor="#0099FF" backcolor="#0099FF" uuid="435dc6e8-36db-4757-baa0-3508f5687f50"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[No/Tgl Kwitansi :]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="2" y="113" width="179" height="20" backcolor="#0099FF" uuid="382346d2-1739-4cdc-9523-4d5cb64bc867"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineColor="#3366FF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="46" y="27" width="135" height="50" forecolor="#6699FF" uuid="afd672c2-84e0-45a6-b709-b53c0082533d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA["There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..." ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="134" y="182" width="66" height="41" uuid="74ebafa4-5e02-4253-ad72-002c2e1fa1fa"/>
+				<imageExpression><![CDATA["/mnt/Disk2/github/kredit/img/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="4" y="67" width="176" height="27" forecolor="#6699FF" uuid="855e5039-7e7c-427f-9ee6-9c843fe99ccd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Jl. Hatta Maulana 23 Kediri Hp 081 234 567 910]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="214" width="64" height="20" forecolor="#0099FF" uuid="be4bec33-fd32-42e4-bfc5-af6697b38750"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Terbilang Rp. ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="69" y="161" width="14" height="20" uuid="dec375fc-63ae-4f8b-86a2-8dc122233465"/>
+				<textFieldExpression><![CDATA[$F{kwitansi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="83" y="161" width="12" height="20" uuid="237bb479-3ae5-471f-98da-07471c143a9a"/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="179" width="64" height="20" forecolor="#0099FF" uuid="cab3af65-e857-4141-978b-0f706b12bbf7"/>
+				<text><![CDATA[Guna Bayar :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="68" y="179" width="112" height="20" uuid="b7ad27d9-9ab0-42a8-9452-eb36ffbdf8db"/>
+				<textFieldExpression><![CDATA[$F{barang}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="160" width="69" height="20" forecolor="#0099FF" uuid="bf560fa9-55fb-4179-8c4d-8e1934f411f4"/>
+				<text><![CDATA[Angsuran Ke : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="214" width="116" height="20" uuid="17ba21fd-6af2-4418-902a-292fb837a292"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{angsuran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="162" width="18" height="19" uuid="843f7a33-9aaa-4b5d-9809-62709ef0145d"/>
+				<textFieldExpression><![CDATA[$F{kwitansi}+1]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="287" y="161" width="12" height="20" uuid="ac21e8ca-876a-420c-8a1b-6014e8d5b09b"/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="458" y="158" width="20" height="20" uuid="0fd657b0-335c-4393-abbf-7a238c5d0c81"/>
+				<textFieldExpression><![CDATA[$F{kwitansi}+2]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="478" y="159" width="12" height="20" uuid="157b2e3b-5f05-4250-b525-f9b6396af5c7"/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="161" width="22" height="20" uuid="ae923919-1563-43f2-9e62-b6c71777f643"/>
+				<textFieldExpression><![CDATA[$F{tipe}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="141" width="69" height="20" forecolor="#0099FF" uuid="36c4af56-f775-46ab-ac86-54b639ac0c90"/>
+				<text><![CDATA[Diterima Oleh :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="141" width="101" height="20" uuid="a73cef78-6cfc-49dd-a78b-7daaf9d8a3ef"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="161" width="19" height="20" uuid="b7b7299f-494f-40ab-b33e-796cd482abea"/>
+				<textFieldExpression><![CDATA[$F{tipe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="158" width="27" height="20" uuid="3dea17fd-3c79-437e-a155-06dbaf12ef29"/>
+				<textFieldExpression><![CDATA[$F{tipe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="262" y="181" width="109" height="20" uuid="36b767a3-8ecd-4899-b50c-7a3f18d4d256"/>
+				<textFieldExpression><![CDATA[$F{barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="140" width="104" height="20" uuid="569281f0-ce15-4878-9154-9c9433223a30"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="213" width="105" height="15" uuid="8401a855-af01-4b36-a7e9-dc4f0e7ed680"/>
+				<textFieldExpression><![CDATA[$F{angsuran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="180" width="105" height="20" uuid="fd2f777f-c67e-408b-9aa7-3e4c7626153a"/>
+				<textFieldExpression><![CDATA[$F{barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="453" y="138" width="102" height="20" uuid="d56dfc32-b189-421a-84fc-1854b1eec5ce"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="453" y="213" width="102" height="20" uuid="93eb9d12-8c95-40a5-96b2-5c9af88b4d67"/>
+				<textFieldExpression><![CDATA[$F{angsuran}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="196" y="100" width="177" height="1" uuid="0f1268a5-134e-4b5f-b80a-f53cf56e3320"/>
+			</line>
+			<line>
+				<reportElement x="387" y="99" width="168" height="1" uuid="0744aa5e-83e0-449c-9329-cf6d8c010a07"/>
+			</line>
+			<image>
+				<reportElement x="196" y="0" width="68" height="47" uuid="2d2813a0-e612-49e0-a438-f9ecf69d1832"/>
+				<imageExpression><![CDATA["/mnt/Disk2/github/kredit/img/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="246" y="1" width="127" height="42" forecolor="#DD1F1F" uuid="81962640-f887-4544-a509-109cebfb0684"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KREDIT SUCCESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="25" width="135" height="50" forecolor="#6699FF" uuid="519e967f-4dbb-4e93-a9e6-230805149227"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA["There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..." ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="69" width="176" height="27" forecolor="#6699FF" uuid="cf908b6c-2e78-40d4-9012-8c5449498b8d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Jl. Hatta Maulana 23 Kediri Hp 081 234 567 910]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="199" y="113" width="100" height="20" forecolor="#0099FF" backcolor="#0099FF" uuid="65cd3943-cd93-40d8-99ef-7867f6efcfbc"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[No/Tgl Kwitansi :]]></text>
+			</staticText>
+			<image>
+				<reportElement x="382" y="2" width="68" height="47" uuid="e233815c-db54-4ae0-857f-188eec266426"/>
+				<imageExpression><![CDATA["/mnt/Disk2/github/kredit/img/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="427" y="1" width="127" height="42" forecolor="#DD1F1F" uuid="c357765e-df90-45b1-b429-2af088b0e2c2"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KREDIT SUCCESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="27" width="135" height="50" forecolor="#6699FF" uuid="c33f3e75-9402-4b91-8f1f-3f63c59dad3d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA["There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..." ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="67" width="176" height="27" forecolor="#6699FF" uuid="df159f29-d68c-4dda-8ff0-dc1c0b63a69d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Jl. Hatta Maulana 23 Kediri Hp 081 234 567 910]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="112" width="100" height="20" forecolor="#0099FF" backcolor="#0099FF" uuid="c704320a-df59-4e99-b7ec-f61ce2cde56a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[No/Tgl Kwitansi :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="197" y="207" width="176" height="1" uuid="c55736d5-3c91-4165-8137-8a5f75c95d3d"/>
+				<graphicElement>
+					<pen lineWidth="2.25" lineColor="#0099FF"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="383" y="206" width="171" height="1" uuid="d0fd2507-f1b3-4df9-a365-009260534293"/>
+				<graphicElement>
+					<pen lineWidth="2.25" lineColor="#0099FF"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="199" y="141" width="69" height="20" forecolor="#0099FF" uuid="ac1966ab-c3d6-48a7-943b-3c10ebbd06eb"/>
+				<text><![CDATA[Diterima Oleh :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="161" width="69" height="20" forecolor="#0099FF" uuid="d87942c6-8f08-408e-90cc-54b2df3d9d34"/>
+				<text><![CDATA[Angsuran Ke : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="182" width="64" height="20" forecolor="#0099FF" uuid="a35d2b80-9cd3-4ad9-abde-9336e2c8ce35"/>
+				<text><![CDATA[Guna Bayar :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="213" width="64" height="20" forecolor="#0099FF" uuid="31a2c3d1-1a9f-4896-b82d-78461537bb41"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Terbilang Rp. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="138" width="69" height="20" forecolor="#0099FF" uuid="b4bb81ee-77ac-4685-ab83-9d9b6c8f2286"/>
+				<text><![CDATA[Diterima Oleh :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="159" width="69" height="20" forecolor="#0099FF" uuid="55c81e5f-7a95-4abd-98e5-3a236580da03"/>
+				<text><![CDATA[Angsuran Ke : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="181" width="64" height="20" forecolor="#0099FF" uuid="0c212988-a7a9-4c4b-b300-3d0cd271fb6a"/>
+				<text><![CDATA[Guna Bayar :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="214" width="64" height="20" forecolor="#0099FF" uuid="930d5a55-31cd-48c9-b1f0-ca3cf11beb2b"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Terbilang Rp. ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="197" y="232" width="176" height="1" uuid="4d95ef0b-f3a2-437d-8375-2eea2d9df819"/>
+				<graphicElement>
+					<pen lineWidth="2.25" lineColor="#0099FF"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="332" y="186" width="67" height="37" uuid="0eed55ca-b903-4489-8d6e-184f25d47ed2"/>
+				<imageExpression><![CDATA["/mnt/Disk2/github/kredit/img/logo.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="514" y="186" width="67" height="37" uuid="8ff896b0-75a1-46d2-92c1-1ef2acb7ad50"/>
+				<imageExpression><![CDATA["/mnt/Disk2/github/kredit/img/logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>
