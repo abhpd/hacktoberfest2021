@@ -1,0 +1,71 @@
+#include<iostream>
+#include<queue>
+using namespace std;
+
+// class "node" 
+class node{
+	public:
+	int data;
+	node*right,*left;
+	
+	node(int d){      // constructor
+		data=d;
+		right=left=NULL;
+	}
+};
+
+
+//Level order input for the binary tree , -1 for NULL
+node* build(){
+   queue<node*> q;
+   int d; cin>>d;
+   node*root= new node(d);
+   q.push(root);
+   while(!q.empty()){
+    
+      if(q.front()->left==NULL){
+   	    cin>>d;
+   	    if(d==-1)
+   	    q.front()->left=NULL;
+   	  else{
+   	    q.front()->left=new node(d);
+   	    q.push(q.front()->left);
+      }
+   }
+   if(q.front()->right==NULL){
+    	cin>>d;
+   	  if(d==-1)
+   	  q.front()->right=NULL;
+   	  else{
+   	    q.front()->right=new node(d);
+   	    q.push(q.front()->right);
+      }
+    	q.pop();
+  }
+  }
+    return root;
+}
+	
+//LeftView   
+void leftview(node*root,int p){
+	static int max=-1;
+  
+	if(root==NULL)
+	return;
+	
+	if(p > max){
+		max=p;
+    //printing the left view of the binary tree
+	  cout<<root->data<<endl;
+  }
+	leftview(root->left,p+1);
+	leftview(root->right,p+1);
+	return;
+}
+
+int main(){
+// building tree
+	node*root=build();
+	leftview(root,0);
+	return 0;
+}
