@@ -1,3 +1,13 @@
+/*PROBLEM:
+Given an array of jobs where every job has a deadline and associated profit if the job is finished before the deadline.
+It is also given that every job takes the single unit of time, so the minimum possible deadline for any job is 1.
+How to maximize total profit if only one job can be scheduled at a time.
+
+SOLUTION:
+It can be solved using greedy.Firstly sort all jobs in decreasing order of profit. 
+Iterate over the jobs and find a time slot j for that job such that j<deadline and j is empty and greatest.
+If no such j is present then ignore it.
+*/
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
