@@ -69,7 +69,6 @@ int sort(fcfs arr[], int n)
     {
         for (j = i + 1; j < n; j++)
         {
-            //Sorting the processes according to their arrival time
             if (arr[i].arrival > arr[j].arrival)
             {
                 k = arr[i];
