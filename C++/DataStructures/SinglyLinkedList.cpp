@@ -93,10 +93,10 @@ void List::print() const {
       cout << "\t \tvv " << endl;
     traverseNode = traverseNode->next;
   }
-    cout << "||------------------------------||" << endl;;
-    cout << "||Node " << count++ << " :\t\t\t||" << endl; 
-    cout << "||\t info = " << traverseNode->info << "  \t\t||"  << endl;
-    cout << "||------------------------------||" << endl;
+   cout << "||------------------------------||" << endl;;
+   cout << "||Node " << count++ << " :\t\t\t||" << endl; 
+   cout << "||\t info = " << traverseNode->info << "  \t\t||"  << endl;
+   cout << "||------------------------------||" << endl;
 }
 /* sample main */
 int main() {
