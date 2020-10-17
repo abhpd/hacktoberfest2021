@@ -2,9 +2,7 @@
 def interpolationSearch(arr, n, x): 
 	# Find indexs of two corners 
 	lo = 0
-	hi = (n - 1) 
-
-	
+	hi = (n - 1) 	
 	while lo <= hi and x >= arr[lo] and x <= arr[hi]: 
 		if lo == hi: 
 			if arr[lo] == x: 
