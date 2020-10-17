@@ -1,0 +1,5 @@
+compile imagestack.cpp
+./imagestack pt0.pgm pt1.pgm pt2.pgm pt3.pgm pt4.pgm pt5.pgm pt6.pgm pt7.pgm
+pt8.pgm output.pgm
+
+here output will have the one without noise
