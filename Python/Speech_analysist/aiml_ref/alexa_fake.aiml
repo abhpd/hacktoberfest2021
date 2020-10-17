@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <aiml version="1.0">
+   <category>
+      <pattern>ALEXA *</pattern>
+      <template> 
+      	<think><set name="topic">controller</set> </think> 
+      	<srai><star/></srai>
+      </template>
+   </category>
+
+   <category>
+      <pattern>ALEXA PLEASE *</pattern>
+      <template> 
+      	<think><set name="topic">controller</set> </think> 
+      	<srai><star/></srai>
+      </template>
+   </category>
+
+   <topic name="CONTROLLER">
+
+		<category>
+			<pattern>* PLEASE</pattern>
+			<template>
+				<srai><star/></srai>
+			</template>
+		</category>
+
+		<category>
+			<pattern>DIM THE * LIGHTS TO *</pattern>
+			<template>
+				ok, now dim the lights
+				<think>
+					<set name="alexa_device"><star index="1"/></set>
+				<set name="alexa_command">dim light</set>
+				<set name="alexa_parameters"> | percentage = <star index="2"/> | </set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>WHAT TIME IS IT IN *</pattern>
+			<template>
+				ok, now ask the time in <star/>
+				<think>
+					<set name="alexa_device">clock</set>
+				<set name="alexa_command">time</set>
+				<set name="alexa_parameters"> | place = <star/> | </set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>TURN ON THE *</pattern>
+			 <template> <srai>TURN ON <star/></srai> </template>
+		</category>
+
+		<category>
+			<pattern>TURN THE * ON</pattern>
+			 <template> <srai>TURN ON <star/></srai> </template>
+		</category>
+
+		<category>
+			 <pattern>TURN * ON</pattern>
+			 <template> <srai>TURN ON <star/></srai> </template>
+		</category>
+
+		<category>
+		<pattern>TURN ON *</pattern>
+		<template>
+				OK master, now turn on <star/>
+				<think>
+					<set name="alexa_device"><star/></set>
+					<set name="alexa_command">turn on</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+		</template>
+		</category>
+
+		<category>
+		<pattern>CALL *</pattern>
+		<template>
+				now calling <star/>
+				<think>
+					<set name="alexa_device">phone</set>
+					<set name="alexa_command">call</set>
+					<set name="alexa_parameters"> | person =  <star/>  | </set>
+					<set name="alexa_flag">queued</set>
+				</think>
+		</template>
+		</category>
+
+		<category>
+		<pattern>DISCONNECT FROM *</pattern>
+		<template>
+				ok master, will now disconnect from <star/>
+				<think>
+					<set name="alexa_device">bluetooth</set>
+					<set name="alexa_command">disconnect</set>
+					<set name="alexa_parameters"> | device = <star/> | </set>
+					<set name="alexa_flag">queued</set>
+				</think>
+		</template>
+		</category>
+
+
+
+		<category>
+		<pattern>SEND MESSAGE TO *</pattern>
+		<template><srai>MESSAGE <star/></srai></template>
+		</category>
+
+
+		<category>
+		<pattern>MESSAGE * ABOUT *</pattern>
+		<template>
+				ok master, now send message
+				<think>
+					<set name="alexa_device">SMS</set>
+					<set name="alexa_command">send</set>
+					<set name="alexa_parameters">| person = <star index="1"/>| text = <star index="2"/> |</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+		</template>
+		</category>
+
+
+		<category>
+		<pattern>NEW MESSAGE TO *</pattern>
+		<template>
+				ok master, what is your message ?
+				<think>
+					<set name="alexa_device">SMS</set>
+					<set name="alexa_parameters">| person = <star index="1"/> |</set>
+				</think>
+		</template>
+		</category>
+
+		<category>
+		<pattern>*</pattern>
+		<that>OK MASTER WHAT IS YOUR MESSAGE</that>
+		<template>
+			ok master, now send new message
+			<think>
+					<set name="alexa_device">SMS</set>
+					<set name="alexa_command">send</set>
+					<set name="alexa_parameters"> <get name="alexa_parameters"/> text = <star/> |</set>
+					<set name="alexa_flag">queued</set>
+			</think>
+		</template>
+		</category>
+
+		<category>
+		<pattern>HOW MUCH TIME IS LEFT ON THE * TIMER</pattern>
+		<template>
+				ok master, now asking computer timeleft on the <star/>
+				<think>
+					<set name="alexa_device">timer</set>
+					<set name="alexa_command">timeleft</set>
+					<set name="alexa_parameters">| id = <star/> |</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+		</template>
+		</category>
+
+		<category>
+		<pattern>FACETIME WITH *</pattern>
+		<template><srai>facetime <star/></srai>
+		</template>
+		</category>
+
+		<category>
+		<pattern>FACETIME *</pattern>
+		<template>
+				OK master, now facetime <star/>
+				<think>
+					<set name="alexa_device">facetime</set>
+					<set name="alexa_command">call</set>
+					<set name="alexa_parameters">|person = <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+		</template>
+		</category>
+
+		<category>
+			<pattern>CHANGE * IN VIETNAMESE DONG</pattern>
+			<template>
+				ok, now change <star/>
+				<think>
+					<set name="alexa_device">currency</set>
+					<set name="alexa_command">change</set>
+					<set name="alexa_parameters">| amount = <star/> | target = VND |</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>WHEN IS * NEXT ALARM</pattern>
+			<template>
+				ok, ask alarm <star/>
+				<think>
+					<set name="alexa_device">alarm</set>
+					<set name="alexa_command">next</set>
+					<set name="alexa_parameters">| id = <star/> |</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>CANCEL * ALARM </pattern>
+			<template>
+				ok, cancel alarm <star/>
+				<think>
+					<set name="alexa_device">alarm</set>
+					<set name="alexa_command">cancel</set>
+					<set name="alexa_parameters">| id = <star/> |</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>SET AN ALARM FOR *</pattern>
+			<template>
+				ok, set alarm for <star/>
+				<think>
+					<set name="alexa_device">alarm</set>
+					<set name="alexa_command">set</set>
+					<set name="alexa_parameters">| id = <star/> |</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>SET TIME FOR * MINUTES</pattern>
+			<template>
+				ok, set time for <star/>
+				<think>
+					<set name="alexa_device">timer</set>
+					<set name="alexa_command">set</set>
+					<set name="alexa_parameters">| amount = <star/> |</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>WHEN IS * IN THE YEAR</pattern>
+			<template>
+				ok, ask time<star/>
+				<think>
+					<set name="alexa_device">calendar</set>
+					<set name="alexa_command">date</set>
+					<set name="alexa_parameters">| event = <star/> |</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>TURN OFF *</pattern>
+			<template>
+				ok, turn off
+				<think>
+					<set name="alexa_device"><star/></set>
+					<set name="alexa_command"> turn off</set>
+					<set name="alexa_parameters"></set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>GOOGLE FOR *</pattern>
+			<template><srai>WIKIPEDIA <star/></srai></template>
+		</category>
+
+		<category>
+			<pattern>GOOGLE *</pattern>
+			<template><srai>WIKIPEDIA <star/></srai></template>
+		</category>
+
+		<category>
+			<pattern>WIKIPEDIA FOR *</pattern>
+			<template><srai>WIKIPEDIA <star/></srai></template>
+		</category>
+
+		<category>
+			<pattern>WIKIPEDIA *</pattern>
+			<template>
+				ok, search wiki for <star/>
+				<think>
+					<set name="alexa_device">wikipedia</set>
+					<set name="alexa_command">search</set>
+					<set name="alexa_parameters">|text = <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>HOW MANY PEOPLE LIVE IN THE *</pattern>
+			<template>
+				ok, people live in the <star/>
+				<think>
+					<set name="alexa_device">wikipedia</set>
+					<set name="alexa_command">search</set>
+					<set name="alexa_parameters">|text = number of people in <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>WHAT IS THE TRAFFIC LIKE TO *</pattern>
+			<template>
+				ok, traffic in <star/>
+				<think>
+					<set name="alexa_device">map</set>
+					<set name="alexa_command">traffic</set>
+					<set name="alexa_parameters">|location = <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>RAISE THE * TEMPERATURE * degree</pattern>
+			<template>
+				ok, now raise the temperautue
+				<think>
+					<set name="alexa_device"><star index="1"/></set>
+					<set name="alexa_command">raise_temperature</set>
+					<set name="alexa_parameters">|degree = +<star index="2"/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>SET THE * TEMPERATURE TO *</pattern>
+			<template>
+					ok, now set the temperatue
+				<think>
+					<set name="alexa_device"><star index="1"/></set>
+					<set name="alexa_command">set_temperature</set>
+					<set name="alexa_parameters">|degree = <star index="2"/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>CONNECT * TO MY PHONE</pattern>
+			<template>
+				ok, connect from phone
+				<think>
+					<set name="alexa_device">phone</set>
+					<set name="alexa_command">connect</set>
+					<set name="alexa_parameters">|device = <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>DISCONNECT * TO MY PHONE</pattern>
+			<template>
+				ok, disconnect from phone
+				<think>
+					<set name="alexa_device">phone</set>
+					<set name="alexa_command">disconnect</set>
+					<set name="alexa_parameters">|device = <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>READ * NOTIFICATIONS</pattern>
+			<template>
+				ok, read notification
+				<think>
+					<set name="alexa_device"><star/></set>
+					<set name="alexa_command">notification</set>
+					<set name="alexa_parameters">|action = read|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>DELETE * NOTIFICATIONS</pattern>
+			<template>
+				ok, delete notification
+				<think>
+					<set name="alexa_device"><star/></set>
+					<set name="alexa_command">notifications</set>
+					<set name="alexa_parameters">|action = delete|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>ADD * TO MY CALENDAR</pattern>
+			<template>
+				ok, add <star/> to calendar
+				<think>
+					<set name="alexa_device">calendar</set>
+					<set name="alexa_command">event</set>
+					<set name="alexa_parameters">|action = add|event=<star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>HOW DO YOU COOK *</pattern>
+			<template>
+				ok, ask recipe <star/>
+				<think>
+					<set name="alexa_device">google</set>
+					<set name="alexa_command">search</set>
+					<set name="alexa_parameters">|text = cook <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+
+		<category>
+			<pattern>WHAT IS THE DEFINITION OF *</pattern>
+			<template>
+				ok, ask definition <star/>
+				<think>
+					<set name="alexa_device">wikipedia</set>
+					<set name="alexa_command">search</set>
+					<set name="alexa_parameters">|text = <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>WHERE IS THE NEAREST *</pattern>
+			<template>
+				ok, find nearest location of <star/>
+				<think>
+					<set name="alexa_device">map</set>
+					<set name="alexa_command">find</set>
+					<set name="alexa_parameters">|text = <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>ANSWER * CALL</pattern>
+			<template>
+				ok, now answer <star/> call
+				<think>
+					<set name="alexa_device">phone</set>
+					<set name="alexa_command">answer</set>
+					<set name="alexa_parameters">|person = <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+		<category>
+			<pattern>END * CALL</pattern>
+			<template>
+				ok, now end call <star/> call
+				<think>
+					<set name="alexa_device">phone</set>
+					<set name="alexa_command">end</set>
+					<set name="alexa_parameters">|person = <star/>|</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+			</template>
+		</category>
+
+   </topic>
+</aiml>

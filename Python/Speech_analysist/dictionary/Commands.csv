@@ -1,0 +1,30 @@
+Devices,Commands,Parameters
+Computer,turn on,
+Computer,turn off,
+Computer,dim light,percentage
+Clock,time,place
+Phone,call,person
+Bluetooth,disconnect,device
+Bluetooth,connect,device
+SMS,send,"person, text"
+Timer,timeleft,id
+Facetime,call,person
+
+currency,change,"amount,target"
+alarm,next,id
+alarm,cancel,id
+alarm,set,id
+timer,set,amount
+calendar,date,event
+wikipedia,search,text
+wikipedia,search,text
+map,traffic,location
+phone,connect,device
+phone,disconnect,device
+calendar,event,"action,event"
+google,search,text
+map,find,text
+phone,answer,person
+phone,end,person
+shopee,notifications,action
+lazada,notifications,action

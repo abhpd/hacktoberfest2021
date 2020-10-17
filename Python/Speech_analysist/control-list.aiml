@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+     <category>
+          <pattern>BIBO *</pattern>
+          <template> 
+      	     <think><set name="topic">controller</set> </think> 
+      	     <srai><star/></srai>
+          </template>
+     </category>
+
+     <topic name="CONTROLLER">
+          <category>
+   	            <pattern>TURN * ON</pattern>
+   	  	     <template> <srai>TURN ON <star/></srai> </template>
+          </category>
+
+          <category>
+               <pattern>TURN ON *</pattern>
+               <template>
+         		    OK master, now turn on <star/>
+         		<think>
+         			<set name="bibo_device"><star/></set>
+         			<set name="bibo_command">turn on</set>
+         			<set name="bibo_flag">queued</set>
+         		</think>
+               </template>
+          </category>
+
+          <category>
+               <pattern>CALL *</pattern>
+               <template>
+         		    now calling <star/>
+         		    <think>
+                         <set name="bibo_device">phone</set>
+                         <set name="bibo_command">call <star/> </set>
+                         <set name="bibo_flag">queued</set>
+                    </think>
+               </template>
+          </category>
+
+      <category>
+      	<pattern>DISCONNECT FROM *</pattern>
+      	<template>
+      			ok master, will now disconnect from <star/>
+      			<think>
+      				<set name="bibo_device">bluetooth</set>
+      				<set name="bibo_command">disconnect <star/></set>
+      				<set name="bibo_flag">queued</set>
+      			</think>
+      	</template>
+      </category>
+
+      <category>
+      	<pattern>MESSAGE *</pattern>
+      	<template>
+      			ok master, now send message to <star/>
+      			<think>
+      				<set name="bibo_device">SMS</set>
+      				<set name="bibo_command">send to <star/></set>
+      				<set name="bibo_flag">queued</set>
+      			</think>
+      	</template>
+      </category>
+
+      <category>
+      	<pattern>HOW MUCH TIME IS LEFT ON THE * TIMER</pattern>
+      	<template>
+      			ok master, now asking computer timeleft on the <star/>
+      			<think>
+      				<set name="bibo_device">timer</set>
+      				<set name="bibo_command">timeleft on <star/></set>
+      				<set name="bibo_flag">queued</set>
+      			</think>
+      	</template>
+      </category>
+
+      <category>
+         <pattern>FACETIME *</pattern>
+         <template>
+         		OK master, now facetime <star/>
+         		<think>
+         			<set name="bibo_device">facetime</set>
+         			<set name="bibo_command"><star/></set>
+         			<set name="bibo_flag">queued</set>
+         		</think>
+         </template>
+      </category>
+
+      <category>
+          <pattern>CHECK THE *</pattern>
+          <template>
+               Fine, now checking <star/>
+               <think>
+                    <set name="bibo_device"><star/></set>
+                    <set name="bibo_command">checking <star/></set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>PLAY * FROM *</pattern>
+          <template>
+               You're in the mood ? Let's play <star index="1"/>  from app <star index="2"/>
+               <think>
+                    <set name="bibo_device">application</set>
+                    <set name="bibo_command">play <star index ="1"/></set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>DOWNLOAD *</pattern>
+          <template>
+               Ok, Now open App store and download <star/>
+               <think>
+                    <set name="bibo_device">App store</set>
+                    <set name="bibo_command">Download <star/></set>
+                    <set name="bibo_flag">queued</set>     
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>SNOOZE FOR * MINUTES</pattern>
+          <template>
+               Open clock and set alarm for <star/> minutes
+               <think>
+                    <set name="bibo_device">Timer</set>
+                    <set name="bibo_command">set timer for <star/> minutes</set>
+                    <set name="bibo_flag">queued</set>     
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>CONNECT * WITH *</pattern>
+          <template>You want to connect by bluetooth or WiFi ?</template>
+     <category>
+          <pattern>WIFI</pattern>
+          <that>You want to connect by bluetooth or WiFi ?</that>
+          <template>
+               Connecting <star index="1"/> with <star index="2"/> using WiFi
+               <think>
+                    <set name="bibo_device"><star index="1"/></set>
+                    <set name="bibo_command">connect</set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>BLUETOOTH</pattern>
+          <that>You want to connect by bluetooth or WiFi ?</that>
+          <template>
+               Connecting <star index="1"/> with <star index="2"/> using Bluetooth
+               <think>
+                    <set name="bibo_device"><star index="1"/></set>
+                    <set name="bibo_command">connect</set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>ORDER *</pattern>
+          <template>From amazon or somewhere else ?</template>
+     </category>
+
+     <category>
+          <pattern>AMAZON</pattern>
+          <that>From amazon or somewhere else ?</that>
+          <template>
+               Ordering <star/> from amazon
+               <think>
+                    <set name="bibo_device">Shopping apps</set>
+                    <set name="bibo_command">ordering <star/></set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>SOMEWHERE ELSE</pattern>
+          <that>From amazon or somewhere else ?</that>
+          <template>I can only order from amazon</template>
+     </category>
+
+     <category>
+          <pattern>FIND * AROUND HERE</pattern>
+          <template>
+               Openning Maps and find <star/>
+               <think>
+                    <set name="bibo_device">Maps</set>
+                    <set name="bibo_command">finding <star/> </set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>SET * MODE</pattern>
+          <template>
+               Setting to <star/> mode
+               <think>
+                    <set name="bibo_device">settings</set>
+                    <set name="bibo_command">set <star/> mode </set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>FIND * AROUND HERE</pattern>
+          <template>
+               Openning Maps and find <star/>
+               <think>
+                    <set name="bibo_device">Maps</set>
+                    <set name="bibo_command">finding <star/> </set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>WHAT IS *</pattern>
+          <template>
+               Searching online result for <star/> 
+               <think>
+                    <set name="bibo_device">Maps</set>
+                    <set name="bibo_command">Searching <star/> </set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>FIND * AROUND HERE</pattern>
+          <template>
+               Openning Maps and find <star/>
+               <think>
+                    <set name="bibo_device">Maps</set>
+                    <set name="bibo_command">finding <star/> </set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>ADD * TO MY SHOPPING LIST</pattern>
+          <template>
+               Openning notes and add <star/> to your shopping list
+               <think>
+                    <set name="bibo_device">Notes</set>
+                    <set name="bibo_command">Add <star/> </set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+     <category>
+          <pattern>HOW TO MAKE *</pattern>
+          <template>
+               Finding how to make <star/> on Safari
+               <think>
+                    <set name="bibo_device">Safari</set>
+                    <set name="bibo_command">finding how to make <star/> </set>
+                    <set name="bibo_flag">queued</set>
+               </think>
+          </template>
+     </category>
+
+   </topic>
+</aiml>
+

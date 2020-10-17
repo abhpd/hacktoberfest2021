@@ -1,0 +1,40 @@
+Nguyên lý
+Nhận thấy một command thường có phần tĩnh và phần động
+Ví dụ: turn on the computer thì turn on là phần tĩnh, the computer là phần động
+hay như send a message to Karen about the terrosist thì Karen và the terrosist là phần động
+AIML hoạt động dựa trên pattern matching, nghĩa là nếu câu của mình có form, có pattern thì nó sẽ nhận diện được. 
+Ví dụ :
+		<category>
+		<pattern>TURN ON *</pattern>
+		<template>
+				OK master, now turn on <star/>
+				<think>
+					<set name="alexa_device"><star/></set>
+					<set name="alexa_command">turn on</set>
+					<set name="alexa_flag">queued</set>
+				</think>
+		</template>
+		</category>
+thì turn on * là pattern của mình. AIML sẽ coi các câu: turn on the computer, turn on computer, turn on phone là như nhau, với phần sau chữ "on" sẽ là phần động.
+Sau khi nhận diện được, aiml sẽ tiến hành gán nhãn.
+		<category>
+		<pattern>PLAY *</pattern>
+		<template>
+				OK master, now play <star/>
+				<think>
+					<set name="alexa_device">music</set>
+					<set name="alexa_command">play</set>
+					<set name="alexa_parameters"> | name =  <star/>  | </set>
+					<set name="alexa_flag">queued</set>
+				</think>
+		</template>
+		</category>
+Nếu nhập là "play despacito", thì aiml sẽ gắn "alexa_device" = music, "alexa_command" = play, "alexa_parameters" = "|name = despacito", và "alexa_flag" = queued.
+Từ Python có thể lấy được những giá trị alexa này.
+
+NLP là xử lý ngôn ngữ tự nhiên, nhưng ở đây nhóm chỉ dùng một phần nhỏ là cây liên hệ: dependency-tree. Với module NLP có sẵn như spacy, textrazor, nltk ta có thể xây được cây liên hệ từ một câu bất kỳ. Khi đó ta sẽ có một cây với các node là các từ trong câu, các edge là mối quan hệ.
+Ví dự: advmod là trạng từ bổ nghĩa , conj là từ nối tiếp sau "and", "or", "then", iobj là vật thể gián tiếp của động từ.
+Chi tiết hơn coi tại https://nlp.stanford.edu/software/dependencies_manual.pdf
+Nhóm đang tách một cách đơn giản, nếu nói giữa root và con là "conj" hoặc "xcomp" hoặc "advcl" thì sẽ tách cây con đó thành một cây mới, tức là một câu bé hơn. Phần cây còn lại là một vế. Sau đó lại đệ quy vào cây con vừa tách.
+
+Cách này chưa thật sự hiệu quả.

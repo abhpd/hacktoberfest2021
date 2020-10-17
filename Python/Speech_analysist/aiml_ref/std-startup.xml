@@ -1,0 +1,16 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- std-startup.xml -->
+<!-- Category is an atmic AIML unit -->
+<category>
+<pattern>LOAD ALL</pattern>
+<template>
+<learn>aiml_ref/*.aiml</learn>
+</template>
+</category>
+<category>
+<pattern>LOAD ALEXA</pattern>
+<template>
+<learn>aiml_ref/alexa_fake.aiml</learn>
+</template>
+</category>
+</aiml>
