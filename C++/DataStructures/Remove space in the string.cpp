@@ -1,5 +1,5 @@
-/* Remove space in the input string , Input is in form- Firts line : Number of Test Cases
-                                                       Second line : String for each test case */
+/* Remove space in the input string , Input is in form: Firts line- Number of Test Cases
+                                                       Second line- String for each test case */
 
 #include <iostream>
 using namespace std;
