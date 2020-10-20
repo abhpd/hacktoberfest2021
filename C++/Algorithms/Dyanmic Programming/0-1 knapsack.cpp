@@ -1,4 +1,10 @@
 
+/* Given two integer arrays val[0.....n-1] and wt[0.....n-1] which represent values and weights of n items respectively. 
+Also given an integer W representing the Knapsack's capacity . find the maximum value subset of val[] such that
+sum of the weights of this subset is smaller than or equal to W */
+  
+//solution
+  
 #include <bits/stdc++.h> 
 using namespace std; 
 
