@@ -1,0 +1,42 @@
+//...........KADANE'S ALGORITHM...........................//
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void *max_sum(int arr[],int n,int count){
+    int currentsum=0,maxsum=0;
+    for(int i=0;i<n;i++){
+        currentsum+=arr[i];
+        if(currentsum<0) //if the current sum is less than 0 then 0 can be assigned to the current sum
+        currentsum=0;
+        maxsum=max(currentsum,maxsum); /*we'll need to find the maximum sum between currentsum and maxsum so that 
+                                           so that we update the currentsum */
+        if(arr[i]<0)
+        count++;
+    }
+    int maxx=arr[0];
+    if(count==n){            // if count is equal to n then we'll find the maximum element
+        for(int i=0;i<n;i++){
+            if(arr[i]>maxx)
+            maxx=arr[i];
+        }
+    }
+    if(count==n)
+    cout<<maxx<<endl;
+    else
+    cout<<maxsum<<endl;
+}
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int arr[100000];
+	    int n,count=0;
+	    cin>>n;
+	    for(int i=0;i<n;i++)
+	    cin>>arr[i];
+	    max_sum(arr,n,count);
+	}
+	return 0;
+}
