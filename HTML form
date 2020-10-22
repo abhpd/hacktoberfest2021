@@ -1,0 +1,67 @@
+<html>
+	<head>	
+		<title>FORM PRACTICE</title>
+	</head>
+	<body>
+		<form method="get">
+			<table border="2px" align="center">
+				<tr>
+					<th>User-Name</th>
+					<td><input type="text" placeholder="Enter your name" size="30" maxlength="20" name="uname"/></td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td><input type="email" placeholder="Enter your email" size="30" maxlength="30" name="email"/></td>
+				</tr>
+				<tr>
+					<th>Password</th>
+					<td><input type="password" placeholder="Enter your password" size="30" maxlength="8" name="pass"/></td>
+				</tr>
+				<tr>
+					<th>Contact</th>
+					<td><input type="text" placeholder="Enter your no" size="30" maxlength="10" name="no."/></td>
+				</tr>
+				<tr>
+					<th>Gender</th>
+					<td><input type="radio" name="gender" value="male"/>MALE
+						<input type="radio" name="gender" value="female"/>FEMALE</td>
+				</tr>
+				<tr>
+					<th>HOBBIES</th> 
+						<td><input type="checkbox" name="hobbies" value="art"/>ART
+							<input type="checkbox" name="hobbies" value="dance"/>DANCE
+							<input type="checkbox" name="hobbies" value="playing"/>PLAYING
+							<input type="checkbox" name="hobbies" value="singing"/>SINGING</td>
+				</tr>
+				<tr>
+					<th>COURSES</th>
+						<td>
+						<select name="courses" multiple>
+							<option>----select your courses----</option>
+							<option value="webdesign">Web design</option>
+							<option value="c++">c++</option>
+							<option value="java">java</option>
+							<option value="python">python</option>
+						</select>
+						</td>
+				</tr>
+				<tr>
+					<th>IMAGE</th>
+					<td><input type="file"></td>
+				</tr>
+				<tr>
+					<th>ADDRESS</th>
+					<td>
+						<textarea rows="10" cols="30" style="resize:none"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<th>ACTION</th>
+					<td>
+						<input type="submit" value="submit">
+						<input type="reset" value="reset">
+					</td>
+				</tr>
+			</table>
+	</body>
+</html>
