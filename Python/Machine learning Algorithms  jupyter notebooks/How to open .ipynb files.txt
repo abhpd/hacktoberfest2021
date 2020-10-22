@@ -1,0 +1,5 @@
+you can add them to your drive and then open it using google colab notebook
+
+you can also open this files directly from google colab .
+
+I attached this notebooks as i wanted to attach output of each line too.
