@@ -1,0 +1,45 @@
+/*
+Given two strings A and B of lowercase letters, return true if you can swap two letters in A so the result is equal to B, otherwise, return false.
+
+Swapping letters is defined as taking two indices i and j (0-indexed) such that i != j and swapping the characters at A[i] and A[j]. For example, swapping at indices 0 and 2 in "abcd" results in "cbad".
+*/
+
+class Solution {
+    public boolean buddyStrings(String A, String B) {
+        int l1=A.length();
+        int l2=B.length();
+        if(l1!=l2) return false;
+        int count=0;
+        
+        int[] ar1=new int[4];
+        Set<Character> set=new LinkedHashSet<>();
+        
+        
+        int p=0;
+        for(int i=0;i<l1;i++){
+                if(A.charAt(i)!=B.charAt(i)) { 
+                    ++count;
+                     if(count>2){
+                        return false;
+                    }
+                    ar1[p]=A.charAt(i);
+                    p++;
+                    ar1[p]=B.charAt(i);
+                    p++;
+                }
+            set.add(A.charAt(i));
+        }
+        
+        if(count==0 && set.size()==l1){  //count=0 means no any character is different in comparison with both string while set.size==l1 means all characters is different in A that's why size is equal
+            return false;
+        }
+        
+        if(ar1[0]==ar1[3] && ar1[1]==ar1[2]){  //diff from 1st submission
+            return true;
+        }
+        
+        return false;
+        
+        
+    }
+}
