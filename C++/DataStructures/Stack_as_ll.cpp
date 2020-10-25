@@ -1,12 +1,15 @@
 #include <iostream>
-
 using namespace std;
+
+// structure/schema of any node in the stack
 struct Node {
-   int data;
-   struct Node *next;
+   int data; 
+   struct Node *next; // 'next' stores the address of node below the current node
 };
-struct Node* top = NULL;
-int size = 0;
+struct Node* top = NULL; //initializing the top node of the stack as 'NULL'
+int size = 0; // size of the stack
+
+// function to create and push a node on the top of the stack
 void push(int val) {
    struct Node* newnode = new Node;
    newnode->data = val;
@@ -14,15 +17,21 @@ void push(int val) {
    top = newnode;
    size++;
 }
+
+//function to pop the top node from the stack
 void pop() {
-   if(top==NULL)
+   if(top==NULL) // if stack is empty
    cout<<"Stack Underflow\n";
    else {
-      cout<<"The popped element is "<< top->data <<"\n";
+      Node* temp = top;
+      cout<<"The popped element is "<< temp->data <<"\n";
       top = top->next;
+      delete(temp);
       size--;
    }
 }
+
+// function to display the values of all the nodes of the stack
 void display() {
    struct Node* ptr;
    if(top==NULL)
@@ -38,9 +47,10 @@ void display() {
    cout<<endl;
 }
 
+// function to display the top element of the stack
 void peek()
 {
-    if(top==NULL)
+    if(top==NULL) // if stack is empty
     {
         cout<<"Underflow\n";
     }
@@ -50,10 +60,12 @@ void peek()
     }
 }
 
+// function to display the size of the stack
 void get_size()
 {
      cout<<size<<"\n";
 }
+
 int main() {
    int ch, val;
    cout<<"1) Push\n";
