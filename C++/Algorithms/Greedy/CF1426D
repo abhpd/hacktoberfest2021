@@ -1,0 +1,33 @@
+//CF 1426D
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long n;
+    cin>>n;
+    vector <long long> v(n);
+    for(long long i=0;i<n;i++)
+    {
+        cin>>v[i];
+    }
+    set <long long> s;
+    s.insert(0);
+    long long ans=0;
+    long long temp=0;
+    for(long long i=0;i<n;i++)
+    {
+        temp+=v[i];
+        if(s.count(temp))
+        {
+            ans++;
+            temp=v[i];
+            s.clear();
+            s.insert(0);
+        }
+        s.insert(temp);
+    }
+    cout<<ans;
+}
+
