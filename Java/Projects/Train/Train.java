@@ -1,3 +1,4 @@
+
 import java.util.Collections;
 /**
  * 
@@ -18,22 +19,38 @@ public class Train implements Comparable<Train>
         this.price = price;
     }
 
+    /**
+     * A method to get the departure
+     */
     public String getDeparture() {
         return departure;
     }
 
+    /**
+     * A method to get the destiantion
+     */
     public String getDestiantion() {
         return destination;
     }
 
+    /**
+     * A method to get grice
+     */
     public int getPrice() {
         return price;
     }
 
+    /**
+     * This method will format a String of the given way
+     */
     public String toString() {
         return "From " + departure + " to " + destination + " for " + price + " DKK";
     }
 
+    /**
+     * This method sorts departures alphabeticly, if they have the same 
+     * departures then it wil sort after price from lovest til highest
+     */
     public int compareTo(Train other) {
         if(!departure.equals(other.departure)) {
             return departure.compareTo(other.departure);
@@ -41,5 +58,5 @@ public class Train implements Comparable<Train>
         {
             return price - other.price;
         }
-        }
+    }
 }
