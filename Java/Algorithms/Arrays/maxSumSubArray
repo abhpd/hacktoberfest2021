@@ -1,0 +1,43 @@
+public int maxSubArray(int[] nums) {
+        
+        //Overall Maximum Sum
+        int oMax = 0;
+        //Current Maximum Sum
+        int cMax = 0;
+        
+        boolean allNegative = true;
+        
+        for(int i = 0; i < nums.length; i++){
+            
+            if(nums[i] > 0){
+                allNegative = false;
+            }
+            
+            cMax += nums[i];
+            
+            if(cMax < 0){
+                cMax = 0;
+            }
+            
+            if(oMax < cMax){
+                oMax = cMax;
+            }
+            
+        }
+        
+        if(allNegative){
+            
+            int largest = nums[0];
+            
+            for(int i = 1; i < nums.length; i++){
+                if(nums[i] > largest){
+                    largest = nums[i];
+                }
+            }
+            
+            return largest;
+        }
+        
+        return oMax;
+        
+    }
