@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class CountingSort {
 	/*
-     * Sorts an array using counting sort
+         * Sorts an array using counting sort
 	 * @param arr[]    Array of elements
 	 * @param size     Size of array
 	 */
