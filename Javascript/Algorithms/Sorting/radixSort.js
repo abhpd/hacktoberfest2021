@@ -4,7 +4,7 @@ const countingSort = (arr, size, place) => {
     let max = Math.max(...arr);
     
     let freq = new Array(max + 1).fill(0);
-    
+     
     // Calculate count of elements
     for (let i = 0; i < size; i++){
         const num = Math.floor(arr[i] / place) % 10;
