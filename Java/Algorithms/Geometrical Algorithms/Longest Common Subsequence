@@ -1,16 +1,33 @@
-/* A Naive recursive implementation of LCS problem in java*/
+/* In the above partial recursion tree, lcs(“AXY”, “AYZ”) is being solved twice. 
+If we draw the complete recursion tree, then we can see that there are many subproblems which are solved again and again. 
+So this problem has Overlapping Substructure property and recomputation of same subproblems can be avoided by either using Memoization or Tabulation. 
+Following is a tabulated implementation for the LCS problem. */
+
+/* Dynamic Programming Java implementation of LCS problem */
+
 public class LongestCommonSubsequence
 {
 
 /* Returns length of LCS for X[0..m-1], Y[0..n-1] */
 int lcs( char[] X, char[] Y, int m, int n )
 {
-	if (m == 0 || n == 0)
-	return 0;
-	if (X[m-1] == Y[n-1])
-	return 1 + lcs(X, Y, m-1, n-1);
-	else
-	return max(lcs(X, Y, m, n-1), lcs(X, Y, m-1, n));
+	int L[][] = new int[m+1][n+1];
+
+	/* Following steps build L[m+1][n+1] in bottom up fashion. Note
+		that L[i][j] contains length of LCS of X[0..i-1] and Y[0..j-1] */
+	for (int i=0; i<=m; i++)
+	{
+	for (int j=0; j<=n; j++)
+	{
+		if (i == 0 || j == 0)
+			L[i][j] = 0;
+		else if (X[i-1] == Y[j-1])
+			L[i][j] = L[i-1][j-1] + 1;
+		else
+			L[i][j] = max(L[i-1][j], L[i][j-1]);
+	}
+	}
+return L[m][n];
 }
 
 /* Utility function to get max of 2 integers */
@@ -30,8 +47,9 @@ public static void main(String[] args)
 	int m = X.length;
 	int n = Y.length;
 
-	System.out.println("Length of LCS is" + " " +
-								lcs.lcs( X, Y, m, n ) );
+	System.out.println("Length of LCS is" + " " +lcs.lcs( X, Y, m, n ) );
 }
 
 }
+
+
