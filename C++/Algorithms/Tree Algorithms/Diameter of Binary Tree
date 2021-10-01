@@ -1,0 +1,44 @@
+class Solution {
+public:
+
+int maxD=INT_MIN;
+
+int height(Node* temp)
+
+{
+
+if(temp==NULL) return 0;
+
+else{
+
+int leftH=height(temp->left);
+
+int rightH=height(temp->right);
+
+if(leftH>rightH) 
+
+return leftH+1;
+
+else{return rightH+1;}}
+
+}
+
+int diameter(Node* root) {
+
+if(root==NULL) return 0;
+
+int leftHeight=height(root->left);
+
+int rightHeight=height(root->right);
+
+maxD=max(maxD,leftHeight+rightHeight+1)
+
+diameter(root->left);
+
+diameter(root->right);
+
+return maxD;
+
+}
+
+};
