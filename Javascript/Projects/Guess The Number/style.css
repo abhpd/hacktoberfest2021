@@ -1,0 +1,67 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+nav>h1 {
+    margin-left: 5rem;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main>h1 {
+    color: rgb(255, 196, 0);
+    font-size: 10rem;
+    margin: 1rem;
+}
+
+input {
+    margin: 1rem;
+}
+
+.form-group {
+    width: 35%;
+}
+
+.butn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button {
+    margin: 5px;
+}
+
+ul {
+    margin: 0.5rem;
+}
+
+#history {
+    width: 30%;
+}
+
+#total {
+    margin: 1rem;
+}
