@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: #023047;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #023047;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: #219EBC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #FFB703;
+}
+
+h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin-top: -100px;
+  color: #023047;
+  font-size: 3em;
+  text-align: center;
+}
+
+section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #023047;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-clip-path: circle(0px at center);
+          clip-path: circle(0px at center);
+}
+
+.outerText {
+  position: fixed;
+  top: 50%;
+  left: 100%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+  font-size: 8vw;
+  color: transparent;
+  -webkit-text-stroke: 2px #023047;
+  text-align: center;
+  width: 100%;
+}
+
+.innerText {
+  position: fixed;
+  top: 50%;
+  left: 100%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+  font-size: 8vw;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  margin-top: 200vh;
+  background: #023047;
+  padding: 100px;
+  color: #8ECAE6;
+  z-index: 2;
+}
+
+.container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.container p {
+  color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 25px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

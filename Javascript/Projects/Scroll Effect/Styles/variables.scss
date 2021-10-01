@@ -1,0 +1,29 @@
+@mixin flex($align, $justify, $direction) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+// Background colors
+$primaryColor: #FFB703;
+$secondaryColor: #023047;
+//text colors
+$primaryText: #fff;
+$secondaryText: #219EBC;
+$textColor: #8ECAE6;
+// custom scroll bar
+::-webkit-scrollbar-track {
+    width: 10px;
+    background-color: $secondaryColor;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: $secondaryColor;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: $secondaryText;
+}

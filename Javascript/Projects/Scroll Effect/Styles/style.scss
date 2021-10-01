@@ -1,0 +1,83 @@
+@import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: $primaryColor;
+}
+
+h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -100px;
+    color: $secondaryColor;
+    font-size: 3em;
+    text-align: center;
+}
+
+section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: $secondaryColor;
+    @include flex(center,
+    center,
+    row);
+    clip-path: circle(0px at center);
+}
+
+.outerText {
+    position: fixed;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-size: 8vw;
+    color: transparent;
+    -webkit-text-stroke: 2px $secondaryColor;
+    text-align: center;
+    width: 100%;
+}
+
+.innerText {
+    position: fixed;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-size: 8vw;
+    color: $primaryText;
+    text-align: center;
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    margin-top: 200vh;
+    background: $secondaryColor;
+    padding: 100px;
+    color: $textColor;
+    z-index: 2;
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    p {
+        color: $primaryText;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+}
