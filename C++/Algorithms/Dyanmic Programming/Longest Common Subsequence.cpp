@@ -1,6 +1,18 @@
 
 
-/*Given two sequences, find the length of longest subsequence present in both of them. Both the strings are of uppercase.*/
+/*Given two sequences, find the length of longest subsequence present in both of them. Both the strings are of uppercase.
+
+
+Sample Input:
+6 7
+AGGTAB
+GXTXAYB
+
+
+Output:
+The length of Longest Common Subsequence is 3 
+
+*/
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -30,6 +42,6 @@ int main(){
  cin>>s1>>s2;
  int ans=0;
  ans=lcs(n,m,s1,s2);
- cout<<"Longest Common Subsequence "<<ans<<"\n";
+ cout<<"The length of Longest Common Subsequence is "<<ans<<"\n";
 
 }
