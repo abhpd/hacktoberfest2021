@@ -1,10 +1,10 @@
-# ✨ hacktoberfest2020 💫
+# ✨ hacktoberfest2021 💫
 
-![banner](https://hacktoberfest.digitalocean.com/assets/HF-full-logo-b05d5eb32b3f3ecc9b2240526104cf4da3187b8b61963dd9042fdc2536e4a76c.svg)
+![banner](https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg)
 
-## 🌱 Contributing to hacktoberfest 2020
+## 🌱 Contributing to hacktoberfest 2021
 
-### Welcome to hacktoberfest 2020 Public Repository. 👨🏻‍💻
+### Welcome to hacktoberfest 2021 Public Repository. 👨🏻‍💻
 <p>A month-long celebration from October 1st - 31st sponsored by Digital Ocean and GitHub to get people involved in Open Source. Create your very first pull request to any public repository on GitHub and contribute to the open source developer community.
 
 https://hacktoberfest.digitalocean.com/</p>
@@ -28,11 +28,11 @@ https://hacktoberfest.digitalocean.com/</p>
 * Fork the repository (Click the Fork button in the top right of this page, click your Profile Image)
 * Clone the forked repository to your local machine.
 ```markdown
-git clone https://github.com/your-username/HacktoberFest2020.git
+git clone https://github.com/your-username/HacktoberFest2021.git
 ```
 * change the present working directory
 ```markdown
-cd HacktoberFest2020
+cd HacktoberFest2021
 ```
 * Add/Create your project to the specific folder as described in what you can contribute section.
 * Make a new branch
