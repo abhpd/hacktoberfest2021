@@ -10,7 +10,7 @@ public class JosephusProblem {
 		int n = sc.nextInt();
 		System.out.println("Enter k: ");
 		int k = sc.nextInt();
-		System.out.println("The safe place is: " + p.josephus(n, k));
+		System.out.println(p.josephus(n, k));
 		
 
 		sc.close();
