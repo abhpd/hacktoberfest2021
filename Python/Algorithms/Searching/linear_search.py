@@ -1,16 +1,18 @@
-def linear_search(lst,key):
-    flag = 0
-    for i in lst:
-        if i == key:
-            print("Found at position {}".format(lst.index(i)+1))
-            flag = flag+1
-    if flag == 0:
-        print("Not Found")
+def search(arr, n, x):
+
+	for i in range(0, n):
+		if (arr[i] == x):
+			return i
+	return -1
 
 
-# Driver Code
-my_list = [1,5,3,4]
-linear_search(my_list,5)
-linear_search(my_list,2)
 
+arr = [2, 3, 4, 10, 40]
+x = 10
+n = len(arr)
 
+result = search(arr, n, x)
+if(result == -1):
+	print("Element is not present in array")
+else:
+	print("Element is present at index", result)
