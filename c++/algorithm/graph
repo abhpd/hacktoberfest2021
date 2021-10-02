@@ -1,0 +1,86 @@
+#include <bits/stdc++.h>
+#define IOS                  \
+	ios::sync_with_stdio(0); \
+	cin.tie(0);              \
+	cout.tie(0);
+#define endl "\n"
+#define ll long long int 
+#define pb push_back
+#define ma make_pair
+#define f1(i, a, b) for (int i = a; i < b; i++)
+#define f2(i, a, b) for (int i = a; i > b; i--)
+#define ff first
+#define ss second
+#define lb lower_bound
+#define ub upper_bound
+#define mod 1000000007
+#define ii pair<int,int>
+#define vi vector<int>
+#define vl vector<ll>
+#define vii vector<ii>
+#define pq priority_queue<int,vi,greater<int> > //for min heap.
+using namespace std;
+vector<int> arr[100001];
+int vis[100001];
+int par[100001];
+int sv,ev;
+bool dfs(int node,int x)
+{
+  vis[node]=1;
+  par[node]=x;
+  for(int child : arr[node])
+  {
+      if(!vis[child])
+      {
+          if(dfs(child,node)==true) return true;
+      }
+      else
+      {
+          if(child!=x) 
+          {
+              sv=child;
+              ev=node;
+              return true;
+          }
+      }
+  }
+  return false;
+}
+int main()
+{  IOS;
+   int n,m,u,v;
+   cin>>n>>m;
+   while(m--)
+   {
+       cin>>u>>v;
+       arr[u].pb(v);
+       arr[v].pb(u);
+   }
+   bool f=false;
+   for(int i=1;i<=n;i++)
+   {
+       if(!vis[i])
+       {
+          f=dfs(i,-1);
+          if(f==true)
+          break;
+       }
+   }
+   if(!f) cout<<"IMPOSSIBLE"<<endl;
+   else
+   {
+       vi ans;
+       int curr=ev;
+       ans.pb(ev);
+       while(curr!=sv)
+       {
+            ans.pb(par[curr]);
+            curr=par[curr];
+        }
+       ans.pb(ev);
+       cout<<ans.size()<<endl;
+       for(int x : ans)
+       cout<<x<<" ";
+   }
+}    
+// here n is vertices and m is edges.
