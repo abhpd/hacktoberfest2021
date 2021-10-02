@@ -1,12 +1,21 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//**Stack is a last in first out data structure.**
+
 //we define a stack of size 4 to keep integer values
 #define size 4 
-  
+
+//this stack is created using an array. Variable top is used as the stack pointer  
 int top=-1, stack[size];
+
+//push function is used to push a new integer into the stack
 void push(int input);
+
+//retrieve the latest value inserted 
 void pop();
+
+//function to display the entire stack at the current point of time
 void display();
   
 int main()
@@ -22,6 +31,7 @@ int main()
         printf("\n\nEnter the choice:");
         scanf("%d",&choice);
          
+        // this switch manages the user's choise
         switch(choice)
         {
             case 1: printf("\nPlease input the integer value to push : ");
