@@ -1,0 +1,43 @@
+#include <stdio.h>
+int main()
+{
+    int m,n,count=0;
+    int arr[100][100],i,j;
+    printf("Enter no. of rows: ");
+    scanf("%d", &m);
+    printf("Enter no. of columns: ")
+    scanf("%d", &n);
+    printf("\nEnter Matrix elements: ");
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    printf("\nMatrix is: ");
+    for(i=0;i<m;i++)
+    {
+        printf("\n");
+        for(j=0;j<n;j++)
+        {
+            printf("%d ", arr[i][j]);
+        } 
+    }
+ //check sparse
+ for(i=0;i<m;i++)
+ {
+    for(j=0;j<n;j++)
+    {
+        if(arr[i][j]==0)
+        {
+            count++;
+        }
+    }
+ }
+ printf("\n\n");
+ if(count > ((m*n)/2))
+ printf("Matrix is a sparse matrix \n");
+ else
+ printf("Matrix is not sparse matrix\n");
+ }
