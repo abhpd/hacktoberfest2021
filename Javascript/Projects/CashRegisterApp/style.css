@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  background-color: goldenrod;
+  text-align: center;
+}
+h2 {
+  background-color: lemonchiffon;
+  text-align: center;
+}
+.error {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+.green {
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+.output {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cashGiven {
+  margin-bottom: 1rem;
+}
+label {
+  margin: 1rem 0rem 1rem 0rem;
+}
