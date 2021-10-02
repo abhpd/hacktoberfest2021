@@ -19,8 +19,7 @@ int minKey(int key[], bool mstSet[])
 	return min_index;
 }
 
-// A utility function to print the
-// constructed MST stored in parent[]
+// Print constructed MST stored in parent[]
 int printMST(int parent[], int graph[V][V])
 {
 	printf("Edge \tWeight\n");
@@ -33,7 +32,6 @@ int printMST(int parent[], int graph[V][V])
 // matrix representation
 void primMST(int graph[V][V])
 {
-	// Array to store constructed MST
 	int parent[V];
 	// Key values used to pick minimum weight edge in cut
 	int key[V];
@@ -61,7 +59,6 @@ void primMST(int graph[V][V])
 		// Update key value and parent index of
 		// the adjacent vertices of the picked vertex.
 		// Consider only those vertices which are not
-		// yet included in MST
 		for (int v = 0; v < V; v++)
 
 			// graph[u][v] is non zero only for adjacent vertices of m
