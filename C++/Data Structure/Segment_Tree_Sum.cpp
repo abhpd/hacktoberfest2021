@@ -1,3 +1,6 @@
+//Program to calculate the sum of segments in an array and be able to do the same
+//when a few of the elements of the array have been changed in short time
+//(O(log(n)) for calculating sum and setting the elements)
 #include <bits/stdc++.h>
 typedef long long ll;   //to make the code a little short
 using namespace std;
@@ -118,3 +121,8 @@ int main() {
     }
     return 0;
 }
+// The time complexity of build is nlog(n)
+// The time complexity of set is log(n)
+// The time complexity of getSum is log(n)
+// The time complexity of the whole program is O(mlog(n))
+// Memory complexity is O(n)
