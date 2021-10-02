@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-a-Sketch</title>
+  <script defer src="js/index.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="header">
+    <h1>Etch-a-Sketch</h1>
+  </header>
+  <main id="container">
+    <div class="options">
+      <div class="slidecontainer">
+        <label for="grid-size-slider">Select grid size:</label>
+        <input type="range" min="2" max="64" value="16" class="slider" id="grid-size-slider">
+        <p class="slider-value"></p>
+      </div>
+      <div class="color-picker">
+        <label for="favcolor">Select your favorite color:</label>
+        <input type="color" id='favcolor' name="color">
+      </div>
+      <button class="color-mode-chooser" id="grayscale" name="gray">Grayscale</button>
+      <button class="color-mode-chooser" id="rgb" name="rgb">RGB</button>
+      <button class="color-mode-chooser" id="eraser" name="eraser">Eraser</button>
+      <button class="color-mode-chooser" id="reset" onclick="resetGrid()">Reset</button>
+    </div>
+    <div class="canvas"></div>
+  </main>
+  <footer id="footer">
+  <p>Crafted by Harsh | <a href="https://www.github.com/harsh-gautam/etch-a-sketch.git" target="_blank">source</a></p> 
+  </footer>
+</body>
+</html>
