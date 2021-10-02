@@ -1,58 +1,69 @@
+import java.io.*;
 
-public class QuickSort {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		int a[] = {2,3,8,10,11,6,9,5};
-		sort(a, 0, a.length - 1);
-		for (int val : a) {
-			System.out.println(val + " ");
-		}
-
-	}
-	static void display(int a[])
-	{
-		for(int i=0;i<a.length;i++)
-			System.out.print(a[i]+" ");
-		System.out.println();
-	}
-
-	public static void sort(int a[], int lo, int hi) {
-
-		if (lo >= hi) // if only one element left or lo>ho
-			return;
-		// partioning
-		int m = (lo + hi) / 2;
-		int pivot = a[m];
-		int l = lo;
-		int r = hi;
-		while (l <= r) // till it do not cross each other
-		{
-			//increment l until u find an element greater than pivot
-			while (a[l] < pivot) {
-				l++;
-			}
-			//decrement r until u find an elemnt smaller than pivot
-			while (a[r] > pivot) {
-				r--;
-			}
-//and then swap them
-			if (l <= r) { // to stop swapping if l and r has already swapped
-				int temp = a[l];
-				a[l] = a[r];
-				a[r] = temp;
-				l++;
-				r--;
-			}
-			System.out.println(pivot);
-			display(a);
-		}
+class QuickSortAlgorithm{
 	
-
-		sort(a, lo, r);
-		sort(a, l, hi);
-
-	}
-
+static void swap(int[] arr, int i, int j)
+{
+	int temp = arr[i];
+	arr[i] = arr[j];
+	arr[j] = temp;
 }
+
+static int partition(int[] arr, int low, int high)
+{
+	
+	int pivot = arr[high];
+	
+	int i = (low - 1);
+
+	for(int j = low; j <= high - 1; j++)
+	{
+		
+		if (arr[j] < pivot)
+		{
+			
+			
+			i++;
+			swap(arr, i, j);
+		}
+	}
+	swap(arr, i + 1, high);
+	return (i + 1);
+}
+
+
+
+static void quickSort(int[] arr, int low, int high)
+{
+	if (low < high)
+	{
+		
+		
+		int pi = partition(arr, low, high);
+
+		
+		quickSort(arr, low, pi - 1);
+		quickSort(arr, pi + 1, high);
+	}
+}
+
+
+static void printArray(int[] arr, int size)
+{
+	for(int i = 0; i < size; i++)
+		System.out.print(arr[i] + " ");
+		
+	System.out.println();
+}
+
+public static void main(String[] args)
+{
+	int[] arr = { 10, 7, 8, 9, 1, 5 };
+	int n = arr.length;
+	
+	quickSort(arr, 0, n - 1);
+	System.out.println("Sorted array: ");
+	printArray(arr, n);
+}
+}
+
