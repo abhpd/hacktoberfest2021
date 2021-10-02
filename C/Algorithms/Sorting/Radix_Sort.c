@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-// Main function
 int main(){
     int n,i;
     printf("Welcome to Radix Sorting Algorithm\n");
@@ -34,8 +33,7 @@ int getMax(int a[], int n){
             mx = a[i];
     return mx;
 }
-// A function to do counting sort of arr[] according to
-// the digit represented by exp.
+// A function to do counting sort of arr[] 
 void countSort(int arr[], int n, int exp){
     int output[n]; 
     int i, count[10] = { 0 };
@@ -49,7 +47,7 @@ void countSort(int arr[], int n, int exp){
     */
     for (i = 1; i < 10; i++)
         count[i] += count[i - 1];
- 
+
     for (i = n - 1; i >= 0; i--) {
         output[count[(arr[i] / exp) % 10] - 1] = arr[i];
         count[(arr[i] / exp) % 10]--;
@@ -59,7 +57,7 @@ void countSort(int arr[], int n, int exp){
         arr[i] = output[i];
 }
  
-// This function is the base of the sort
+
 void radixsort(int arr[], int n){
     
     int m = getMax(arr, n);
