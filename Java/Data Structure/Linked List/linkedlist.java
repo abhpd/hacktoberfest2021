@@ -1,3 +1,9 @@
+/*
+    Hey I'm Om Duragkar Learning DSA therefore today I made commits to add linkedlist with functions for add remove display! 
+
+*/
+
+
 import java.io.*;
 import java.util.*;
 
