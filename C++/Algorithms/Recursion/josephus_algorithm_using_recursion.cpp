@@ -4,6 +4,8 @@ using namespace std;
 //Objective : Simulate the josephus algorithm and find the last standing person 
 //after eliminating the M th person continuously in a circle of N people
 
+
+//2-variations of recursion are there. One returns index and another returns position.
 int josephus_recursive(int n,int m)
 {
     if(n==1)
