@@ -1,58 +1,47 @@
+/* Quick Sort */
 
-public class QuickSort {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class Solution {
 
-		int a[] = {2,3,8,10,11,6,9,5};
-		sort(a, 0, a.length - 1);
-		for (int val : a) {
-			System.out.println(val + " ");
+	public int partition(int[] arr, int start, int end) {
+		int pIndex = start;
+		int pivot = arr[end];
+		for (int i = start; i < end; i++) {
+			if (arr[i] <= pivot) {
+				int temp = arr[i];
+				arr[i] = arr[pIndex];
+				arr[pIndex] = temp;
+				pIndex++;
+			}
 		}
-
-	}
-	static void display(int a[])
-	{
-		for(int i=0;i<a.length;i++)
-			System.out.print(a[i]+" ");
-		System.out.println();
+		int temp = arr[pIndex];
+		arr[pIndex] = arr[end];
+		arr[end] = temp;
+		return pIndex;
 	}
 
-	public static void sort(int a[], int lo, int hi) {
-
-		if (lo >= hi) // if only one element left or lo>ho
-			return;
-		// partioning
-		int m = (lo + hi) / 2;
-		int pivot = a[m];
-		int l = lo;
-		int r = hi;
-		while (l <= r) // till it do not cross each other
-		{
-			//increment l until u find an element greater than pivot
-			while (a[l] < pivot) {
-				l++;
-			}
-			//decrement r until u find an elemnt smaller than pivot
-			while (a[r] > pivot) {
-				r--;
-			}
-//and then swap them
-			if (l <= r) { // to stop swapping if l and r has already swapped
-				int temp = a[l];
-				a[l] = a[r];
-				a[r] = temp;
-				l++;
-				r--;
-			}
-			System.out.println(pivot);
-			display(a);
+	public void quickSort(int arr[], int start, int end) {
+		if(start < end) {
+			int pIndex = partition(arr, start, end);
+			quickSort(arr,start, pIndex-1);
+			quickSort(arr, pIndex + 1, end);
 		}
-	
-
-		sort(a, lo, r);
-		sort(a, l, hi);
-
 	}
 
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int num = Integer.parseInt(br.readLine());
+		int[] arr = new int[num];
+		for (int i = 0; i < num; i++) {
+			arr[i] = Integer.parseInt(br.readLine());
+		}
+		Solution obj = new Solution();
+		obj.quickSort(arr, 0, num-1);
+		for (int i = 0; i < num; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
 }
