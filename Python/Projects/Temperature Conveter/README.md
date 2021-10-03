@@ -43,8 +43,8 @@
 
 
 ## Display images/gifs/videos of output/result of your script so that users can visualize it
-BasicPythonScripts/Temperature Conveter/Images/Program Stimulation.png
-BasicPythonScripts/Temperature Conveter/Images/Temp.png
+Temperature Conveter/Images/Program Stimulation.png
+Temperature Conveter/Images/Temp.png
 
 
 ## Author(s)
