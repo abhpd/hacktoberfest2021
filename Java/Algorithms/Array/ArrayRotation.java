@@ -29,6 +29,7 @@ public class ArrayRotation {
 
     public static void main(String[] args) {
 
+
         Scanner sc =  new Scanner(System.in);
         int K=0,N = 0;
         K=sc.nextInt();
