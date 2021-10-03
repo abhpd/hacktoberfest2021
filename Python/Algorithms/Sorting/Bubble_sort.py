@@ -1,20 +1,20 @@
-# Python program for Bubble Sort
+def bubbleSort(arr):
+	n = len(arr)
 
-a = []
-number = int(input("Please Enter the Total Number of Elements : "))
-for i in range(number):
-    value = int(input("Please enter the %d Element of List1 : " %i))
-    a.append(value)
+	
+	for i in range(n):
 
-i = 0
-while(i < number -1):
-    j = 0
-    while(j < number - i - 1):
-        if(a[j] > a[j + 1]):
-             temp = a[j]
-             a[j] = a[j + 1]
-             a[j + 1] = temp
-        j = j + 1
-    i = i + 1
+		
+		for j in range(0, n-i-1):
 
-print("The Sorted List in Ascending Order : ", a)
+		
+			if arr[j] > arr[j+1] :
+				arr[j], arr[j+1] = arr[j+1], arr[j]
+
+arr = [64, 34, 25, 12, 22, 11, 90]
+
+bubbleSort(arr)
+
+print ("Sorted array is:")
+for i in range(len(arr)):
+	print ("%d" %arr[i]),
