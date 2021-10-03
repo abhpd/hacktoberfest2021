@@ -1,5 +1,5 @@
 import cv2
-image = cv2.imread(r"C:\Users\ANNAPURNA\Downloads\annu.png") #reading the image
+image = cv2.imread("./annu.png") #reading the image
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #converting it to grayscale
 inverted_image = 255 - gray_image
 blurred = cv2.GaussianBlur(inverted_image, (21, 21), 0)
