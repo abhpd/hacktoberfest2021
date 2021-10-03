@@ -1,32 +1,38 @@
-package InsertionSort;
+class InsertionSort {
+	
+	void sort(int arr[])
+	{
+		int n = arr.length;
+		for (int i = 1; i < n; ++i) {
+			int key = arr[i];
+			int j = i - 1;
 
-/**
- * InsertionSort
- */
-public class InsertionSort {
-  public static void main(String[] args) {
-    int[] originalArray = new int[10];
+      
+			while (j >= 0 && arr[j] > key) {
+				arr[j + 1] = arr[j];
+				j = j - 1;
+			}
+			arr[j + 1] = key;
+		}
+	}
+  
+	static void printArray(int arr[])
+	{
+		int n = arr.length;
+		for (int i = 0; i < n; ++i)
+			System.out.print(arr[i] + " ");
 
-    for (int i = 0; i < originalArray.length; i++) {
-      originalArray[i] = (int) (Math.random() * 15);
-    }
+		System.out.println();
+	}
 
-    insertionSort(originalArray);
+	
+	public static void main(String args[])
+	{
+		int arr[] = { 12, 11, 13, 5, 6 };
 
-    for (int i = 0; i < originalArray.length; i++) {
-      System.out.println(originalArray[i]);
-    }
-  }
+		InsertionSort ob = new InsertionSort();
+		ob.sort(arr);
 
-  public static void insertionSort(int[] array) {
-    for (int i = 1; i < array.length; i++) {
-      int current = array[i];
-      int j = i - 1;
-      while (j >= 0 && current < array[j]) {
-        array[j + 1] = array[j];
-        j--;
-      }
-      array[j + 1] = current;
-    }
-  }
+		printArray(arr);
+	}
 }
