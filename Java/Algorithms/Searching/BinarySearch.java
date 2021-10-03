@@ -1,30 +1,42 @@
-public class BinarySearch {
+import java.util.*;
 
+public class BinarySearch {
     public static void main(String[] args) {
-        int[] arr = {-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89};
-        int target = 22;
-        int l = arr.length;
-        int result = binarySearch(arr, 0, l-1, target);
-        if (result == -1)
-            System.out.println("Element not present");
-        else
-            System.out.println("Element found at index " + result);
+        int[] arr = {-2,0,3,5,7,9,12};
+        int target = 3;
+        int ans = binarySearch(arr, target);
+        System.out.println(ans);
     }
 
-    // return the index
-    // return -1 if it does not exist
-    static int binarySearch(int[] arr, int l, int r, int x) {
-        if (r >= l) {
-            int mid = l + (r - l) / 2;
+    // return index
+    // if not -1
+    // This algo if for sorted in asc order
+    // for dec if(target > mid) => end = mid -1
+    // target < mid => start = mid + 1
+    static int binarySearch(int[] arr, int target){
+        int start = 0;
+        int end = arr.length-1;
 
-            if (arr[mid] == x)
+        while(start <= end){
+            // start + end may give v.large value
+            //int mid = (start+end)/2;
+
+            //better approach
+            int mid = start + (end-start)/2;
+
+            if(arr[mid] == target){
                 return mid;
-
-            if (arr[mid] > x)
-                return binarySearch(arr, l, mid - 1, x);
-
-            return binarySearch(arr, mid + 1, r, x);
+            }
+            else if(target < arr[mid]){
+                end = mid - 1;
+            }
+            else{
+                start = mid + 1;
+            }
         }
+
+        // if not found
         return -1;
     }
+
 }
