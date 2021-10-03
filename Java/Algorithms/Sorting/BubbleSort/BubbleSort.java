@@ -1,34 +1,35 @@
-package BubbleSort;
+class BubbleSort
+{
+	void bubbleSort(int arr[])
+	{
+		int n = arr.length;
+		for (int i = 0; i < n-1; i++)
+			for (int j = 0; j < n-i-1; j++)
+				if (arr[j] > arr[j+1])
+				{
 
-/**
- * BubbleSort
- */
-public class BubbleSort {
-  public static void main(String[] args) {
-    int[] originalArray = new int[10];
+					int temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+				}
+	}
 
-    //Here Im making
-    for (int i = 0; i < originalArray.length; i++) {
-      originalArray[i] = (int) (Math.random() * 15);
-    }
 
-    bubbleSort(originalArray);    
+	void printArray(int arr[])
+	{
+		int n = arr.length;
+		for (int i=0; i<n; ++i)
+			System.out.print(arr[i] + " ");
+		System.out.println();
+	}
 
-    for (int i = 0; i < originalArray.length; i++) {
-      System.out.println(originalArray[i]);
-    }
-  }
 
-  public static void bubbleSort(int[] a) {
-    int temp;
-    for (int j = 0; j < a.length; j++) {
-      for (int i = 0; i < a.length - 1; i++) {
-        if (a[i] >= a[i + 1]) {
-          temp = a[i];
-          a[i] = a[i + 1];
-          a[i + 1] = temp;
-        }
-      }
-    }
-  }
+	public static void main(String args[])
+	{
+		BubbleSort ob = new BubbleSort();
+		int arr[] = {64, 34, 25, 12, 22, 11, 90};
+		ob.bubbleSort(arr);
+		System.out.println("Sorted array");
+		ob.printArray(arr);
+	}
 }
