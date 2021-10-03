@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include<limits.h>
+#define INFINITY 999999999
+
+// GLOBAL VARIABLES 
+long int m[20][20];
+int s[20][20];
+int p[20],i,j,n;
+
+// SUB  TO FILL MATRIX M AND S 
+
+void matrix_chain(void)
+{
+	long int q;
+	int k;
+	for(i=n;i>0;i--)
+	 {
+	   for(j=i;j<=n;j++)
+	    {
+	     if(i==j)
+	       m[i][i]=0;
+	     else
+	       {
+	       	m[i][j]=INFINITY;
+	        for(k=i;k<j;k++)
+	        {
+	         q = m[i][k]+m[k+1][j]+p[i-1]*p[k]*p[j];
+	         if(q<m[i][j])
+	          {
+	            m[i][j]= q;
+	            s[i][j]= k;
+	          }
+	         }
+	        }
+	      }
+	 }
+}
+
+//DISPLAY  
+void display_optimal(int i,int j)
+{
+if (i == j)
+printf(" A%d ",i);
+else
+   {
+      printf("( ");
+      display_optimal(i, s[i][j]);
+      display_optimal(s[i][j] + 1, j);
+      printf(")");
+   }
+}
+
+
+// MAIN CALLING METHOD
+void main()
+{
+	int k;
+	printf("------------------- MATRIX CHAIN MULTIPLICATION--------------------");
+	
+	printf("\nEnter the no. of elements: ");
+	scanf("%d",&n);
+	printf("\nEnter the dimensions: \n");
+	for(k=0;k<=n;k++)
+	{
+		 printf("P%d: ",k);
+		 scanf("%d",&p[k]);
+	}
+	matrix_chain();
+	
+	for (int x = 1; x <= n; x++){
+		printf("\n Subproblems of Size - %d", x );
+		for (int y =1;y<=n- x+1;y++){
+			  int z = y+x-1;
+			  printf("\n Number of Multiplications for chain %d - %d is:  %d", y,z, m[y][z]);
+			}
+	}
+	
+	
+	printf("\nCost Matrix M:\n\n");
+	for(i= 1;i<=n;i++)
+	{
+		for(j=n;j>=i;j--){
+			printf("%-10ld", m[i][j]);
+	  	//rintf("\n Number of Multiplications for chain %d - %d is:  %d", i,j,m[i][j]);	
+		}
+	    printf("\n");  
+	
+	}
+	i=1,j=n;
+	printf("\nMultiplication Sequence : ");
+	display_optimal(i,j);
+	printf("\nMinimum number of multiplications is : %d ", m[i][j]);
+}
