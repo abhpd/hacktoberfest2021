@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  font-size: 40px;
+  font-family: "Orbitron", sans-serif;
+  background-color: #121212;
+  color: #08f7fe;
+}
+.gameboard {
+  margin: auto;
+  margin-top: 100px;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+  cursor: pointer;
+}
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+.cell:hover {
+  background-color: #121212;
+}
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7) {
+  border-left: none;
+}
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+  border-bottom: none;
+}
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+  border-right: none;
+}
+.btn {
+  margin: auto;
+  margin-top: 50px;
+  width: 200px;
+  height: 50px;
+  display: block;
+  align-content: center;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 900;
+  background: -webkit-linear-gradient(#a40606, #d98324);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text {
+  margin-left: 30px;
+  font-size: 30px;
+}
+p {
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+.gameend {
+  display: none;
+}
