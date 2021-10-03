@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>calculator</title>
+    <script src="calculator.js"></script>
+    <style>
+      div{
+        background-color:grey;
+        width:373.2px;
+        height:283px;
+      }
+      input[type="text"]{
+        width:350px;
+        height:40px;
+        text-align:center;
+        margin-left:3.5%;
+        margin-top:2%;
+        text-decoration:none;
+        outline:none;
+        font-size:20px;
+        border:1px solid black;
+      }
+    input[type="button"]{
+        width:90px;
+        height:70px;
+        text-align:center;
+        text-decoration:none;
+        outline:none;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="start">
+      <form class="form">
+        <input type="text" name="screen" id="ok" placeholder="calculator"><br><br>
+        <div class="button">
+        <input type="button" onclick="form.screen.value +='1'" class="one"  value="1">
+        <input type="button" onclick="form.screen.value +='2'" class="one" value="2">
+        <input type="button" onclick="form.screen.value +='3'" class="one" value="3">
+        <input type="button" id="yo" onclick="form.screen.value +='+'" class="one" value="+">
+
+    <br>
+  <input type="button" onclick="form.screen.value +='4'" value="4">
+    <input type="button" onclick="form.screen.value +='5'" value="5">
+    <input type="button" onclick="form.screen.value +='6'" value="6">
+    <input type="button" id="yo" onclick="form.screen.value +='-'" class="one" value="-">
+    <br>
+    <input type="button" onclick="form.screen.value +='7'" value="7">
+      <input type="button" onclick="form.screen.value +='8'" value="8">
+      <input type="button" onclick="form.screen.value +='9'" value="9">
+      <input type="button" id="yo" onclick="form.screen.value +='/'" class="one" value="/">
+      <br>
+      <input type="button" value="A.C" onclick="c()">
+      <input type="button" onclick="form.screen.value +='0'" value="0">
+      <input type="button" onclick="eva()" value="=">
+      <input type="button" id="yo" onclick="form.screen.value +='*'" class="one" value="*">
+    </form>
+  </div>
+    </div>
+  </body>
+</html>
