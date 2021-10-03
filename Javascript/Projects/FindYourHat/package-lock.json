@@ -1,0 +1,29 @@
+{
+  "name": "find-your-hat",
+  "version": "1.0.0",
+  "lockfileVersion": 1,
+  "requires": true,
+  "dependencies": {
+    "ansi-regex": {
+      "version": "4.1.0",
+      "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-4.1.0.tgz",
+      "integrity": "sha512-1apePfXM1UOSqw0o9IiFAovVz9M5S1Dg+4TrDwfMewQ6p/rmMueb7tWZjQ1rx4Loy1ArBggoqGpfqqdI4rondg=="
+    },
+    "prompt-sync": {
+      "version": "4.1.7",
+      "resolved": "https://registry.npmjs.org/prompt-sync/-/prompt-sync-4.1.7.tgz",
+      "integrity": "sha512-EPdLWdZCgNAxF8haGg1CKOL/F5KZiRtuqgoWc1EGefX+fX+5qsB8vI52+qzl1jgADO6AiLaIcioicxRgQEy5xA==",
+      "requires": {
+        "strip-ansi": "5.2.0"
+      }
+    },
+    "strip-ansi": {
+      "version": "5.2.0",
+      "resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-5.2.0.tgz",
+      "integrity": "sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==",
+      "requires": {
+        "ansi-regex": "4.1.0"
+      }
+    }
+  }
+}
