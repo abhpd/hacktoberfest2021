@@ -50,3 +50,6 @@ public class LinkedList {
         llist.detectLoop();
     }
 }
+
+//Time Complexity - O(n)
+//Space Complexity - O(1)
