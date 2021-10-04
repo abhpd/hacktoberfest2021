@@ -31,8 +31,8 @@ def reg(col_name):
     x=dataset[[col_name]]
     y=dataset[['price']]
     
-#splitting the training data and testing data    
-    x_train,x_test,y_train,y_test= train_test_split(x,y,test_size=0.3,random_state=10)
+#splitting the training data and testing data using train_test_split method    
+    x_train,x_test,y_train,y_test= train_test_split(x,y,test_size=0.1,random_state=10)
     reg= LinearRegression()
     
 #fitting the model
@@ -50,7 +50,7 @@ def reg(col_name):
 
 #predicting and priniting the estimated price
     unseen_pred=reg.predict(np.array([[2]]))
-    print("The estiamted price is",unseen_pred)
+    print("The estimated price is",unseen_pred)
     print('---------------------------------------------------------------')
     
 #passing values (the independent varibles) to the function
