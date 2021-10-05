@@ -6,16 +6,16 @@
 # Stable: Yes
 # 
 # bubble_sort [5, 4, 3, 1, 2] => [1, 2, 3, 4, 5]
-def self.bubble_sort(container)
-loop do
-    swapped = false
-    (container.size-1).times do |i|
-    if (container[i] <=> container[i+1]) == 1
-        container[i], container[i+1] = container[i+1], container[i] # Swap
-        swapped = true
+def bubble_sort(container)
+    loop do
+        swapped = false
+        (container.size-1).times do |i|
+        if (container[i] <=> container[i+1]) == 1
+            container[i], container[i+1] = container[i+1], container[i] # Swap
+            swapped = true
+        end
+        end
+        break unless swapped
     end
-    end
-    break unless swapped
-end
-container
+    container
 end
