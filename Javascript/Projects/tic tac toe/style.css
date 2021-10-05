@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Stick+No+Bills:wght@800&display=swap');
+body{
+    max-width: 100%;
+    min-height: 80vh;
+    text-align: center;
+    background-image: url("https://images.pexels.com/photos/1113520/pexels-photo-1113520.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Stick No Bills', sans-serif;
+}
+#heading,h2{
+    margin:70px 0px;
+    font-family: 'Stick No Bills', sans-serif;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.ele{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    height: 80px;
+    font-family: 'Italianno', cursive;
+    width: 100px;
+    border:1px solid white;
+}
+#Single-player{
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    text-decoration: underline;
+    background-color: transparent;
+    color: white;
+}
