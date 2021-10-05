@@ -1,7 +1,6 @@
 // Author : Adwait Patil
 const Discord = require('discord.js');
 const api = require("imageapi.js");
-const keepAlive = require("./server")
 const fetch = require("node-fetch")
 const client = new Discord.Client();
 
