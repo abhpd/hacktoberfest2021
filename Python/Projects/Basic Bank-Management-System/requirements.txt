@@ -1,0 +1,2 @@
+mysql-connector-python==8.0.22
+prettytable==2.0.0
