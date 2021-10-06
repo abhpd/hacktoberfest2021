@@ -22,10 +22,7 @@ def minSubsetSumDiff(n, arr):
     return minn
 
 ########## Driver Code
-
 arr = [3, 1, 4, 2, 3, 1, 7, 2, 1]
 n = len(arr)
 print(minSubsetSumDiff(n, arr))
-
-
 ##########
