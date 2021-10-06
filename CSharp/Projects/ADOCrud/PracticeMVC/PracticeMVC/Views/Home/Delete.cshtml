@@ -1,0 +1,35 @@
+﻿@model StudentDeleteViewModel
+
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<!--Model Validation-->
+<div class="row">
+    <div class="col-md-8">
+        <form enctype="multipart/form-data" asp-controller="home" asp-action="delete" method="post" class="mt-3">
+            <input hidden asp-for="Id" />
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input asp-for="Name " type="text" class="form-control">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Address" class="form-label">Address</label>
+                <input asp-for="Address" type="text" class="form-control">
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Faculty" class="form-label">Faculty</label>
+                <input asp-for="Faculty" type="text" class="form-control">
+                <span asp-validation-for="Faculty" class="text-danger"></span>
+            </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <button type="submit" class="btn btn-primary">Delete</button>
+            <a asp-controller="home" asp-action="index" class="btn btn-success mb-2">Cancel</a> 
+
+
+        </form>
+    </div>
+</div>
