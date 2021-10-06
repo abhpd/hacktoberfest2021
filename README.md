@@ -32,7 +32,7 @@ git clone https://github.com/your-username/HacktoberFest2021.git
 ```
 * change the present working directory
 ```markdown
-cd HacktoberFest2021
+cd hacktoberfest2021
 ```
 * Add/Create your project to the specific folder as described in what you can contribute section.
 * Make a new branch
