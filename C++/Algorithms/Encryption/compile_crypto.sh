@@ -1,0 +1,1 @@
+g++ -o bin.exe crypto.cpp crypto_test.cpp
