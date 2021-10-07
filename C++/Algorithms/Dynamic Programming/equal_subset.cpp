@@ -15,12 +15,14 @@ bool canPartition(vector<int>& nums) {
     for(auto i:nums) {
         sum += i;
     }
+    // If sum of all the numbers is not divisible by 2, array cannot be partitioned into equal subset.
     if(sum%2 != 0) return false;
     
     long long sum_by_2 = sum/2;
     long long N = nums.size();
     long long dp[N+1][sum_by_2+1];
     
+    // Tabulation to check if sum of a subset can equal sum/2 or not
     memset(dp, -1, sizeof(dp));
     for(long i=0;i<=sum_by_2;i++) dp[0][i]=false;
     for(long i=0;i<=N;i++) dp[i][0]=true;
