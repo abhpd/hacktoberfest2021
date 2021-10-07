@@ -1,37 +1,47 @@
-#include<bits/stdc++.h>
+// C++ program for insertion sort
+#include <bits/stdc++.h>
 using namespace std;
 
-void insertionSort(vector<long> &a,long n) // n= size of vector
+/* Function to sort an array using insertion sort*/
+void insertionSort(int arr[], int n)
 {
-    long i,j;
+	int i, key, j;
+	for (i = 1; i < n; i++)
+	{
+		key = arr[i];
+		j = i - 1;
 
-    for(i=1;i<n;i++)
-    {
-        for(j=0;j<i;j++)
-        {
-            if(a[j]>a[i])
-            {
-                swap(a[i],a[j]);
-            }
-        }
-    }
+		/* Move elements of arr[0..i-1], that are
+		greater than key, to one position ahead
+		of their current position */
+		while (j >= 0 && arr[j] > key)
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+		arr[j + 1] = key;
+	}
 }
 
+// A utility function to print an array of size n
+void printArray(int arr[], int n)
+{
+	int i;
+	for (i = 0; i < n; i++)
+		cout << arr[i] << " ";
+	cout << endl;
+}
+
+/* Driver code */
 int main()
 {
-    long n; // n= size of vector
-    cin>>n;
+	int arr[] = { 12, 11, 13, 5, 6 };
+	int n = sizeof(arr) / sizeof(arr[0]);
 
-    vector<long> a(n);
-    for(long i=0;i<n;i++)
-    {
-        cin>>a[i];
-    }
-    insertionSort(a,n);
-    //output the array after sorting
-    for(long i=0;i<n;i++)
-    {
-        cout<<a[i]<<" ";
-    }
-    return 0;
+	insertionSort(arr, n);
+	printArray(arr, n);
+
+	return 0;
 }
+
+
