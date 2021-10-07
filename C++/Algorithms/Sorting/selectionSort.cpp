@@ -1,37 +1,39 @@
-#include<bits/stdc++.h>
+
+#include<iostream>
 using namespace std;
 
-void selectionSort(vector<long> &a,long n) // n= size of vector
-{
-    long i,j;
-
-    for(i=0;i<n-1;i++)
-    {
-        for(j=i+1;j<n;j++)
-        {
-            if(a[j]<a[i])
-            {
-                swap(a[i],a[j]);
-            }
-        }
-    }
-}
-
-int main()
-{
-    long n; // n= size of vector
+int main(){
+    
+    int n;
+    cout<<"Enter the size array: ";
     cin>>n;
+    int arr[n];
 
-    vector<long> a(n);
-    for(long i=0;i<n;i++)
-    {
-        cin>>a[i];
+    //Taking array input
+    cout<<"Enter the array: ";
+    for(int i = 0;i < n; i++){
+        cin>>arr[i];
     }
-    selectionSort(a,n);
-    //output the array after sorting
-    for(long i=0;i<n;i++)
+
+    //SelectionSort method
+    for(int i=0;i<5;i++){
+        int min = 5;
+        for(int j=i;j<5;j++){
+           
+           if(arr[j]<arr[min]){
+               min = j;
+           }
+
+        }
+        int temp = arr[i];
+        arr[i]   = arr[min] ;
+        arr[min] = temp;
+    }
+
+    //Printing array
+    for (int i = 0; i < 5; i++)
     {
-        cout<<a[i]<<" ";
+        cout<<arr[i]<<" ";
     }
     return 0;
 }
