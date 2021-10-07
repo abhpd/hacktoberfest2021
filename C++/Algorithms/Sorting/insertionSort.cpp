@@ -1,37 +1,35 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
-void insertionSort(vector<long> &a,long n) // n= size of vector
-{
-    long i,j;
-
-    for(i=1;i<n;i++)
-    {
-        for(j=0;j<i;j++)
-        {
-            if(a[j]>a[i])
-            {
-                swap(a[i],a[j]);
-            }
-        }
-    }
-}
-
-int main()
-{
-    long n; // n= size of vector
+int main(){
+    int n;
+    cout<<"Enter size of array: ";
     cin>>n;
-
-    vector<long> a(n);
-    for(long i=0;i<n;i++)
-    {
-        cin>>a[i];
+    int arr[n];
+    
+    //Taking array Input
+    cout<<"Enter array: ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
     }
-    insertionSort(a,n);
-    //output the array after sorting
-    for(long i=0;i<n;i++)
-    {
-        cout<<a[i]<<" ";
+    // int arr[7] = {2,15,42,26,39,92,30};
+    
+    //InsertionSort method
+    for(int i=0;i<n;i++){
+        for(int j = i+1;j>0;j--){
+             if(arr[j] < arr[j-1]){
+
+                int temp = arr[j];
+                arr[j] = arr[j-1];
+                arr[j-1] = temp;
+              }
+        
+        }   
+    }
+     
+    //Printing Method
+    for(int i=0;i < n;i++){
+           cout<<arr[i]<<" ";
     }
     return 0;
 }

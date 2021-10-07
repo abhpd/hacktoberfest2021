@@ -1,32 +1,30 @@
-// bubble sort
-// Edit: Modified to pass fucntion as a fucntion parameter
-#include<stdio.h>
+#include<iostream>
+using namespace std;
 
-bool compare(int a, int b) {
-	return a > b;
-}
 
-// Bubble Sort
-void bubblesort(int arr[], int n, bool (*cmp)(int, int)) {
-	for (int j = n - 1; j > 0; j--) {
-		for (int i = 0; i < j; i++) {
-			if (cmp(arr[i + 1], arr[i])) {
-				int temp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = temp;
-			}
-		}
-	}
-}
+int main(){
 
-int main() {
-	int x;
-	scanf("%d", &x);
-	int arr[13] = {5, 4, 9, 123, 58, 37, 324, 444, 699, 347, -1, 0, 200};
-	int n = sizeof(arr) / sizeof(arr[0]);
+   int n;
+   cout<<"Enter size of Array : ";
+   cin>>n;
+   int arr[n];
+   cout<<"Enter the array : ";
+   for(int i=0;i<n;i++){
+       cin>>arr[i];
+   }
+   //Bubble Sort Algorithm
+   for(int i=0;i<n;i++){
+       for(int j=0;j<n-i-1;j++){
+           if(arr[j]>arr[j+1]){
+               int temp = arr[j];
+               arr[j]   = arr[j+1];
+               arr[j+1]   = temp;
+           }
+       }
+   }
+   for(int i=0;i<n;i++){
+       cout<<arr[i]<<" ";
+   }
 
-	bubblesort(arr, n, compare);
-
-	for (int i = 0; i < n; i++)
-		printf("%d ", arr[i]);
+   return 0;
 }
