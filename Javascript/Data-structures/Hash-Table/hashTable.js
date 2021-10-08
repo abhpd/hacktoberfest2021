@@ -1,8 +1,10 @@
+// creating a class for hashtable
 class HashTable {
   constructor(size=53){
     this.keyMap = new Array(size);
   }
-
+  
+// generating hash
   _hash(key) {
     let total = 0;
     let WEIRD_PRIME = 31;
@@ -13,6 +15,7 @@ class HashTable {
     }
     return total;
   }
+  // setting the value
   set(key,value){
     let index = this._hash(key);
     if(!this.keyMap[index]){
@@ -20,6 +23,7 @@ class HashTable {
     }
     this.keyMap[index].push([key, value]);
   }
+  // getting the value
   get(key){
     let index = this._hash(key);
     if(this.keyMap[index]){
@@ -31,6 +35,7 @@ class HashTable {
     }
     return undefined;
   }
+  // keys in the array
   keys(){
     let keysArr = [];
     for(let i = 0; i < this.keyMap.length; i++){
