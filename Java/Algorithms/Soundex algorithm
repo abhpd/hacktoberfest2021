@@ -1,0 +1,1 @@
+This algorithm was developed by Robert Russell in 1910 for the words in English. The main principle behind this algorithm is that consonants are grouped depending on the ordinal numbers and finally encoded into a value against which others are matched. It aims to find a code for every word by above process which is called soundex code.
