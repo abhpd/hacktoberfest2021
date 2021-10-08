@@ -2,13 +2,11 @@
 using namespace std;
 
 
-class Solution 
-{
-    public:
+//Function to check if students can be allocated within this range
     bool isAllocate(int barr,int A[],int N,int M){
         int alctdstd=0,pages=0;
         for(int i=0;i<N;i++){
-            
+           //if the sum exceed range we increase the allocated student 
             if(A[i]+pages>barr){
                 pages=A[i];
                 alctdstd+=1;
@@ -32,8 +30,10 @@ class Solution
            high+=A[i];
        }
        int res=-1;
+       //performing binary search
        while(low<=high){
            int mid=(low+high)>>1;
+          //if true the result is updated 
            if(isAllocate(mid,A,N,M)){
                res=mid;
                high=mid-1;
@@ -43,14 +43,12 @@ class Solution
        }
        return res;
     }
-};
+
 
 // Driver Code 
 
 int main() {
-    int t;
-    cin>>t;
-    while(t--){
+
         int n;
         cin>>n;
         int A[n];
@@ -59,8 +57,8 @@ int main() {
         }
         int m;
         cin>>m;
-        Solution ob;
-        cout << ob.findPages(A, n, m) << endl;
-    }
+        
+        cout << findPages(A, n, m) << endl;
+
     return 0;
 }
