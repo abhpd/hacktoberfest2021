@@ -1,67 +1,64 @@
-//this algorithms assumes that edges are bidirectional and graph is connected
-
-#include<iostream> 
-#include<vector>
+// C++ program to print DFS traversal from
+// a given vertex in a  given graph
+#include <bits/stdc++.h>
 using namespace std;
-
-vector<int> adjList[100005]; // max number of node is 10005
-
-void dfs(int node,vector<bool> &vis) 
+  
+// Directed Graph
+// using adjacency list representation
+class Graph 
 {
-	cout<<node<<' ';
-	vis[node] = 1; //vis[node] = true, mark node as visited
-	for(int child: adjList[node])
-	{
-		//if child is not visited then only visit it
-		if(!vis[child])
-		{
-			//now make dfs on child 
-			dfs(child, vis);
-		}
-	}
+public:
+    map<int, bool> visited;
+    map<int, list<int>> adj;
+  
+    // function to add an edge to graph
+    void addEdge(int v, int w);
+  
+    void DFS(int v);
+};
+  
+void Graph::addEdge(int v, int w)
+{
+    adj[v].push_back(w); 
 }
-
-int main() 
+  
+void Graph::DFS(int v)
 {
-
-	int N,M; // N=number of nodes, M = number of edges
-	cout<<"Enter number of Nodes ";
-	cin>>N;
-	cout<<"Enter number of Edges ";
-	cin>>M;
-
-  for(int i = 0; i<M; i++)
-  {
-  	int u,v;
-  	//enter nodes which are directly connected
-  	cin>>u>>v;
-
-  	//make edge v->u
-  	adjList[v].push_back(u);
-  	//make edge u->v
-  	adjList[u].push_back(v);
-  }
-
-  vector<bool> vis(N+1,false); //initially all nodes will be marked unvisited
-
-  //perform dfs with picking node 1
-  cout<<"\nPerforming dfs :";
-  dfs(1,vis);
-  return 0;
-
+    visited[v] = true;
+    cout << v << " ";
+  
+    // Recurring for all the vertices adjacent
+    // to this vertex
+    list<int>::iterator i;
+    for (i = adj[v].begin(); i != adj[v].end(); ++i)
+        if (!visited[*i])
+            DFS(*i);
+}
+  
+int main()
+{
+    // Create a graph 
+    Graph g;
+    g.addEdge(0, 1);
+    g.addEdge(0, 2);
+    g.addEdge(1, 2);
+    g.addEdge(2, 0);
+    g.addEdge(2, 3);
+    g.addEdge(3, 3);
+  
+    cout << "DFS Traversal"
+            " (starting from vertex 2) \n";
+    g.DFS(2);
+  
+    return 0;
+}
   /*
 	----sample----
 
-	Enter number of Nodes 4
-	Enter number of Edges 5
-	3 4
-	4 2
-	1 4
-	3 1
-	2 5
-
-	Performing dfs :1 4 3 2 5
+	Output: 
+	---> DFS Traversal (starting from vertex 2)
+	---> 2 0 1 3
 
   */
 
-}
+
