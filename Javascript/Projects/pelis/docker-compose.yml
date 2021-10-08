@@ -1,0 +1,12 @@
+services:
+  pelis-client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pelis
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm start
+    ports:
+      - 3000:3000
