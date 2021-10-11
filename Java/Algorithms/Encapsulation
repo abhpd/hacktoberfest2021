@@ -1,0 +1,25 @@
+class Area{
+
+//fields to calculation for area
+int length;
+int breadth;
+
+//initialize of values
+Area(int length, int breadth){
+this.length=length;
+this.breadth=breadth;
+}
+
+//method to calculation for area
+public void getArea(){
+int area=length*breadth;
+System.out.println("Area: "+area);
+}
+}
+
+class Main{
+public static void main(String[] args){
+Area rectangle=new Area(5,6);
+rectangle.getArea();
+}
+}
