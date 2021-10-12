@@ -19,7 +19,7 @@ public class DaftarPremierLeague {
     
     //setelah ini tuliskan method tampil()
     public void tampil(){
-        for (PremierLeague_1941720030 pm : listPM) {
+        for (PremierLeague pm : listPM) {
             pm.tampil();
             System.out.println("------------------------------");
         }
@@ -29,7 +29,7 @@ public class DaftarPremierLeague {
     public void  insertionSortKecilBesar(){
         int i, j;
         for (i = 1; i < listPM.length; i++) {
-            PremierLeague_1941720030 temp = new PremierLeague();
+            PremierLeague temp = new PremierLeague();
             temp = listPM[i];
             j = i;
             while((j > 0) && (listPM[j-1].pts > temp.pts)){
@@ -42,7 +42,7 @@ public class DaftarPremierLeague {
     public void  insertionSortBesarKecil(){
         int i, j;
         for (i = 1; i < listPM.length; i++) {
-            PremierLeague_1941720030 temp = new PremierLeague();
+            PremierLeague temp = new PremierLeague();
             temp = listPM[i];
             j = i;
             while((j > 0) && (listPM[j-1].pts < temp.pts)){

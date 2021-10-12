@@ -44,7 +44,7 @@ public class Main {
             int gd = arrGd[i];
             int pts = arrPts[i];
             //Instansiasi untuk mengisi data yang ada di dalam class
-            PremierLeague_1941720030 pm  = new PremierLeague(tim, p, gd, pts);
+            PremierLeague pm  = new PremierLeague(tim, p, gd, pts);
             data.tambah(pm);
         }
         System.out.println();
