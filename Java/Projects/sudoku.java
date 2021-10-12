@@ -1,9 +1,13 @@
 import java.io.*;
+import java.util.*;
 
 public class sudoku {
-    public void main(String args[]) throws IOException {
+    public void main(String[] args) throws IOException {
         char[][] board = new char[9][9];
-        Scanner sc = new Scanner(System.in);
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 9; i++) {
+            board[i] = in.readLine().toCharArray();
+        }
         solve(board);
     }
     static boolean solve(char[][] board){
@@ -14,19 +18,18 @@ public class sudoku {
                         if(isvalid(board,i,j,c)){
                             board[i][j]=c;
                             if(solve(board)==true){return true;}
-                            else{
-                                board[i][j]='.';
-                            }
+                            else{board[i][j]='.';}
                         }
+                        
                     }
-                    return false; 
+                      return false; 
                 }
                 
             }
         }
       return true;
     } 
-    static boolean isValid(char[][]board, int row,int  col, char c){
+    static boolean isvalid(char[][]board, int row,int  col, char c){
         for(int i=0;i<9;i++){
             if( board[row][i]==c){return false;}
             if( board[i][col]==c){return false;}
