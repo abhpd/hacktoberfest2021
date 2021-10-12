@@ -1,9 +1,12 @@
+import java.io.*;
+
 public class sudoku {
-        public void solveSudoku(char[][] board) {
+    public void main(String args[]) throws IOException {
+        char[][] board = new char[9][9];
+        Scanner sc = new Scanner(System.in);
         solve(board);
-       
     }
-    boolean solve(char[][] board){
+    static boolean solve(char[][] board){
         for(int i=0;i<board.length;i++){
             for(int j=0;j<board[0].length;j++){
                 if(board[i][j]=='.'){
@@ -11,18 +14,19 @@ public class sudoku {
                         if(isvalid(board,i,j,c)){
                             board[i][j]=c;
                             if(solve(board)==true){return true;}
-                            else{board[i][j]='.';}
+                            else{
+                                board[i][j]='.';
+                            }
                         }
-                        
                     }
-                      return false; 
+                    return false; 
                 }
                 
             }
         }
       return true;
     } 
-    boolean isvalid(char[][]board, int row,int  col, char c){
+    static boolean isValid(char[][]board, int row,int  col, char c){
         for(int i=0;i<9;i++){
             if( board[row][i]==c){return false;}
             if( board[i][col]==c){return false;}
