@@ -5,13 +5,23 @@ class PalindromeString{
 	}
 
 	public static boolean checkPalindrome(String str){
-		int n = str.length();
-		if(n==0 || n==null)
-			return true;
-		for(int i=0;i<n/2;i++){
-			if(str.charAt(i)!=str.charAt(n-1-i))
-				return false;
-		}
-		return true;
+		int a,l;
+	    char ch;
+	    String str1,nstr="";
+	    str1=str.toLowerCase();
+	    l=str1.length();
+	    for (a=(l-1); a>=0; a--)
+	    {
+	        ch=str1.charAt(a);
+	        nstr=nstr+ch;
+	    }
+	    if(nstr.equals(str1))
+	    {
+	        return true;
+	    }
+	    else
+	    {
+	        return false;
+	    }
 	}
 }
