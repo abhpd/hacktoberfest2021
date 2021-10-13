@@ -1,0 +1,46 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package GeeksforGeeks;
+
+
+class SubSequence {
+
+    static int lcs(int x, int y, String s1, String s2) {
+        // your code here
+        x = s1.length();
+        y = s2.length();
+        String s3 = "";
+        int lcs[][] = new int[x + 1][y + 1];
+        for (int i = 0; i <= x; i++) {
+            for (int j = 0; j <= y; j++) {
+                if (i == 0 || j == 0) {
+                    lcs[i][j] = 0;
+                } else if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
+                    lcs[i][j] = 1 + lcs[i - 1][j - 1];
+                    char c = s1.charAt(i - 1);
+                    s3 = Character.toString(c);
+                    System.out.print(s3);
+                } else {
+                    lcs[i][j] = Math.max(lcs[i - 1][j], lcs[i][j - 1]);
+                }
+            }
+        }
+        System.out.println("\n"+lcs[x][y]);
+
+        return lcs[x][y];
+    }
+    
+//Very Interesting Program to solve using dp method or up-down method...
+    
+    public static void main(String[] args) {
+        String s1 = "ABCDEF";
+        String s2 = "BCDEFG";
+        int x = 0;
+        int y = 0;
+        lcs(x, y, s1, s2);
+
+    }
+}
