@@ -149,3 +149,12 @@ input[type='number'] {
 .list li:hover .delete-btn {
   opacity: 1;
 }
+.income:hover{
+  background-color: #bbb;
+}
+.expense:hover{
+  background-color: #bbb;
+}
+.btn:hover{
+  background-color: #614fb8;
+}
