@@ -1,0 +1,26 @@
+{
+	"name": "awesome-cli-alerts",
+	"version": "1.0.2",
+	"description": "Cross platform CLI Alerts with colors and symbols suport for success, info, warnin and errors. Works on MacOS, Linux and Windows",
+	"main": "index.js",
+	"keywords": [
+		"cli-alerts",
+		"node-alerts"
+	],
+	"author": "Muhammad Ahmad",
+	"license": "MIT",
+	"files": [
+		"alert.js"
+	],
+	"devDependencies": {
+		"prettier": "^2.2.1"
+	},
+	"scripts": {
+		"test": "node test.js",
+		"format": "prettier --write \"./**/*.{js,json}\""
+	},
+	"dependencies": {
+		"chalk": "^4.1.0",
+		"log-symbols": "^4.0.0"
+	}
+}
