@@ -16,13 +16,13 @@ def recieve():
             else:
                 print(message).decode("utf-8")
         except:
-            print("An error occured!!")
+            print("An error has occured!!")
             client.close()
             break
 
 def write():
     while True:
-        message = '{} :  {}'.format(nickname, input(''))
+        message = '{} : {}'.format(nickname, input(''))
         client.send(message.encode('ascii'))
 
 recieve_thread = threading.Thread(target = recieve)
