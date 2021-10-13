@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1632149882 source:c:\users\heena thadani\documents\os_lab\program9\main.cpp
+	<stdio.h>
+	<conio.h>
+	<string.h>
+
