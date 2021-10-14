@@ -45,7 +45,7 @@ class MiddleOfLL{
             }
             Solution sol = new Solution();
             int ans = sol.printMiddleNaive(head);
-            int ans2 = sol.printMiddleNaive(head);
+            int ans2 = sol.printMiddleEff(head);
             System.out.println(ans);
             System.out.println(ans2);
             t--;
