@@ -1,12 +1,10 @@
 # Python program for Bubble Sort
 
-a = []
-number = int(input("Please Enter the Total Number of Elements : "))
-for i in range(number):
-    value = int(input("Please enter the %d Element of List1 : " %i))
-    a.append(value)
+number = int(input("Please Enter the Total Number of Elements : ")) # number yang perlu idiisi
+a = [int(input("Please enter the %d Element of List1 : " %i)) for i in range(number)]
+# masukkan data sesuai elemen list1
 
-i = 0
+i = 0 # lakukan perulangan while
 while(i < number -1):
     j = 0
     while(j < number - i - 1):
