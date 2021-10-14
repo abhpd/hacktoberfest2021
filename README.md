@@ -1,4 +1,4 @@
-# ✨ hacktoberfest2021 💫
+# </> hacktoberfest2021 </>
 
 ![banner](https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg)
 
