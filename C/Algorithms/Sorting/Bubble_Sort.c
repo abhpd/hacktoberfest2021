@@ -7,6 +7,7 @@ void print(int a[], int n);
 void main()
 {
     int length, i;
+    int length1, j,k;
     printf("Welcome to Bubble Sorting Algorithm\n");
     printf("You can sort the data elements here, I will help you in that\n");
     printf("So lets start with sorting integer datatypes\n");
