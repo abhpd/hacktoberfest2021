@@ -1,5 +1,3 @@
-// This program prints
-
 package main
 
 import (
