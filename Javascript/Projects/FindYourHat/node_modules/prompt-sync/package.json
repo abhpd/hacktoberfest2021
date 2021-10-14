@@ -1,0 +1,72 @@
+{
+  "_args": [
+    [
+      "prompt-sync@4.1.7",
+      "/Users/ianmunro/cc/independent-practice/js-maze-runner"
+    ]
+  ],
+  "_from": "prompt-sync@4.1.7",
+  "_id": "prompt-sync@4.1.7",
+  "_inBundle": false,
+  "_integrity": "sha512-EPdLWdZCgNAxF8haGg1CKOL/F5KZiRtuqgoWc1EGefX+fX+5qsB8vI52+qzl1jgADO6AiLaIcioicxRgQEy5xA==",
+  "_location": "/prompt-sync",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "prompt-sync@4.1.7",
+    "name": "prompt-sync",
+    "escapedName": "prompt-sync",
+    "rawSpec": "4.1.7",
+    "saveSpec": null,
+    "fetchSpec": "4.1.7"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/prompt-sync/-/prompt-sync-4.1.7.tgz",
+  "_spec": "4.1.7",
+  "_where": "/Users/ianmunro/cc/independent-practice/js-maze-runner",
+  "bugs": {
+    "url": "https://github.com/0x00A/prompt-sync/issues"
+  },
+  "contributors": [
+    {
+      "name": "Paolo Fragomeni",
+      "email": "paolo@async.ly"
+    },
+    {
+      "name": "David Mark Clements",
+      "email": "david.clements@nearform.com"
+    }
+  ],
+  "dependencies": {
+    "strip-ansi": "^5.0.0"
+  },
+  "description": "a synchronous prompt for node.js",
+  "devDependencies": {
+    "prompt-sync-history": "^1.0.1"
+  },
+  "homepage": "https://github.com/0x00A/prompt-sync#readme",
+  "keywords": [
+    "prompt",
+    "sync",
+    "blocking",
+    "readline",
+    "input",
+    "getline",
+    "repl",
+    "history"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "prompt-sync",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0x00A/prompt-sync.git"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "version": "4.1.7"
+}
