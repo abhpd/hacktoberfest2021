@@ -6,6 +6,6 @@
 ### Things to install
 
 
-
+[<h3>sudo apt-get install python-tk</h3>]()
 [<h3>pip install forex-python</h3>]()
 [<h3>pip install Pillow</h3>]()
