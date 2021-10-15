@@ -1,5 +1,3 @@
-package Java_Programs_for_beginners;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,16 +10,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Class that checks if all open close parameters are valid in string or in file.
- * Checks is open close contract is respected.
- * Parameters can be default,
- * custom if passed with ie -l "{" - r "}" or --left, --right Passed input can be string
+ * Class that checks if all open close parameters are valid in string or in file. Parameters can be
+ * default or custom if passed with ie -l "{" - r "}" or --left, --right Passed input can be string
  * line -s or --string or file -f or --file with path after it You can use --example to see how
  * input can look like
  */
-public class OpenCloseContractCheck {
+public class OpenCloseCheck {
 
-  private static final String ERROR_MSG = "Submitted input contains improper closures.";
+  private static final String ERROR_MSG = "Submitted input contain improper closures.";
   // Pattern to extract left symbols argument from command line
   private static final String LEFT_SYMBOL_PATTERN = "(--left\\s*\"|-l\\s*\")(.*?)\"";
   private static final String LEFT_SYMBOL_REG = "-l|--left";
@@ -55,7 +51,7 @@ public class OpenCloseContractCheck {
     // Read console input
     final String input = myObj.nextLine();
     // Parse console line arguments
-    readArguments(input.trim());
+    readArgumentsAndAnalyze(input.trim());
     // Printout end text
     endText();
   }
@@ -83,7 +79,7 @@ public class OpenCloseContractCheck {
         + LINE_SEPARATOR);
   }
 
-  private static void readArguments(String input) {
+  private static void readArgumentsAndAnalyze(String input) {
     // Check if example is requested.
     if (scanForExampleParameter(input)) {
       showExample();
