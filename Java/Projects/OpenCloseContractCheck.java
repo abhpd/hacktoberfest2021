@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
  */
 public class OpenCloseContractCheck {
 
-  private static final String ERROR_MSG = "Submitted input contain improper closures.";
+  private static final String ERROR_MSG = "Submitted input contains improper closures.";
   // Pattern to extract left symbols argument from command line
   private static final String LEFT_SYMBOL_PATTERN = "(--left\\s*\"|-l\\s*\")(.*?)\"";
   private static final String LEFT_SYMBOL_REG = "-l|--left";
