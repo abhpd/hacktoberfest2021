@@ -1,4 +1,4 @@
-# ✨ hacktoberfest2021 💫
+# </> hacktoberfest2021 </>
 
 ![banner](https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg)
 
@@ -18,10 +18,14 @@ https://hacktoberfest.digitalocean.com/</p>
 * Make sure your follow the below steps.
 -----
 
-### Process are as follows :- 
-* Login using github @ [Hacktoberfest](https://hacktoberfest.digitalocean.com/)
-* Create four valid pull requests (PRs) between 1st - 31st October
-
+### </>Github Contribution Rules</> 
+* Login using github @ {Hacktoberfest}(https://hacktoberfest.digitalocean.com/)
+* Create four valid pull requests (PRs) between 1st - 31st 
+* Pull requests can be submitted to any opted-in repository on GitHub or GitLab.
+* The pull request must contain commits you made yourself.
+* If a maintainer reports your pull request as spam, it will not be counted toward your participation in Hacktoberfest.
+* If a maintainer reports behavior that’s not in line with the project’s code of conduct, you will be ineligible to participate.
+* This year, the first 50,000 participants can earn a T-shirt.
 ------
 ### How to Contribute to this repository
 
