@@ -103,10 +103,10 @@ public class OpenCloseContractCheck {
       if (!filePath.isBlank()) {
         // If filePath is not blank check if file meets criteria
         analyseFile(filePath);
+      } else {
+        System.out.println(
+            "Please insert line of file to analyse using parameters -s|--string|-f|--file");
       }
-      System.out.println(
-          "Please insert line of file to analyse using parameters -s|--string|-f|--file");
-
     }
   }
 
