@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "312373789798",
+    "firebase_url": "https://linux-app-38840.firebaseio.com",
+    "project_id": "linux-app-38840",
+    "storage_bucket": "linux-app-38840.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312373789798:android:05006f33f892abb6fd99a7",
+        "android_client_info": {
+          "package_name": "com.chirag.linux_command"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312373789798-j7ih1r4v51vpmbgqp5ldcmamgger6n9v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9LlF7fn4b2tsc123Q9h_kMHwnmBVlZZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312373789798-j7ih1r4v51vpmbgqp5ldcmamgger6n9v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
