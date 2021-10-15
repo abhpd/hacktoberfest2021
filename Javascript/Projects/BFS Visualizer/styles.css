@@ -1,0 +1,88 @@
+:root {
+    --size: 30px;
+}
+
+body{
+    background-color: rgb(29, 29, 29);
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.box{
+    display: flex;
+    border: rgb(210, 217, 219) solid 1px;
+    flex-wrap: wrap;
+    height: 100%;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+.cell{
+    height: var(--size);
+    width: var(--size);
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+.default-color-cell{
+    height: calc(100% - 3px);
+    width: calc(100% - 3px);
+    background-color: rgb(8, 60, 128);
+    margin: 2px;
+    transition: all 0.1s ease;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.color-cell-visited{
+    background-color: rgb(59, 121, 192);
+    transition: all 0.1s ease;
+    /* cursor: pointer; */
+    height: 100%;
+    width: 100%;
+    margin: 0px;   
+}
+.default-color-cell:hover{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+.color-cell{
+    transition: all 0.1s ease;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    border-radius: 2px;
+}
+.active{
+    background-color: rgb(91, 244, 255);
+}
+.target{
+    background-color: rgb(194, 26, 26);   
+}
+.start{
+    background-color: rgb(255, 255, 255);   
+}
+.click-buttons{
+    background-color: white;
+    border: 0px;
+    height: 40px;
+    width: 100px;
+    margin: 5px;
+    transition: 0.3s ease all;
+}
+.click-buttons:hover{
+    background-color: rgb(141, 177, 245);
+    cursor: pointer;
+}
+.content{
+    text-align: left;
+    margin: 20px;
+}
+.fixed-footer{
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    color: black;
+    background-color: thistle;
+    padding: 10px 10px;
+    transition: all 0.3s ease;
+}
