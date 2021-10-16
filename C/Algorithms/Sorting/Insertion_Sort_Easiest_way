@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main(){
+
+   
+   int i, j, num, temp, number[50];
+
+   printf("How many numbers u are going to enter ?: ");
+   scanf("%d",&num);
+   
+
+   printf("Enter %d elements: ", num);
+   
+   for(i=0;i<num;i++)
+      scanf("%d",&number[i]);
+
+   
+   for(i=1;i<num;i++){
+      temp=number[i];
+      j=i-1;
+      while((temp<number[j])&&(j>=0)){
+         number[j+1]=number[j];
+         j=j-1;
+      }
+      number[j+1]=temp;
+   }
+
+   printf("Order of Sorted elements: ");
+   for(i=0;i<num;i++)
+      printf(" %d",number[i]);
+
+   return 0;
+}
