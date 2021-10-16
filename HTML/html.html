@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AaA Couplesite</title>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<h1> Couplesite</h1>
+<div class="topnav" id="myTopnav">
+    <a href="#ABOUT US" class="active">ABOUT US</a>
+    <a href="#news">Destination Trips</a>
+    <a href="#PICTURES">PICTURES</a>
+    <a href="#contact">Contact US</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<h2> Hello!</h2>
+<p>Hello We are Thinkpads. We enjoy taking pictures to remember great moments, like to do </p>
+
+<div id="nav-arrows" class="nav-arrows">
+    <a href="#" class="forward">Weiter</a>
+    <a href="#" class="backward">Zurück</a>
+</div>
+
+
+<div class="main-screen">
+    <ul class="slideshow">
+        <li class="image"><img src="https://cdn.pixabay.com/photo/2018/10/13/13/52/concept-car-3744254_1280.jpg" width="1280" height="853" alt="sunset" class="center" /></li>
+        <li class="image"><img src="https://www.publicdomainpictures.net/pictures/180000/nahled/fast-sport-car-1466168715EF7.jpg" width="1280" height= "853" alt="secondsunset"  class="center" /></li>
+        <li class="image"><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/street-royalty-free-image-1580912705.jpg?crop=1.00xw:0.754xh;0,0.104xh&resize=480:*" width="1280" height= "853" alt="us" class="center"/></li>
+    </ul>
+</div>
+<h1>Destination trips</h1>
+<p>Lorem ipsum</p>
+<h1>Pictures of our Memories</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisici elit, …</p>
+
+
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script>
+    //Menu
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+
+    //back to top
+    $(document).ready(function(){
+
+        // Der Button wird mit JavaScript erzeugt und vor dem Ende des body eingebunden.
+        var back_to_top_button = ['<a href="#top" class="back-to-top">Nach oben</a>'].join("");
+        $("body").append(back_to_top_button)
+
+        // Der Button wird ausgeblendet
+        $(".back-to-top").hide();
+
+        // Funktion für das Scroll-Verhalten
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) { // Wenn 100 Pixel gescrolled wurde
+                    $('.back-to-top').fadeIn();
+                } else {
+                    $('.back-to-top').fadeOut();
+                }
+            });
+
+            $('.back-to-top').click(function () { // Klick auf den Button
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        });
+
+    });
+
+</script>
+
+
+
+<script type="text/javascript" src="slideshow.js"></script>
+</body>
+</html>
