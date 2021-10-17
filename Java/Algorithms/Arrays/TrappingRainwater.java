@@ -1,30 +1,44 @@
 
+class RainWater{
 
+public static int maxWater(int[] arr, int n)
+{
+	
+	int res = 0;
 
-import java.util.*;
-public class TrappingRainwater{
-	public static void main(String args[]){
-		Solution s = new Solution();
-		int arr[] = {3,0,0,2,0,4};
-		System.out.println(s.getUnitOfWater(arr,arr.length));
-	}
-}
-
-class Solution{
-	int getUnitOfWater(int arr[],int n){
-		int quantity = 0;
-		for(int i=1;i<n-1;i++){
-			int lmax = arr[i];
-			for(int j=0;j<i;j++){
-				lmax = Math.max(lmax,arr[j]);
-			}
-			int rmax = arr[i];
-			for(int j=i+1;j<n;j++){
-				rmax = Math.max(rmax,arr[j]);
-			}
-
-			quantity+=Math.min(lmax,rmax)-arr[i];
+	// For every element of the array
+	// except first and last element
+	for(int i = 1; i < n - 1; i++)
+	{
+		
+		// Find maximum element on its left
+		int left = arr[i];
+		for(int j = 0; j < i; j++)
+		{
+			left = Math.max(left, arr[j]);
 		}
-		return quantity;
+
+		// Find maximum element on its right
+		int right = arr[i];
+		for(int j = i + 1; j < n; j++)
+		{
+			right = Math.max(right, arr[j]);
+		}
+
+		// Update maximum water value
+		res += Math.min(left, right) - arr[i];
 	}
+	return res;
 }
+
+public static void main(String[] args)
+{
+	int[] arr = { 0, 1, 0, 2, 1, 0,
+				1, 3, 2, 1, 2, 1 };
+	int n = arr.length;
+
+	System.out.print(maxWater(arr,n));
+}
+}
+
+
