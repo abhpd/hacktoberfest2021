@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+/*int main()
+{
+    string str;
+    cout<<"Enter the email address"<<endl;
+    getline(cin, str);
+    int count = 0;
+    for(int i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] == '@')
+            break;
+        else
+            count++;
+    }
+    for(int i = 0; i <= count-1; i++)
+    {
+        cout<<str[i];
+    }
+}
+*/
+
+
+// Using builtin string functions find(), substr(), using this 
+// procedure it will drastically reduces time complexity, as there is no for loop.
+// Earlier TC = O(n^2)
+// Now TC = O(1)
+
+int main()
+{
+    cout<<"enter email address: ";
+    string email;
+    getline(cin, email);
+
+    int i = email.find('@');
+    string username = email.substr(0, i);
+
+    cout<<"Username: "<<username<<endl;
+}
