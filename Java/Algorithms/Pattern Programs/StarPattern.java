@@ -10,7 +10,7 @@ public class StarPattern{
 	public static void main(String args[]){
 		Solution s = new Solution();
 		// s.printSquare(5);
-		
+
 		// s.printIncTriangle(5);
 
 		// s.printDecTriangle(5);
@@ -30,12 +30,12 @@ public class StarPattern{
 class Solution{
 	void printSquare(int n){
 		/*
-		* * * * * 
-		* * * * * 
-		* * * * * 
-		* * * * * 
-		* * * * * 
-		
+		* * * * *
+		* * * * *
+		* * * * *
+		* * * * *
+		* * * * *
+
 		*/
 		for(int i=1;i<=n;i++){
 			for(int j=1;j<=n;j++){
@@ -49,7 +49,7 @@ class Solution{
 	// 1 . Increasing Triangle
 	// 2. Decreasing Triangle
 
-	
+
 	void printIncTriangle(int n){
 	/*
 	 	*
@@ -67,7 +67,7 @@ class Solution{
 	}
 
 	void printDecTriangle(int n){
-		 /* 
+		 /*
 		 * * * * *
 		 * * * *
 		 * * *
@@ -93,11 +93,11 @@ class Solution{
 	   	  * *
 	    * * *
 	  * * * *
-	* * * * *  
+	* * * * *
 
 	*/
 
-	//here if we observe there is two triangles. 
+	//here if we observe there is two triangles.
 	// 1(decreasing triangel with spaces)
 	// 2(increasing triangle with stars)
 
@@ -113,7 +113,7 @@ class Solution{
 			}
 			System.out.println();
 		}
-		
+
 	}
 
 	void printLeftTriangle(int n){
@@ -148,7 +148,7 @@ class Solution{
 			for(int j=i;j<=n;j++){
 				System.out.print("  ");
 			}
-			//note : here j<i to reduce one extra column 
+			//note : here j<i to reduce one extra column
 			//increasing  stars
 			for(int j=1;j<i;j++){
 				System.out.print(" *");
@@ -191,7 +191,7 @@ class Solution{
 		}
 	}
 
-	//we can also use condition for avoiding multiple time for loop printing within single 
+	//we can also use condition for avoiding multiple time for loop printing within single
 	//for loop
 
 	void printReverseHillFor(int n){
@@ -217,12 +217,60 @@ class Solution{
 				//decreasing stars
 				for(int j=i;j<n+k;j++){
 					System.out.print(" *");
-				}	
+				}
 			}
 			System.out.println();
 		}
 	}
 
+/*	Enter the number of rows you want to print: 5
+* * * * *
+ * * * *
+  * * *
+   * *
+    *
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+    */
+		import java.util.Scanner;
+		public class sandGlassPattern
+		{
+		public static void main(String[] args)
+		{
+		int i, j, k, n;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the number of rows ");
+		n = sc.nextInt();
+		for (i= 0; i<= n-1 ; i++)
+		{
+		for (j=0; j<i; j++)
+		{
+		System.out.print(" ");
+		}
+		for (k=i; k<=n-1; k++)
+		{
+		System.out.print("*" + " ");
+		}
+		System.out.println("");
+		}
+		for (i= n-1; i>= 0; i--)
+		{
+		for (j=0; j<i; j++)
+		{
+		System.out.print(" ");
+		}
+		for (k=i; k<=n-1; k++)
+		{
+		System.out.print("*" + " ");
+		}
+		System.out.println("");
+		}
+		sc.close();
+		}
+		}
 
 
 }
