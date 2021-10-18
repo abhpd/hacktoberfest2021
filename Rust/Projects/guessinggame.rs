@@ -9,7 +9,7 @@ fn main() {
         println!("Please input a number:");
         let mut guess = String::new();
         match io::stdin().read_line(&mut guess){
-            Ok(n) => println!("{}", n),
+            Ok(n) => println!("{} bytes read", n),
             Err(error) => println!("Error: {}", error),
         }
 
