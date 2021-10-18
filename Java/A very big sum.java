@@ -38,7 +38,7 @@ public class Solution {
             ar[i] = arItem;
         }
 
-        long result = aVeryBigSum(ar);
+        long long result = aVeryBigSum(ar);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
