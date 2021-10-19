@@ -1,0 +1,78 @@
+body {
+  background: #A2D2FF;
+  font-family: 'Pacifico', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #ff865e;
+  font-size: 40px;
+  font-family: 'Pacifico', cursive;
+}
+
+.subtext {
+  font-size: 20px;
+  color: #fef9ef;
+}
+
+.player-name {
+  font-weight: bold;
+}
+
+#gamesheet {
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fef9ef;
+  font-size: 140px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #ff865e;
+}
+
+.box:hover {
+  background-color: #faefd7;
+}
+
+#restartButton {
+  margin: 40px 40px;
+  background-color: #fef9ef;
+  border: 10px solid #ff865e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px, 0px;
+  border-radius: 25px;
+  width: 150px;
+  height: 90px;
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+  color: #ff865e;
+}
+
+#restartButton:hover {
+  border-color: #fef9ef;
+}
