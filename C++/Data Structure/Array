@@ -1,0 +1,58 @@
+//Array Implementation with functionalities such run time Array creation, Display the array, Insert into the Array and Delete from the Array.
+//This code is contributed by Reejo.
+#include<iostream>
+using namespace std;
+
+void DISPLAY(int *arr,int n)      //Display function to Display the current elemnets in the Array.
+{
+    for(int i=0;i<n;i++)
+      cout<<arr[i]<<" ";
+    cout<<endl;
+}
+
+void INSERT(int *arr,int n)   //Insert function to insert an element anywhere in the array.
+{
+    int item,index;
+    cout<<"Random Insertion"<<endl;
+    cout<<"Enter the item to Insert:-";
+    cin>>item;
+    cout<<"Enter the Index number to insert(between 0-"<<n-1<<")";
+    cin>>index;
+
+    for(int i=n-1;i>=index;i--)
+    {
+        arr[i+1]=arr[i];
+    }
+    arr[index]=item;
+}
+
+void DELETE(int *arr,int n)   //Delete function to Delete any element from the array.
+{
+    int index;
+    cout<<"Enter the index position to delete(between 0-"<<n-1<<"):-";
+    cin>>index;
+    for(int i=index;i<n;i++)
+       arr[i]=arr[i+1];
+}
+
+
+int main()
+{
+    int n;
+    cout<<"Enter the size of the array:-";
+    cin>>n;
+    int arr[n];
+
+    for(int i=0;i<n;i++)            //initializing the array
+    {
+        cout<<"Enter "<<i+1<<" Element:-";
+        cin>>arr[i];
+    }
+
+    INSERT(arr,6);               //calling INSERT function
+    DISPLAY(arr,6);              //calling DISPLAY function
+
+    DELETE(arr,6);               //calling DELETE function
+    DISPLAY(arr,6);              //calling DISPLAY function
+
+}
