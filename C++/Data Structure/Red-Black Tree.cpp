@@ -1,5 +1,3 @@
-// Implementing Red-Black Tree in C++
-
 #include <iostream>
 using namespace std;
 
