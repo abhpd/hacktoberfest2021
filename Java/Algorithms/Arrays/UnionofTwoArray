@@ -1,0 +1,36 @@
+import java.util.*;
+public class UnionofArry {
+
+	public static void main(String[] args) {
+		
+		int a[]= {10,15,20,15,30,30,5};
+		int b[]= {30,5,30,80};
+
+		Union(a,b);
+
+	}
+
+	 static void Union(int[] a, int[] b) {
+		// TODO Auto-generated method stub
+		 
+		 HashSet<Integer>h=new HashSet<Integer>();
+			
+			for(int i=0;i<a.length;i++) {
+				h.add(a[i]);
+			}
+		
+			
+			for(int i=0;i<b.length;i++) {
+				h.add(b[i]);
+			}
+			
+			 Iterator<Integer>i=h.iterator();
+			 
+			 while(i.hasNext()) {
+				 
+				 System.out.print(i.next()+" ");
+				 
+			 }
+	}
+
+}
