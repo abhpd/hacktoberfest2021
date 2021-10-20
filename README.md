@@ -1,4 +1,5 @@
-#  ❗️ This Project is no longer accepting PRs since the project is excluded from hacktoberfest. Thnaks to everyone for contributing and we hope it was a good learning experience on open source for you all.
+#  ❗️ This Project is no longer accepting PRs since the project is excluded from hacktoberfest. 
+# Thanks to everyone for contributing and we hope it was a good learning experience on open source for you all.
 
 # ✨ hacktoberfest2021 💫
 
