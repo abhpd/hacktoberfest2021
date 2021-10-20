@@ -1,0 +1,9 @@
+POST http://127.0.0.1:5000/auth
+Content-Type: application/json
+
+{
+  "username": "nimisha",
+  "password": "asdf"
+}
+
+###

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Dashboard</title>
+
+    <link href="../static/css/app.css" rel="stylesheet">
+    <style>
+        .content {
+            display: none;
+        }
+    </style>
+
+    <script src="../static/js/app.js" type="text/javascript"></script>
+    <script src="../static/js/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="../static/js/js.cookie.js" type="text/javascript"></script>
+    <script src="../static/js/util.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="main">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <a class="navbar-brand h4" href="#">Boston University</a>
+
+            <div class="navbar-collapse collapse justify-content-center">
+                <ul class="navbar-nav navbar-align">
+                    <li class="nav-item active">
+                        <a class="nav-link h4" href="/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link h4" href="/home">Courses</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-align justify-content-end">
+                    <li class="nav-item dropdown">
+                        <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
+                            <i class="align-middle" data-feather="settings"></i>
+                        </a>
+
+                        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
+                            <img src="../static/img/diary.png" class="avatar img-fluid rounded mr-1"
+                                 alt="Charles Hall"/> <span class="text-dark h4" id="user-name">Student Name</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1"
+                                                                                  data-feather="user"></i> Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="pages-settings.html"><i class="align-middle mr-1"
+                                                                                   data-feather="settings"></i> Settings
+                                & Privacy</a>
+                            <a class="dropdown-item" href="#"><i class="align-middle mr-1"
+                                                                 data-feather="help-circle"></i> Help Center</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/login" onclick="Cookies.remove('access_token')">Log out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="content" id="content">
+            <div class="container-fluid p-0">
+
+                <h1 class="h3 mb-3">Welcome</h1>
+
+                <div class="row">
+                    <div class="d-flex">
+                        <div class="w-100">
+                            <div class="row" id="course-list">
+
+                                <div class="col-sm-3 col-6" id="dummy-course">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-center">
+                                                <img src="../static/img/diary.png" class="img-fluid" width="50%">
+                                            </div>
+                                            <h3 class="mt-3 mb-0 d-flex justify-content-center" id="course-name">Course
+                                                Name</h3>
+                                            <a class="btn btn-primary w-100 mt-3" id="view-course">View Course</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="../static/js/home.js" type="text/javascript"></script>
+
+</body>
+</html>

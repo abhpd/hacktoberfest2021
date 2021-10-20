@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Login Page</title>
+    <link href="../static/css/app.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="main">
+        <main class="content" style="display: flex; justify-content: center; align-items: center;">
+            <div class="container-fluid p-0">
+                <div class="row" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="col-12 col-xl-5">
+                        <div class="card">
+                            <div class="card-header">
+                                <h1 class="h1">Boston University</h1>
+                                <h6 class="card-subtitle text-muted">Thrive with excellence</h6>
+                            </div>
+                            <div class="card-body">
+                                <form class="mb-2" id="form" method="POST">
+                                    <div class="mb3">
+                                        <label class="form-label">Login ID</label>
+                                        <div class="input-group mb-2 mr-sm-2">
+                                            <div class="input-group-text">@</div>
+                                            <input type="text" class="form-control" name="student_id"
+                                                   placeholder="Login ID" autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Password</label>
+                                        <div class="input-group mb-2 mr-sm-2">
+                                            <div class="input-group-text">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                     class="feather feather-lock align-middle">
+                                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                </svg>
+                                            </div>
+                                            <input type="password" class="form-control" name="password"
+                                                   placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" id="btnSubmit">Login</button>
+                                </form>
+                                <div>
+                                    <span id="output"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="../static/js/app.js"></script>
+<script src="../static/js/jquery-3.5.1.js"></script>
+<script src="../static/js/js.cookie.js"></script>
+<script src="../static/js/login.js"></script>
+
+</body>
+</html>
