@@ -26,14 +26,14 @@ class SinglyLinkedList {
   }
 
   void insert_node_left(char node_data, SinglyLinkedListNode * ptr ) {
-    /*code to insert new node at the end in linked list having node_data*/
+    //code to insert new node at the end in linked list having node_data
     this -> tail -> next = ptr1;
     this -> tail = ptr1;
   }
 };
 
 void print_singly_linked_list(SinglyLinkedListNode * node) {
-  /*code to print linked list separated by single space*/
+  //code to print linked list separated by single space
   SinglyLinkedListNode * walker = node;
   while (walker != NULL) {
     cout << walker -> data << " ";
@@ -67,7 +67,7 @@ int main() {
   for (int i = 0; i < test_cases; i++) {
     SinglyLinkedList * LS = new SinglyLinkedList();
 
-    /*code to read input and insert node in linked list*/
+    //code to read input and insert node in linked list
     int num_node;
     cin >> num_node;
     for (int a = 0; a < num_node; a++) {
