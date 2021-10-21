@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css" href="Login.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="abc.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+ 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+ 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+ 	<title>Login Now! | CounsaXR</title>
+</head>
+<body>
+<div class="trans">
+<div class="abcdef">
+<h2></h2>
+<div class="b" id="container">
+	<div class="form-container sign-up-container">
+		<form class="abc" method="POST" action="../Includes/login.inc.php">
+			<h2>Login Now!</h2>
+			<div class="social-container">
+				<a class="abcd" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a class="abcd" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a class="abcd" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span class="e">or use your email for registration</span>
+			<input class="a" type="text" name="username" placeholder="Email or Username" />
+			<input class="a" type="password" name="pwd" placeholder="Password" />
+			<button class="ab" name="submit" type="submit">Sign In</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form class="abc" method="POST" action="../Includes/login.inc.php">
+			<h2>Login,Hury!</h2>
+			<div class="social-container">
+				<a class="abcd" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a class="abcd" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a class="abcd" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span class="e">or use your account</span>
+			<input class="a" type="text" name="username" placeholder="Email or Username" />
+			<input class="a" type="password"  name="pwd" placeholder="Password" />
+			<a class="abcd" href="#">Forgot your password?</a>
+			<button class="ab" name="submit" type="submit">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="c">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Counselor!</h1>
+				<p class="abcde">To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Switch as Patient</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Patient!</h1>
+				<p class="abcde">Enter your details and start journey with us.</p>
+				<button class="ghost" id="signUp">Switch as Counselor</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<script src="Login.js"></script>
+</body>
+</html>

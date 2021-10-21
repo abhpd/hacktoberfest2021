@@ -1,0 +1,170 @@
+
+/*navigation-bar*/
+.nav-bar{
+	background-color: #262625;
+}
+.navbar .navbar-brand{
+	font-weight: normal;
+	font-size: 30px;
+	font-family: 'babapro font',sans-serif;
+}
+.navbar .navbar-nav .nav-link{
+	font-weight: bold;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	padding:0;
+	transition: all ease-in 0.4s;
+	padding-bottom: 15px;
+	color: white;
+}
+.navex{
+	height: 85px;
+	z-index: -60;
+	background:rgba(0,0,0,.3);
+	backdrop-filter:blur(7px);
+  	position: -webkit-sticky;
+  	position: sticky;
+ 	top: 0;
+}
+.navbar .navbar-nav .nav-link:hover{
+	background: transparent;
+	color: #fff;
+}
+.navbar .navbar-nav .nav-link::after{
+	content: "";
+	display: block;
+	width: 0;
+	height: 2px;
+	background: transparent;
+	transition: width 0.4s ease,background-color 0.4s ease;
+}
+.navbar .navbar-nav .nav-link:hover::after{
+	width: 100%;
+	background: #fff;
+	color:#fff;
+}
+
+/*toggle-navbar*/
+.sidemenu{
+	position: fixed;
+	top:82px;
+	right: 0;
+	height: 50%;
+	width: 0;
+	background:rgba(0,0,0,.3);
+	backdrop-filter:blur(10px);
+	z-index: 1;
+	padding-top: 40px;
+	overflow-x: hidden;
+	transition: all 500ms ease;
+}
+.sidemenu a{
+	padding: 0px 0px 35px 64px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #ffff;
+	display: block;
+}
+.sidemenu a:hover{
+	color: white;
+}
+.sidemenu .closebtn{
+	position: absolute;
+	top: 0;
+	right:20px;
+	font-size: 25px;
+	cursor: pointer;
+	margin-left: 32px;
+}
+.sidemenu a:hover{
+	background: transparent;
+	color: #fff;
+}
+.sidemenu a::after{
+	content: "";
+	display: block;
+	width: 0;
+	height: 2px;
+	background: transparent;
+	transition: width 0.4s ease,background-color 0.4s ease;
+}
+.sidemenu a:hover::after{
+	width: 100%;
+	background: #fff;
+	color:#fff;
+}
+
+
+/*Notification and message bar*/
+.active .accordion:hover {
+  background-color: #ccc;
+}
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+.icon {
+	cursor: pointer;
+	line-height: 30px;
+}
+.icon span {
+	background: #f00;
+	padding: 5px;
+	border-radius: 100%;
+	color: #fff;
+	vertical-align: top;
+	margin-left: -24px;
+}
+
+
+.notifi-box {
+	width: 400px;
+	backdrop-filter:blur(10px);
+	overflow: auto;
+	height:auto;
+  bottom:0;
+	opacity: 0;
+	background:grey;
+	position: absolute;
+	top: 85px;
+	right: 35px;
+	transition: 1s opacity, 250ms height;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.notifi-box h2 {
+	font-size: 14px;
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+	color: #999;
+}
+.notifi-box h2 span {
+	color:white;
+
+}
+.notifi-item {
+	display: flex;
+	border-bottom: 1px solid white;
+	cursor: pointer;
+
+}
+.notifi-item:hover {
+	background-color: #eee;
+}
+.notifi-item img {
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+.notifi-item .text h4 {
+	color:black;
+	font-size: 16px;
+	margin-top: 10px;
+}
+.notifi-item .text p {
+	color: #aaa;
+	font-size: 12px;
+}

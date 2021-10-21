@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+ 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+ 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+ 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<title>Register Now! | CounsaXR</title>
+
+	<link rel="stylesheet" type="text/css" href="Register.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="abc.css">
+</head>
+<body>
+<div class="trans">
+<div class="abcdef">
+<h2></h2>
+<div class="b d" id="container">
+	<div class="form-container sign-up-container">
+		<form class="abc" action="../Includes/signupCounselor.inc.php" method="POST" >
+			<h2 class="text-center">Sign Up As Counselor</h2>
+			<div class="social-container text-center">
+				<a class="abcd" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a class="abcd" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a class="abcd" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span class="e">or use your email for registration</span>
+
+			<input class="a" type="text" name="fullname" placeholder="Full Name" />
+			<input class="a" type="text" name="username" placeholder="User Name" />
+			<input class="a" type="email" name="email" placeholder="Email" /><br><br>
+			Apointed Year
+			<input class="a" type="Date" name="appointedyear" placeholder="Appointed Year" />
+			<input class="a" type="text" name="registrationnumber" placeholder="Registration Number" />
+			<input class="a" type="text" name="mobilenumber" placeholder="Mobile Number" />
+			<input class="a" type="text" name="city" placeholder="City" />
+			<input class="a" type="password" name="pwd" placeholder="Password" />
+			<input class="a" type="password" name="confirmpwd" placeholder="Confirm Password" />
+			<button class="ab" name="submit" type="submit" >Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form class="abc" method="POST" action="../Includes/signupPatient.inc.php" >
+			<h2 class="text-center">Sign up As Patient</h2>
+			<div class="social-container text-center">
+				<a class="abcd" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a class="abcd" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a class="abcd" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span class="e">or fill your account</span>
+			<br>
+			<input class="a" type="text" name="fullname" placeholder="Full Name" />
+			<input class="a" type="text" name="username" placeholder="Username" />
+			
+			<input class="a" type="Email" name="email" placeholder="Email" />
+			<br><br>
+			Birth Date
+			<input class="a" type="Date" name="birthdate" placeholder="Birthday" required pattern="\d{2}-\d{2}-\d{4}"/>
+
+			<input class="a" type="text" name="avgearning" placeholder="Average Earning RS:" />
+
+			<input class="a" type="text" name="occupation" placeholder="Occupation" />
+
+			<input class="a" type="Number" name="mobilenumber" placeholder="Mobile Number" />
+
+			<select class="a" id="Lesbian" name="orientation" type="Radio">
+				<option class="a" disabled selected>Orientation</option>
+				<option >Lesbian</option>
+				<option>Gay</option>
+				<option>Straight</option>
+				<option>Prefer not to say</option>
+			</select>
+
+			<select class="a" id="Relationship" name="relation" type="Radio">
+				<option class="a" disabled selected>Relationship Status</option>
+				<option >Single</option>
+				<option>Married</option>
+				<option>In a Relationship</option>
+				<option>Divorced</option>
+				<option>Widowed</option>
+			</select>
+
+			<select class="a" id="Relagious" name="isreligious" type="Radio">
+				<option class="a" disabled selected>Do you consider yourself to be religious?</option>
+				<option >Yes</option>
+				<option>No</option>
+			</select>
+
+			<select class="a" id="feel" name="evercounseled" type="Radio">
+				<option class="a" disabled selected>Have you ever been in counseling?</option>
+				<option >Yes</option>
+				<option>No</option>
+			</select>
+
+			<select class="a" id="current-health" name="physicalhealth" type="Radio">
+				<option class="a" disabled selected>How would you rate your current physical health?</option>
+				<option >Good</option>
+				<option>Fair</option>
+				<option>Poor</option>
+			</select>
+
+			<select class="a" id="eating-habbit" name="eatinghabbit" type="Radio">
+				<option class="a" disabled selected>How would you rate your current eating habbit?</option>
+				<option >Good</option>
+				<option>Fair</option>
+				<option>Poor</option>
+			</select>
+
+			<select class="a" id="Depression" name="isdepressed" type="Radio">
+				<option class="a" disabled selected>Are you currently experiencing overwhelming sadness,grief or depression?</option>
+				<option >Yes</option>
+				<option>No</option>
+			</select>
+
+			<select class="a" id="interest" name="ispleasure" type="Radio">
+				<option class="a" disabled selected>Little interest or pleasure indoing things:?</option>
+				<option >Not at all</option>
+				<option>Several Days</option>
+				<option>More than half the days</option>
+				<option>Nearly Everyday</option>
+			</select>
+
+			<select class="a" id="sex" name="sex" type="Radio">
+				<option class="a" disabled selected>Gender</option>
+				<option >Male</option>
+				<option>Female</option>
+				<option>Other</option>
+			</select>
+
+			<input class="a" type="password" name="pwd" placeholder="Password"/>
+			<input class="a" type="password" name="confirmpwd" placeholder="Confirm Password"/>											
+			<a class="abcd text-center" href="#">Forgot your password?</a><br><br>
+			<button class="ab ">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="c">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Counsellor!</h1>
+				<p class="abcde">To keep connected with us please signup with your personal info</p>
+				<button class="ghost" id="signIn">Switch To patient</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Patient!</h1>
+				<p class="abcde">Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Switch To Counselor</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<script src="Register.js"></script>
+</body>
+</html>
