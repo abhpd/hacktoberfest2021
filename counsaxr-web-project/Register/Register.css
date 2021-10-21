@@ -1,0 +1,263 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body {
+	overflow: hidden;
+}
+.abcdef{
+	font-family: 'Montserrat', sans-serif;
+	background: url(2.jpg);
+	background-size: cover;
+	display: flex;
+	background-size: cover;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 110vh;
+	margin: -20px 0 50px;
+	box-sizing: border-box;
+}
+.abc h5 {
+	font-weight: bold;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.abcde {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+	box-sizing: border-box;
+}
+
+.e {
+	font-size: 12px;
+	box-sizing: border-box;
+}
+
+.abcd{
+	color: #FF4B2B;
+	font-size: 14px;
+	font-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	margin: 15px 0;
+}
+
+button.ab,button.ghost {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	cursor: pointer;
+}
+
+button.ab:active {
+	transform: scale(0.95);
+}
+button.ghost:active {
+	transform: scale(0.95);
+}
+
+button.ab:focus {
+	outline: none;
+}
+button.ghost:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+	box-sizing: border-box;
+}
+
+.abc {
+	background-color: #FFFFFF;
+	display: inline-block;
+	align-items: left;
+	justify-content: center;
+	flex-direction: column;
+	padding: 15px 15px;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: auto;
+	overflow-x: 0;
+	top: 0;
+
+}
+
+.a{
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.b {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	box-sizing: border-box;
+	transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+	box-sizing: border-box;
+}
+
+.b.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+	box-sizing: border-box;
+}
+
+.sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+	box-sizing: border-box;
+}
+
+.b.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	box-sizing: border-box;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+		box-sizing: border-box;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+		box-sizing: border-box;
+	}
+}
+
+.overlay-container {
+	position: absolute;
+	top: 0;
+	box-sizing: border-box;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.b.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+	box-sizing: border-box;
+}
+
+.c {
+	background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-sizing: border-box;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.b.right-panel-active .c {
+  	transform: translateX(50%);
+  	box-sizing: border-box;
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+	box-sizing: border-box;
+}
+
+.b.right-panel-active .overlay-left {
+	transform: translateX(0);
+	box-sizing: border-box;
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+	box-sizing: border-box;
+}
+
+.b.right-panel-active .overlay-right {
+	transform: translateX(20%);
+	box-sizing: border-box;
+}
+
+.social-container {
+	margin: 20px 0;
+	box-sizing: border-box;
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+	box-sizing: border-box;
+}
