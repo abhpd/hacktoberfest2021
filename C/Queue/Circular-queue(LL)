@@ -1,0 +1,98 @@
+/* C program to implement Circular queue using linked list */
+#include <stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+struct q_node
+{
+  int data;
+  struct q_node *link;
+}*new,*front=NULL,*rear=NULL,*P;
+void insert(int);
+void delete();
+void display();
+
+void main()
+{
+  int ch,data;
+  for(;;)
+  {
+    printf("1.Insertion in Queue\n");
+    printf("2.Deletion in Queue\n");
+    printf("3.Display Queue\n");
+    printf("Any other to exit\n");
+    printf("Enter your choice");
+    scanf("%d",&ch);
+    if(ch<=3)
+    {
+    switch(ch)
+    {
+    case 1:
+      printf("Enter value to be inserted");
+      scanf("%d",&data);
+      insert(data);
+      break;
+     case 2:
+      delete(data);
+      break;
+     case 3: 
+       display();
+        break;
+     }
+     }
+     else  break;
+   }
+}
+/*insert fn definition */
+void insert(int item)
+{
+  new=(struct q_node*)malloc(sizeof(struct q_node));
+  new->data=item;
+  if (front==NULL)
+  {
+    front=new;
+    rear=new;
+    front->link=front;
+  }
+  else{
+    rear->link=new;
+    new->link=front;
+    rear=new;
+  }
+}
+
+/*delete fn definition */
+void delete()
+{ 
+  if(front==NULL)
+    printf("queue is empty \n");
+  else if(front==rear)
+  {
+    printf("Element deleted from queue is: %d\n",front->data);
+    front=NULL;
+    }
+  else {
+    printf("Element deleted from queue is: %d\n",front->data);
+    front=front->link;
+    rear->link=front;
+    }
+ }
+ 
+/*display fn definition */
+void display()
+{
+  P=front;
+  if(front==NULL)
+    printf("queue is empty\n");
+  else
+  {
+    if(P->link!=front)
+    {
+    printf("%d\t\t",P->data);
+    P=P->link;
+    }
+    printf("%d\t\t",P->data);
+    
+    printf("\n");
+  }
+}
+    
