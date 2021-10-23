@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a[20],x,n,i,flag=0;
+printf("Enter no. of elements \n");
+scanf("%d",&n);
+printf("Enter elements \n");
+for(i=0;i<n;i++)
+{
+    scanf("%d",&a[i]);
+}
+printf("Enter element you want to search \n");
+scanf("%d",&x);
+for(i=0;i<n;i++)
+   {
+    if(a[i]==x)
+     {
+       printf("Location is %d",i+1);
+       flag=1;
+       break;
+     }
+   }
+     if(flag==0)
+     {
+         printf("No. is not present in the array \n");
+     }
+}
