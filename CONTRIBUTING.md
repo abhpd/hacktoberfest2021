@@ -4,7 +4,7 @@
 
 ### Welcome to hacktoberfest 2021 Public Repository. 👨🏻‍💻
 
-<p>A month-long celebration from October 1st - 31st sponsored by Digital Ocean and GitHub to get people involved in Open Source. Create your very first pull request to any public repository on GitHub and contribute to the open source developer community.
+<p>A Month-long celebration from October 1st - 31st sponsored by Digital Ocean and GitHub to get people involved in Open Source. Create your very first pull request to any public repository on GitHub and contribute to the open source developer community.
 
 https://hacktoberfest.digitalocean.com/</p>
 
@@ -28,7 +28,7 @@ https://hacktoberfest.digitalocean.com/</p>
 
 ### How to Contribute to this repository
 
-- Fork the repository (Click the Fork button in the top right of this page, click your Profile Image)
+- Fork the repository (Click the Fork button in the top right section of this page, click your Profile Image)
 - Clone the forked repository to your local machine.
 
 ```markdown
