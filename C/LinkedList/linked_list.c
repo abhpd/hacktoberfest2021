@@ -97,7 +97,7 @@ void create()
         }
 	display();
 }//end of create()
-void display()
+void display() //it is also called traversing
 {
         struct node *ptr;
         if(start==NULL)
