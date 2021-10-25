@@ -1,44 +1,77 @@
-package BubbleSortRecursive;
+// Java program for recursive implementation
+// of Bubble sort
+ 
 
 import java.util.Arrays;
+ 
 
-/**
- * Bubble sort recursive implementation
- */
-public class BubbleSortRecursive {
+public class GFG 
+{
 
-  public static void main(String[] args){
-    final int maxLength = 10;
-    int[] array = new int[maxLength];
+    // A function to implement bubble sort
 
-    for (int i = 0; i < maxLength; i++) {
-      array[i] = (int)(Math.random() * 1000);
+    static void bubbleSort(int arr[], int n)
+
+    {
+
+        // Base case
+
+        if (n == 1)
+
+            return;
+
+      
+
+        // One pass of bubble sort. After
+
+        // this pass, the largest element
+
+        // is moved (or bubbled) to end.
+
+        for (int i=0; i<n-1; i++)
+
+            if (arr[i] > arr[i+1])
+
+            {
+
+                // swap arr[i], arr[i+1]
+
+                int temp = arr[i];
+
+                arr[i] = arr[i+1];
+
+                arr[i+1] = temp;
+
+            }
+
+      
+
+        // Largest element is fixed,
+
+        // recur for remaining array
+
+        bubbleSort(arr, n-1);
+
     }
 
-    bubbleSort(array, array.length);
+     
 
-    System.out.println("Sorted array: "); // NOSONAR
-    System.out.println(Arrays.toString(array)); // NOSONAR
-  }
+    // Driver Method
 
-  /**
-   * Bubble sort recursive.
-   * 
-   * @param array array to bubble sort
-   * @param length length of the array
-   */
-  public static void bubbleSort(final int[] array, final int length){
-    if(1 == length){
-      return;
+    public static void main(String[] args)
+
+    {
+
+        int arr[] = {64, 34, 25, 12, 22, 11, 90};
+
+      
+
+        bubbleSort(arr, arr.length);
+
+         
+
+        System.out.println("Sorted array : ");
+
+        System.out.println(Arrays.toString(arr));
+
     }
-
-    for(int i = 0; i <  length - 1 ; i++) {
-      if(array[i] > array[i + 1]) {
-        final int aux = array[i];
-        array[i] = array[i + 1];
-        array[i + 1] = aux;
-      }
-    }
-    bubbleSort(array, length - 1);
-  }
-}
