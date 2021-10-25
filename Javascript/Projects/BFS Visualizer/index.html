@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFS Visualiser</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./queue.js" defer></script>
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <div class="buttons-are-here">
+        <input class="click-buttons" type="button" value="Select - Start" onclick="GLOBALS.mode = 'START'">
+        <input class="click-buttons" type="button" value="Select - End" onclick="GLOBALS.mode = 'TARGET'">
+        <input class="click-buttons" type="button" value="Visualize" onclick="start()">
+        <input class="click-buttons" type="button" value="Reset" onclick="reset()">
+        <div class="slidecontainer">
+            Speed : <input type="range" min="10" max="2000" value="1900" class="slider" id="myRange">
+        </div>
+    </div>
+    <div class="score">Cells Visited: <span id="count"></span></div>
+    <div id="box-ID" class="box"></div>
+    <div class="content">
+        ❓ How to use:<br>
+        <ul>
+            <li>Click "Select-Start" Button and select the starting cell.</li>
+            <li>Then click "Select-end" Button and select the ending cell.</li>
+            <li>Click on "Visualize" to start the Algorithm.</li>
+            <li>Click on "Reset" to reset the window after algorithm finishes.</li>
+        </ul>
+    </div>
+    <!-- <div class="fixed-footer">
+        Created by Bipin Jadav
+    </div> -->
+</body>
+
+</html>
