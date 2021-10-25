@@ -1,3 +1,6 @@
+#  ❗️ This Project is no longer accepting PRs since the project is excluded from hacktoberfest. 
+# Thanks to everyone for contributing and we hope it was a good learning experience on open source for you all.
+
 # ✨ hacktoberfest2021 💫
 
 ![banner](https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg)
