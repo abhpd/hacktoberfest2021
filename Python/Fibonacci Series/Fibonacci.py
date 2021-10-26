@@ -1,9 +1,9 @@
-def recur_fibo(n):  
+def fibo(n):  
 
     if n <= 1:  
         return n  
     else:  
-        return(recur_fibo(n-1) + recur_fibo(n-2)) 
+        return(fibo(n-1) + fibo(n-2)) 
 
     # take input from the user  
     nterms = int(input("How many terms? "))  
@@ -14,5 +14,5 @@ def recur_fibo(n):
     else:  
         print("Fibonacci sequence:")  
     for i in range(nterms):  
-        print(recur_fibo(i)) 
+        print(fibo(i)) 
 
