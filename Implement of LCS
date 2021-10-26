@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int i,j,m,n,c[20][20];
+char x[20],y[20],b[20][20];
+void print_LCS(int i,int j)
+{
+	if(i==0 || j==0)
+		return;
+	if(b[i][j]=='c')
+	{
+		print_LCS(i-1,j-1);
+		printf("%c",x[i]);
+	}
+	else if(b[i][j]=='u')
+		print_LCS(i-1,j);
+	else
+		print_LCS(i,j-1);
+}
+void LCS_Length()
+{
+	m=strlen(x);
+	n=strlen(y);
+	for(i=1;i<=m;i++)
+		c[i][0]=0;
+	for(j=0;j<=n;j++)
+		c[0][j]=0;
+	for(i=1;i<=m;i++)
+		for(j=1;j<=n;j++)
+		{
+			if(x[i]==y[j])
+			{
+				c[i][j]=c[i-1][j-1]+1;
+				b[i][j]='c';
+			}
+			else if(c[i-1][j]>=c[i][j-1])
+			{
+				c[i][j]=c[i-1][j];
+				b[i][j]='u';
+			}
+			else
+			{
+				c[i][j]=c[i][j-1];
+				b[i][j]='l';
+			}
+		}
+		print_LCS(m,n);
+}
+void main()
+{
+	printf("enter 1st sequence:");
+	gets(x);
+	printf("\nEnter 2nd sequence:");
+	gets(y);
+	printf("\nThe Longest Common Subsequence is ");
+	LCS_Length();
+}
