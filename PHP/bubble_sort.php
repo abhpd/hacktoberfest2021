@@ -21,6 +21,6 @@ function bubble_sort($array)
     return $array;
 }
 
-$result = bubble_sort([1, 10, 2, 4, 5, 1, 2, 3]);
+$result = bubble_sort([3, 1, 10, 2, 1, 7, 0, 4, 8, 6, 5, 9]);
 
 print_r($result);
