@@ -1,0 +1,67 @@
+version: "2.0"
+
+stories:
+
+- story: signupyes1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_hacktobersign
+  - intent: affirm
+  - action: utter_happy_hacktober
+  - action: utter_end_chat
+
+- story: signupyes2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_hacktobersign
+  - intent: affirm
+  - action: utter_happy_hacktober
+  - action: utter_end_chat
+
+
+- story: signupno1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_hacktobersign
+  - intent: deny
+  - action: utter_sad_hacktober
+  - action: utter_end_chat
+
+- story: signupno2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_hacktobersign
+  - intent: deny
+  - action: utter_sad_hacktober
+  - action: utter_end_chat
+
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_end_chat
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+  - action: utter_end_chat

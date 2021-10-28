@@ -1,0 +1,51 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+
+responses:
+  utter_greet:
+  - text: "Hey! I Am A RASA Powered Bot For Hacktoberfest 2021. Wassup?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Glad To Hear That!"
+
+  utter_goodbye:
+  - text: "See Ya!"
+
+  utter_iamabot:
+  - text: "I Am More Than A Bot. I Am Your PR Reminder For Hacktoberfest-2021. Now Off You Go To Make A Pull Request. NOW!!!!!."
+
+  utter_hacktobersign:
+  - text: "Have You Signed Up For Hacktobefest2021?"
+
+  utter_happy_hacktober:
+  - text: "That's Like A Pro! OP!"
+
+  utter_sad_hacktober:
+  - text: "Wakanda Programmer Are You? PITY ON YOU!"
+
+  utter_end_chat:
+  - text: "Well, Now You Saw Me Working, Let's Just Keep This Straight. I am Just Trained By My Master To Show You How I Work. So, Ask Me No More Questions, Don't Be A Sherlock And Say Goodbye."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+actions:
+- hacktoberfest_action
