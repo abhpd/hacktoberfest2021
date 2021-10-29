@@ -8,22 +8,40 @@
 import java.util.*;
 public class StarPattern{
 	public static void main(String args[]){
-		Solution s = new Solution();
-		// s.printSquare(5);
+		Solu s = new Solu();
+		 s.printSquare(5);
+		 
+		System.out.println();
 		
-		// s.printIncTriangle(5);
-
-		// s.printDecTriangle(5);
-
-		// s.printRightTriangle(5);
-
-		// s.printLeftTriangle(5);
-
-		// s.printHillPattern(5);
-
-		// s.printReverseHill(5);
-
-		s.printReverseHillFor(5);
+		 s.printIncTriangle(5);
+		 
+		 System.out.println();
+		 
+		 s.printDecTriangle(5);
+		 
+		 System.out.println();
+		 
+		 s.printRightTriangle(5);
+		 
+		 System.out.println();
+		 
+		 s.printLeftTriangle(5);
+		 
+		 System.out.println();
+		 
+		 s.printHillPattern(5);
+		 
+		 System.out.println();
+		 
+		 s.printReverseHill(5);
+		 
+		 System.out.println();
+		 
+		s.printSpaceStar(5);
+		
+		System.out.println();
+		
+		s.printStarSpace(5);
 	}
 }
 
@@ -73,7 +91,6 @@ class Solution{
 		 * * *
 		 * *
 		 *
-
 		 */
 
 		for(int i=1;i<=n;i++){
@@ -94,7 +111,6 @@ class Solution{
 	    * * *
 	  * * * *
 	* * * * *  
-
 	*/
 
 	//here if we observe there is two triangles. 
@@ -164,7 +180,6 @@ class Solution{
 	void printReverseHill(int n){
 
 		/*
-
 		* * * * * * * * *
     	 * * * * * * *
            * * * * *
@@ -198,7 +213,6 @@ class Solution{
 		//here i reduced one for by using nested for
 
 		/*
-
 		* * * * * * * * *
     	 * * * * * * *
            * * * * *
@@ -222,7 +236,56 @@ class Solution{
 			System.out.println();
 		}
 	}
-
+	
+	void printSpaceStar(int n) {
+		
+		/*
+		 
+		____*
+		___**
+		__***
+		_****
+		*****
+		 
+		 */
+		
+		for(int i=0;i<n;i++)
+		{
+			for(int k=0;k<n-1-i;k++)
+			{
+				System.out.print("_");
+			}
+			for(int j=0;j<=i;j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+	
+void printStarSpace(int n) {
+	
+	/*
+	 
+	****_
+	***__
+	**___
+	*____
+	_____
+	
+	 */
+		
+		for(int i=0;i<n;i++)
+		{
+			for(int k=0;k<n-1-i;k++)
+			{
+				System.out.print("*");
+			}
+			for(int j=0;j<=i;j++) {
+				System.out.print("_");
+			}
+			System.out.println();
+		}
+	}
 
 
 }
