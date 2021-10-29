@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bodyColor: #545454;
+    --bgColor: #14bdac;
+    --textColorPrimary: #f2ebd3;
+    --textColorSecondary: #b1c2c0;
+    --winColor: #545454;
+    --xSymbol: #e5eec1;
+    --oSymbol: #a2d5ac;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    color: var(--bodyColor);
+}
+
+.rules {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.rules:hover {
+    color: var(--textColorSecondary);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--textColorPrimary);
+    color: var(--bodyColor);
+    margin: auto;
+    padding: 20px;
+    width: 700px;
+    border-radius: 15px;
+}
+
+.modal-content p {
+    text-transform: capitalize;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container {
+    background-color: var(--bgColor);
+    margin: 50px;
+    padding: 50px;
+    border-radius: 25px;
+}
+
+.title-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.underline {
+    width: 300px;
+    height: 6px;
+    background-color: var(--textColorPrimary);
+}
+
+.status-section {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    font-size: 25px;
+}
+
+.status span {
+    color: var(--textColorPrimary);
+}
+
+.reset {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.reset:hover {
+    color: var(--textColorPrimary);
+}
+
+.player-x {
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.player-x .box {
+    background-color: var(--xSymbol);
+    color: var(--oSymbol);
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.player-x .box:nth-child(1) {
+    width: 40px;
+    height: 40px;
+}
+
+.player-x .box:nth-child(2) {
+    width: 44px;
+    height: 44px;
+}
+
+.player-x .box:nth-child(3) {
+    width: 48px;
+    height: 48px;
+}
+
+.player-x .box:nth-child(4) {
+    width: 52px;
+    height: 52px;
+}
+
+.player-x .box:nth-child(5) {
+    width: 56px;
+    height: 56px;
+}
+
+.player-x .box:nth-child(6) {
+    width: 60px;
+    height: 60px;
+}
+
+.player-o {
+    display: grid;
+    margin-bottom: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.player-o .box {
+    background-color: var(--oSymbol);
+    color: var(--xSymbol);
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.player-o .box:nth-child(6) {
+    width: 40px;
+    height: 40px;
+}
+
+.player-o .box:nth-child(5) {
+    width: 44px;
+    height: 44px;
+}
+
+.player-o .box:nth-child(4) {
+    width: 48px;
+    height: 48px;
+}
+
+.player-o .box:nth-child(3) {
+    width: 52px;
+    height: 52px;
+}
+
+.player-o .box:nth-child(2) {
+    width: 56px;
+    height: 56px;
+}
+
+.player-o .box:nth-child(1) {
+    width: 60px;
+    height: 60px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat (3, 1fr);
+    grid-gap: 15px;
+    margin: 20px 0;
+    background-color: var(--textColorSecondary);
+}
+
+.game-cell {
+    background-color: var(--bgColor);
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: var(--textColorPrimary);
+}
+
+.x::after {
+    content: '×';
+    font-size: 200px;
+    color: var(--xSymbol);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.o::after {
+    content: '○';
+    font-size: 225px;
+    color: var(--oSymbol);
+}
+
+.won::after {
+    color: var(--winColor);
+}
+
+@media only screen and (max-width: 1024px) {
+    .game-board {
+        margin-top: 25px;
+        grid-gap: 10px;
+    }
+    .game-cell {
+        height: 150px;
+        width: 150px;
+    }
+    .player-o,
+    .player-x {
+        grid-gap: 7px;
+    }
+    .modal-content {
+        width: 350px;
+    }
+    .player-x .box:nth-child(1) {
+        width: 36px;
+        height: 36px;
+    }
+    .player-x .box:nth-child(2) {
+        width: 40px;
+        height: 40px;
+    }
+    .player-x .box:nth-child(3) {
+        width: 44px;
+        height: 44px;
+    }
+    .player-x .box:nth-child(4) {
+        width: 48px;
+        height: 48px;
+    }
+    .player-x .box:nth-child(5) {
+        width: 52px;
+        height: 52px;
+    }
+    .player-x .box:nth-child(6) {
+        width: 56px;
+        height: 56px;
+    }
+    .player-o .box:nth-child(6) {
+        width: 36px;
+        height: 36px;
+    }
+    .player-o .box:nth-child(5) {
+        width: 40px;
+        height: 40px;
+    }
+    .player-o .box:nth-child(4) {
+        width: 44px;
+        height: 44px;
+    }
+    .player-o .box:nth-child(3) {
+        width: 48px;
+        height: 48px;
+    }
+    .player-o .box:nth-child(2) {
+        width: 52px;
+        height: 52px;
+    }
+    .player-o .box:nth-child(1) {
+        width: 56px;
+        height: 56px;
+    }
+    .player-o .box {
+        width: 47px;
+        height: 47px;
+    }
+    .x::after {
+        font-size: 150px;
+    }
+    .o::after {
+        font-size: 175px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .container {
+        margin: 25px;
+        padding: 25px;
+    }
+    .game-cell {
+        height: 100px;
+        width: 100px;
+    }
+    .x::after {
+        font-size: 100px;
+    }
+    .o::after {
+        font-size: 125px;
+    }
+}

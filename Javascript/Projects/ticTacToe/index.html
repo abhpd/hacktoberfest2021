@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tic-Tac-Toe-Next-Level</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-section">
+            <div class="title">Tic Tac Toe Advanced</div>
+            <div class="underline"></div>
+        </div>
+        <div class="rules">How to play?</div>
+
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Basic Things To Know Before Playing This Game</h3>
+                <p>1. Player-1 is <b>X</b> and Player-2 is <b>O</b>.</p>
+                <p>
+                    2. both players have 6 gobbler, and each gobblers have size from 1 to 6.
+                </p>
+                <p>3. you can start with any piece of your gobbler</p>
+                <p>
+                    4. put a new gobbler on the board, on an empty space or over smaller gobbler.
+                </p>
+                <p>5. you can gabble up your own pieces.</p>
+                <p>6. line up 3 of your gobblers in a row to win!</p>
+                <br />
+                <p>NOTE : you can not change your gobbler after grabbing it.</p>
+            </div>
+        </div>
+
+        <div class="status-section">
+            <div class="status">× is next</div>
+            <div class="reset">Reset</div>
+        </div>
+
+        <div class="player-x">
+            <div class="box player-x-weight">1</div>
+            <div class="box player-x-weight">2</div>
+            <div class="box player-x-weight">3</div>
+            <div class="box player-x-weight">4</div>
+            <div class="box player-x-weight">5</div>
+            <div class="box player-x-weight">6</div>
+        </div>
+
+        <div class="game-board">
+            <div class="game-cell">0</div>
+            <div class="game-cell">0</div>
+            <div class="game-cell">0</div>
+            <div class="game-cell">0</div>
+            <div class="game-cell">0</div>
+            <div class="game-cell">0</div>
+            <div class="game-cell">0</div>
+            <div class="game-cell">0</div>
+            <div class="game-cell">0</div>
+        </div>
+
+        <div class="player-o">
+            <div class="box player-o-weight">6</div>
+            <div class="box player-o-weight">5</div>
+            <div class="box player-o-weight">4</div>
+            <div class="box player-o-weight">3</div>
+            <div class="box player-o-weight">2</div>
+            <div class="box player-o-weight">1</div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
