@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #4c5f6f;
+  --primary-color2: #ce4871;
+  --secondary-color: #c7b698;
+  --selected-color: #ce4871;
+  --booked-color: #93a4ab;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ecf3ed;
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  width: 95vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.moviecontainer {
+  background-color: #fff;
+  /* width: 100%; */
+  width: 320px;
+  margin: 0 auto;
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.moviecontainer__top {
+  background: url('./images/background.jpg') center/cover no-repeat;
+  color: #fff;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  position: relative;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  /* flex: 1; */
+}
+
+.moviecontainer__top::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to right top,
+    rgba(236, 243, 237, 0.3),
+    rgba(221, 229, 216, 0.3),
+    rgba(210, 214, 194, 0.3),
+    rgba(203, 199, 172, 0.3),
+    rgba(199, 182, 152, 0.3)
+  );
+
+  z-index: 100;
+}
+
+.moviecontainer__topDescription {
+  z-index: 101;
+}
+.moviecontainer__topDescription > h2 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.moviecontianer__topDescriptionLocation {
+  font-size: 0.75rem;
+}
+
+.moviecontianer__topDescriptionLocation span {
+  margin-right: 0.25rem;
+}
+
+.moviecontainer__middle ul {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0.35rem;
+}
+
+.moviecontainer__middle ul li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  padding: 0 0.25rem;
+}
+
+.moviecontainer__middle ul li > small {
+  /* padding: 0 0.35rem; */
+  margin-left: 0.1rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.seat i {
+  color: var(--primary-color);
+}
+
+.seat.selected i {
+  color: var(--selected-color);
+}
+
+.seat.booked i {
+  color: var(--booked-color);
+}
+
+.moviecontainer__middleMain {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.moviecontainer__middleMainSeats {
+  display: flex;
+  padding: 0 0.25rem;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+.moviecontainer__middleMainSeats .seat {
+  transition: all 0.2s ease-in-out;
+}
+.moviecontainer__middleMainSeats .seat:not(.booked):hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.moviecontainer__middleMainSeatsLeft,
+.moviecontainer__middleMainSeatsRight {
+  display: flex;
+}
+
+.moviecontainer__middleMainSeatsLeft .row:first-child span {
+  /* border: 2px solid red; */
+  color: var(--booked-color);
+  font-size: 0.65rem;
+}
+
+.row {
+  /* border: 2px solid red; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  margin-right: 0.75rem;
+}
+
+.screen {
+  /* width: 80%;
+  height: 2px;
+  background-color: var(--primary-color);
+  margin: 1rem auto;
+  background-image: radial-gradient(
+    120% 120px at 50% -30px,
+    #000 75%,
+    transparent 75%
+  ); */
+
+  width: 100%;
+  margin: 1rem auto;
+  height: 100px;
+  border: solid 2px var(--primary-color);
+  border-color: var(--primary-color) transparent transparent transparent;
+  border-radius: 90%/100px 100px 0 0;
+  transform: rotate(-180deg);
+  position: relative;
+}
+.moviecontainer__middleMain h2 {
+  position: absolute;
+  left: 0;
+
+  bottom: 2rem;
+  text-align: center;
+  width: 100%;
+  text-transform: capitalize;
+  color: var(--booked-color);
+  font-size: 0.75rem;
+}
+.screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-color: rgba(201, 244, 255, 0.3);
+  box-shadow: rgba(201, 244, 255, 0.3) 0px 29px 38px,
+    rgba(201, 244, 255, 0.3) 0px 25px 12px;
+}
+
+.moviecontainer__bottom {
+  display: flex;
+  background-color: #ec407a;
+  color: #fff;
+  align-items: center;
+}
+
+.moviecontainer__bottom #movie select {
+  padding: 0;
+  margin: 0;
+}
+
+.moviecontainer__bottomLeft {
+  background-color: #db3769;
+  padding-right: 1rem;
+}
+
+.moviecontainer__bottomLeft p,
+.moviecontainer__bottomRight p {
+  margin-bottom: 0.55rem;
+}
+
+.moviecontainer__bottomRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 0.75rem;
+}
+
+.moviecontainer__bottomRight select {
+  border: none;
+  margin-right: 1rem;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.25rem;
+}
