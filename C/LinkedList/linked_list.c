@@ -16,7 +16,9 @@ struct node
         struct node *next;
 };
 struct node *start=NULL;
-int main()      //main() starts
+
+//Execution of each program start form main() function.
+int main(void)      //main() starts
 {
         int choice;
         while(1){
@@ -70,7 +72,8 @@ int main()      //main() starts
         }
         return 0;
 }//end of main()
-void create()
+
+void create() //create() function will create a node of link-list.
 {
         struct node *temp,*ptr;
         temp=(struct node *)malloc(sizeof(struct node));

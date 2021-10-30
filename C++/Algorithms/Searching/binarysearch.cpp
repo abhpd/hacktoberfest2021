@@ -15,9 +15,9 @@ int binarySearch(vector<int> &v, int term)
     }
     return -1;
 }
-int main()
+int main(void)      //Execution of every program start from main() function.
 {
-    int n;
+    int n;      //variable declaration.
     cout<<"Enter number of elements: ";
     cin>>n;
     vector<int> v(n);
@@ -33,5 +33,6 @@ int main()
         cout<<"Element not present";
     else
         cout<<"Element present";
-    return 0;
-}
+    
+    return 0;   //It will return 0 to the main() function.
+}  

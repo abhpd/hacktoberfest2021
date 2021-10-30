@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node
+struct node  // node has two part one is data part and another one is link part. 
 {
     int data;
     struct node *next;
@@ -55,9 +55,10 @@ void display()
     }
 }
 
-int main()
+int main(void) //Execution of all C programs start with main() funtion
 {
     int ch;
+    printf("Please enter your choice\n");
     while(1)
     {
         printf("1.Push\n2.Pop\n3.Display\n4.Exit\n");
@@ -72,6 +73,8 @@ int main()
             break;
             case 4:exit(0);
             break;
+            default:
+                printf("Invalid choice\n");
         }
         
     }
