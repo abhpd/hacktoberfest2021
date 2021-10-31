@@ -7,6 +7,7 @@
 // defining structure of a node in SLL
 struct node{
     int data;
+    int data1, data2;
     struct node *next;
 };
 
