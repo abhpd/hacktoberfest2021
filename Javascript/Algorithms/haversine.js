@@ -6,7 +6,10 @@ baseLng (longitude of center point)
 targetLat (latitude of location to see if it falls within radius from base)
 targetLng (longitude of location to see if it falls within radius from base)
 */
-
+funnction message(str) {
+  console.log(str);
+}
+message("Hay!");
 Number.prototype.toRadians = function () {
   return this.valueOf() * (Math.PI / 180);
 };
