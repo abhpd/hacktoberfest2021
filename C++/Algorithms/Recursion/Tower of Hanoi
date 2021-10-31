@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+void towerOfHanoi(int n, char source, char auxiliary, char destination) {
+ if(n==0){
+     return;
+ } 
+else if(n==1){
+    cout<<source<<" "<<destination;
+}
+    else{
+    towerOfHanoi(n-1, source, destination, auxiliary);
+     cout<<endl;
+     cout<<source<<" "<<destination<<endl;
+     towerOfHanoi(n-1, auxiliary, source, destination);
+    }
+}
+
+
+int main()
+{int t;
+    cin>>t;
+    for(int i=0; i<t; i++){
+    int n;
+    cin>>n;
+   towerOfHanoi(n, 'a', 'b', 'c');   
+}
+    return 0;
+}
