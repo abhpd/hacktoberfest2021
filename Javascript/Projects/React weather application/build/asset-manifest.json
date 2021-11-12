@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Manhatten_Project/static/css/main.2ae47eeb.chunk.css",
+    "main.js": "/Manhatten_Project/static/js/main.b7d32d75.chunk.js",
+    "main.js.map": "/Manhatten_Project/static/js/main.b7d32d75.chunk.js.map",
+    "runtime-main.js": "/Manhatten_Project/static/js/runtime-main.2531da59.js",
+    "runtime-main.js.map": "/Manhatten_Project/static/js/runtime-main.2531da59.js.map",
+    "static/js/2.41e3d0d8.chunk.js": "/Manhatten_Project/static/js/2.41e3d0d8.chunk.js",
+    "static/js/2.41e3d0d8.chunk.js.map": "/Manhatten_Project/static/js/2.41e3d0d8.chunk.js.map",
+    "static/js/3.317ec9e0.chunk.js": "/Manhatten_Project/static/js/3.317ec9e0.chunk.js",
+    "static/js/3.317ec9e0.chunk.js.map": "/Manhatten_Project/static/js/3.317ec9e0.chunk.js.map",
+    "index.html": "/Manhatten_Project/index.html",
+    "static/css/main.2ae47eeb.chunk.css.map": "/Manhatten_Project/static/css/main.2ae47eeb.chunk.css.map",
+    "static/js/2.41e3d0d8.chunk.js.LICENSE.txt": "/Manhatten_Project/static/js/2.41e3d0d8.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/Manhatten_Project/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2531da59.js",
+    "static/js/2.41e3d0d8.chunk.js",
+    "static/css/main.2ae47eeb.chunk.css",
+    "static/js/main.b7d32d75.chunk.js"
+  ]
+}
