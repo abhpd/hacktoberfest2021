@@ -6,23 +6,15 @@ public class CheckPrime{
 }
 
 class Solution{
-    boolean checkPrime(int a){
-        if(a==0 || a==1){
-            return false;
-        }
-        else if(a==2)
-            return true;
-        else if(a%2==0 || a%5==0){
-            return false;
-        }
-        else{
-            for(int i=3;i<=Math.sqrt(a);i+=2){
-                if(i%2==0){
-                    return false;
-                }
-            }
-        }
-        return true;
+    boolean checkPrime(int num){
+    boolean flag = false;
+    for (int i = 2; i <= num / 2; ++i) {
+      // condition for nonprime number
+      if (num % i == 0) {
+        flag = true;
+        break;
+      }
     }
+return flag;
 }
 
