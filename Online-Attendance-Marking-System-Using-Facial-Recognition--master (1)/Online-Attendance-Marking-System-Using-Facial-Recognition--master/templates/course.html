@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Dashboard</title>
+
+    <link href="../static/css/app.css" rel="stylesheet">
+    <style>
+        .webcam-img {
+            border: 1px black;
+            box-shadow: 2px 2px 4px #000000;
+        }
+
+        .webcam-img img ,.webcam-img video {
+            width: 100%;
+            height: 100%;
+        }
+
+        #webcam-result {
+            margin-right: calc(var(--bs-gutter-x) / 2);
+            margin-left: calc(var(--bs-gutter-x) / 2);
+        }
+
+        .content {
+            display: none;
+        }
+    </style>
+
+    <script src="../static/js/app.js" type="text/javascript"></script>
+    <script src="../static/js/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="../static/js/js.cookie.js" type="text/javascript"></script>
+    <script src="../static/webcam/webcam.js" type="text/javascript"></script>
+    <script src="../static/js/util.js" type="text/javascript"></script>
+    <script src="../static/js/attendance.js" type="text/javascript"></script>
+    <script>
+        let course_id = "{{ course_id }}";
+    </script>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="main">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <a class="navbar-brand h4" href="#">Boston University</a>
+
+            <div class="navbar-collapse collapse justify-content-center">
+                <ul class="navbar-nav navbar-align">
+                    <li class="nav-item active">
+                        <a class="nav-link h4" href="/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link h4" href="/home">Courses</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-align justify-content-end">
+                    <li class="nav-item">
+                        <button class="btn mx-5" type="button" id="course-btn"></button>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
+                            <i class="align-middle" data-feather="settings"></i>
+                        </a>
+
+                        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
+                            <img src="../static/img/diary.png" class="avatar img-fluid rounded mr-1"
+                                 alt="Charles Hall"/> <span class="text-dark h4" id="user-name">Student Name</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1"
+                                                                                  data-feather="user"></i> Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="pages-settings.html"><i class="align-middle mr-1"
+                                                                                   data-feather="settings"></i> Settings
+                                & Privacy</a>
+                            <a class="dropdown-item" href="#"><i class="align-middle mr-1"
+                                                                 data-feather="help-circle"></i> Help Center</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/login" onclick="Cookies.remove('access_token')">Log out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="content" id="content">
+            <div class="container-fluid p-5">
+                <div class="row">
+                    <div class="col-12 col-xl-6">
+                        <div class="card" id="attendance-container">
+                            <div class="card-header" id="attendance-info">
+                            </div>
+                            <table class="table" id="attendance-table">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-6">
+                        <div class="card" id="webcam-container">
+                            <div class="btn-group" role="group">
+                                <button type=button class="btn btn-secondary btn-lg" onClick="configure()">Configure
+                                </button>
+                                <button type=button class="btn btn-secondary btn-lg" onClick="takeSnapshot()">Take
+                                    Snapshot
+                                </button>
+                                <button type=button class="btn btn-secondary btn-lg" id="upload-button"
+                                        onClick="uploadSnap()" disabled>
+                                    Upload Snapshot
+                                </button>
+                            </div>
+                            <div id="webcam-result" class="row">
+                                <div id="webcam" class="webcam-img col-12 col-xl-6">
+                                    <img src="../static/img/avatar.jpg">
+                                </div>
+                                <div id="result" class="webcam-img col-12 col-xl-6">
+                                    <img src="../static/img/avatar.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="../static/js/course.js" type="text/javascript"></script>
+
+</body>
+
+</html>
