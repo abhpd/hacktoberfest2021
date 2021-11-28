@@ -1,0 +1,39 @@
+body{
+    /* margin: 0%;
+    padding: 0%; */
+    box-sizing: border-box;
+    /* align-items: center;
+    justify-content: center; */
+    background-image: url('Music-BG.jpg');
+    /* text-align: center; */
+}
+.key{
+    display: flex;
+    height: 400px;
+    margin: 20% 13% 0% 13%;
+}
+.playing{
+    transform: scale(1.1);
+    border:4px solid #ffc600 ;
+    box-shadow: 0 0 10px #ffc600;
+}
+
+.key>.strok{
+    margin: auto;
+    border: 4px solid black;
+    padding: 14px 16px;
+    display: flex;
+    width: 70px;
+    transition: all 0.07s;
+    flex-direction: column;
+    text-align: center;
+    text-shadow: 0 0 5px black;
+}
+kbd{
+    font-size: 22px;
+    color: white;
+
+}
+span{
+    color: rgb(221, 144, 29);
+}
