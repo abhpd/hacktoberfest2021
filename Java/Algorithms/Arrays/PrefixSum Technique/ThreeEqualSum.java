@@ -28,7 +28,7 @@ public class ThreeEqualSum{
 				splitCount++;
 		}
 		
-		return splitCount==3;
+		return splitCount;
 	}
 
 	public static void main(String args[]){
