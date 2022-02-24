@@ -25,7 +25,7 @@ int main() {
 	int arr[13] = {5, 4, 9, 123, 58, 37, 324, 444, 699, 347, -1, 0, 200};
 	int n = sizeof(arr) / sizeof(arr[0]);
 
-	bubblesort(arr, n, compare);
+	bubblesort(arr, n);
 
 	for (int i = 0; i < n; i++)
 		printf("%d ", arr[i]);
