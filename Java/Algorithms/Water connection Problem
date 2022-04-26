@@ -1,0 +1,73 @@
+class Solution 
+{ 
+    ArrayList<ArrayList<Integer>> solve(int n, int p, ArrayList<Integer> a ,ArrayList<Integer> b ,ArrayList<Integer> d) 
+    { 
+        // code here
+        //  int[] a1 = new int[6];
+        //  int[] b1 = new int[6];
+        //  int[] d1 = new int[6];
+        //  a1 = a.toArray();
+        //  b1 = b.toArray();
+        //  d1 = d.toArray();
+        //int[][] matrix = new int[p][3];
+        //  for(int i=0; i<p; i++){
+        //      for(int j=0;j<3;j++) {
+        //          if(j==0) {
+        //              matrix[i][0] == a1[i];
+        //          } else if (j==1) {
+        //              matrix[i][1] == b1[i];
+        //          } else if (j==2) {
+        //              matrix[i][2] == d1[i];
+        //          }
+        //          System.out.println(matrix[i][j]);
+        //      }
+        // }
+        
+        //making everything 0
+        
+         ArrayList<ArrayList<Integer>> ans = new ArrayList<ArrayList<Integer>>();
+         //ArrayList<ArrayList<Integer> f = new ArrayList<ArrayList<Integer>();
+         int[] ith_pipe_ends_at = new int[10];
+         int[] ith_pipe_receives_from = new int[10];
+         int[] diameter = new int[10];
+         
+         for(int i=0;i<n;i++){
+             ith_pipe_ends_at[i]=0;
+             ith_pipe_receives_from[i]=0;
+             diameter[i]=0;
+         }
+         
+         int q,h,t;
+         for(int i=0; i<p;i++) {
+             q=a.get(i);
+             h=b.get(i);
+             t=d.get(i);
+            //  System.out.println(q);
+            //  System.out.println(h);
+            //  System.out.println(t);
+            ith_pipe_ends_at[q]=h;
+            diameter[q]=t;
+            ith_pipe_receives_from[h]=q;
+         }
+         int tap=0;
+         int tank=0;
+         
+         for(int j=0;j<n;j++) {
+             if (ith_pipe_ends_at[j] == 0 && ith_pipe_receives_from[j]!=0){
+                 tank++;
+             } else if (ith_pipe_ends_at[j]!=0 && ith_pipe_receives_from[j]==0) {
+                 tap++;
+             } 
+         }
+         
+         //Depth first search implementation
+         
+         ArrayList<Integer> arr = new ArrayList<Integer>();
+         
+         
+         
+        System.out.println(tap);
+            
+            return ans;
+    } 
+}
