@@ -7,7 +7,7 @@
 using namespace std;
 
 /*
-  Constructor for SinglyLinkedList for new Objects
+  Constructor for SinglyLinkedList for new Object
   Points to NULL i.e there are no objects in the list
 */
 List::List(): head(0){
