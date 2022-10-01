@@ -18,8 +18,9 @@ struct node
 struct node *start=NULL;
 int main()      //main() starts
 {
+	int opt=1;
         int choice;
-        while(1){
+        while(opt==1){
                 printf("\n***SINGLE LINKED LIST OPERATIONS:****\n");
                 printf("---------------------------------------");
                 printf("\n 1.Create");
@@ -67,6 +68,9 @@ int main()      //main() starts
                                         printf("\n Wrong Choice:\n");
                                         break;
                 }//end of switch()
+		fflush(stdin);
+		printf("Do you want to continue?(0 or 1)\n");
+		scanf("%d",&opt);
         }
         return 0;
 }//end of main()
