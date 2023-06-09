@@ -1,4 +1,4 @@
-Linear regresion is a machine learning algorithm that predicts continuous values.
+Linear regression is a machine learning algorithm that predicts continuous values.
 
 It is one of the most popular machine learning algorithms.
 
