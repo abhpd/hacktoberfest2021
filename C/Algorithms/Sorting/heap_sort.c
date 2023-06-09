@@ -12,33 +12,35 @@ void swap(int *a, int *b)
 
 void heapify(int arr[], int n, int i) 
 {
-  int largest = i;
+  int largeOne = i;
   int left = 2 * i + 1;
   int right = 2 * i + 2;
 
   // check if left node is larger then i 
-  if (left < n && arr[left] > arr[largest])
-    largest = left;
+  if (left < n && arr[left] > arr[largeOne])
+    largeOne = left;
 
   // check if right node is larger then i 
-  if (right < n && arr[right] > arr[largest])
-    largest = right;
+  if (right < n && arr[right] > arr[largeOne])
+    largeOne = right;
 
   // Swap and heapify
-  if (largest != i) 
+  if (largeOne != i) 
   {
-    swap(&arr[i], &arr[largest]);
-    heapify(arr, n, largest);
+    swap(&arr[i], &arr[largeOne]);
+    heapify(arr, n, largeOne);
   }
 }
 
 void heapSort(int arr[], int n) 
 {
   // Build max-heap
-  for (int i = n / 2 - 1; i >= 0; i--)
-    heapify(arr, n, i);
+  int i;
+	for (i = (n / 2)- 1; i >= 0; i--){
+    	heapify(arr, n, i);
+	}
 
-  for (int i = n - 1; i >= 0; i--) 
+  for (i = n - 1; i >= 0; i--) 
   {
     //Move the root node at the end
     swap(&arr[0], &arr[i]);
@@ -51,7 +53,8 @@ void heapSort(int arr[], int n)
 // Print an array
 void printArray(int arr[], int n) 
 {
-  for (int i = 0; i < n; ++i)
+	int i;
+  for (i = 0; i < n; ++i)
     printf("%d ", arr[i]);
   printf("\n");
 }
