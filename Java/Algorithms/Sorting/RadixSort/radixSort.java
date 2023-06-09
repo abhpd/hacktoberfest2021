@@ -1,72 +1,71 @@
-import java.io.*;
 import java.util.*;
- 
-class Radix {
- 
-    // A utility function to get maximum value in arr[]
-    static int getMax(int arr[], int n)
-    {
-        int mx = arr[0];
-        for (int i = 1; i < n; i++)
-            if (arr[i] > mx)
-                mx = arr[i];
-        return mx;
-    }
- 
-    // A function to do counting sort of arr[] according to
-    // the digit represented by exp.
-    static void countSort(int arr[], int n, int exp)
-    {
-        int output[] = new int[n]; // output array
-        int i;
-        int count[] = new int[10];
-        Arrays.fill(count, 0);
- 
-        // Store count of occurrences in count[]
-        for (i = 0; i < n; i++)
-            count[(arr[i] / exp) % 10]++;
- 
-        // Change count[i] so that count[i] now contains
-        // actual position of this digit in output[]
-        for (i = 1; i < 10; i++)
-            count[i] += count[i - 1];
- 
-        // Build the output array
-        for (i = n - 1; i >= 0; i--) {
-            output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-            count[(arr[i] / exp) % 10]--;
+import java.lang.*;
+import java.io.*;
+
+public class radixSort {
+        public static int[] radixSort(int[] nums, int n){
+            int negCount = 0, posCount = 0, negMax = Integer.MIN_VALUE, posMax = Integer.MIN_VALUE;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] < 0) {
+                    negMax = Math.max(negMax, nums[i] * -1);
+                    negCount++;
+                }
+                else {
+                    posMax = Math.max(posMax, nums[i]);
+                    posCount++;
+                }
+            }
+            final int[] negNums = new int[negCount];
+            final int[] posNums = new int[posCount];
+            for (int i = 0, j = 0, k = 0; i < nums.length; i++) {
+                if (nums[i] < 0) {
+                    negNums[j++] = nums[i] * -1;
+                }
+                else {
+                    posNums[k++] = nums[i];
+                }
+            }
+            for (int exp = 1; negMax/exp > 0; exp *= 10) {
+                countingSort(negNums, exp);
+            }
+            for (int exp = 1; posMax/exp > 0; exp *= 10) {
+                countingSort(posNums, exp);
+            }
+    
+            int i = 0;
+            for (int j = negNums.length - 1; j >= 0; j--) {
+                nums[i++] = negNums[j] * -1;
+            }
+            for (int j = 0; j < posNums.length; j++) {
+                nums[i++] = posNums[j];
+            }
+            return nums;
         }
+        private static void countingSort(final int[] nums, final int exp) {
+            final int[] count = new int[10];
+            final int[] res = new int[nums.length];
  
-        // Copy the output array to arr[], so that arr[] now
-        // contains sorted numbers according to current digit
-        for (i = 0; i < n; i++)
-            arr[i] = output[i];
-    }
- 
-    static void radixsort(int arr[], int n)
-    {
-        // Find the maximum number to know number of digits
-        int m = getMax(arr, n);
- 
-        // Do counting sort for every digit. Note that
-        // instead of passing digit number, exp is passed.
-        // exp is 10^i where i is current digit number
-        for (int exp = 1; m / exp > 0; exp *= 10)
-            countSort(arr, n, exp);
-    }
- 
-    static void print(int arr[], int n)
-    {
-        for (int i = 0; i < n; i++)
-            System.out.print(arr[i] + " ");
-    }
- 
-    public static void main(String[] args)
-    {
-        int arr[] = { 170, 45, 75, 90, 802, 24, 2, 66 };
-        int n = arr.length;
-           
-        radixsort(arr, n);
-        print(arr, n);
-    }
-}
+            for (int i = 0; i < nums.length; i++) {
+                count[(nums[i]/exp) % 10]++;
+            }
+            for (int i = 1; i < 10; i++) {
+                count[i] += count[i - 1];
+            }
+            for (int i = nums.length - 1; i >= 0; i--) {
+                res[--count[(nums[i]/exp) % 10]] = nums[i];
+            }
+            for (int i = 0; i < nums.length; i++) {
+                nums[i] = res[i];
+            }
+        }
+        public static void main(String[] args) {
+            int[] arr = { 2, 5, 1, 3, 6, 4, 9, 8 ,7};
+            int n = arr.length;
+            int[] sortedArray = radixSort(arr, n);
+            System.out.println("After sorting");
+            for(int item:sortedArray) {
+            	System.out.print(item+" ");
+            }
+            System.out.println();
+        }
+   }
