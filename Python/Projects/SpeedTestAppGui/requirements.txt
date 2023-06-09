@@ -1,0 +1,6 @@
+***********Important***********
+Before You run this program make sure you install following libraries :
+    1. tkinter (command : pip install tkinter)
+    2. urllib  (command : pip install urllib3)
+    3. pillow  (command : pip install pillow)
+    4. speedtest-cli (command :pip install speedtest-cli)
