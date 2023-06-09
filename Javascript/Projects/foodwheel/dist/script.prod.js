@@ -1,0 +1,1 @@
+"use strict";function myfunction(){var t=Math.floor(-8975*Math.random())+9999;document.getElementById("box").style.transform="rotate("+t+"deg)";var e=document.getElementById("main");e.classList.remove("animate"),setTimeout(function(){e.classList.add("animate")},5e3)}
