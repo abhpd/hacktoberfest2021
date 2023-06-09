@@ -330,7 +330,7 @@ public class Main {
     }
 
     public void kReverse(int k) {
-      // write your code here
+      console.log(prev);
       LinkedList prev = null;
       
       while(this.size > 0)
