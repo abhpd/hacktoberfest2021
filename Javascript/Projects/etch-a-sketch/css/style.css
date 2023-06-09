@@ -1,0 +1,146 @@
+body {
+  background-color: rgb(20,20,20);
+  margin: 0;
+  font-family: 'Sacramento', cursive;
+}
+
+#header{
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-style: italic;
+  /* border: 1px solid black; */
+  color: rgb(224, 224, 224);
+}
+
+#container{
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* border: 1px solid black; */
+}
+
+.canvas{
+  width: 500px;
+  /* height: 500px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  border: 0.1rem solid rgb(0 0 0 / 25%);
+  border-radius: 3px;
+  box-shadow: 0px 0px 35px 5px rgb(255 255 255 / 20%);
+}
+
+.canvas-row{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.grid-cell{
+  width: 1%;
+  padding-bottom: 0%;
+  flex-grow: 1;
+  /* border: 1px solid black; */
+}
+
+.options{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid rgb(30,30,30);
+  border-radius: 10px;
+  padding: 10px 55px;
+  background-color: rgb(30, 30, 30);
+}
+
+.color-mode-chooser {
+  padding: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  width: 180px;
+  background-color: rgb(30, 30, 30);
+  color: rgb(214, 214, 214);
+  border: 1px solid rgb(214,214,214);
+}
+
+.color-mode-chooser:hover{
+  background-color: rgb(214,214,214);
+  cursor:pointer;
+  color: rgb(30,30,30)
+}
+
+.active {
+  background-color: rgb(214,214,214);
+  color: rgb(30,30,30);
+}
+
+.slider-value{
+  color:rgb(214, 214, 214);
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+label{
+  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(214, 214, 214);
+}
+
+.slidecontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider{
+  width: 180px;
+}
+
+.color-picker{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#favcolor {
+  background-color: white;
+  width: 180px;
+  border: 0;
+  padding: 0;
+  height: 50px;
+}
+
+#favcolor:hover{
+  cursor: pointer;
+}
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  border: 1px solid black;
+}
+
+#footer > p {
+  color: rgb(224, 224, 224)
+}
+
+#footer > p > a{
+  text-decoration: none;
+  color: rgb(224, 224, 224);
+}
+#footer > p > a:hover{
+  text-decoration: underline;
+  color: rgb(48, 107, 245);
+}
