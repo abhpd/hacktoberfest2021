@@ -11,6 +11,7 @@ void main()
     printf("You can sort the data elements here, I will help you in that\n");
     printf("So lets start with sorting integer datatypes\n");
     printf("So let me know the how much integer datatypes you want me to sort:\n");
+    printf("Let's start!\n");
     scanf("%d", &length);
 
     // Creating an array using calloc i.e. array for the user defined length
