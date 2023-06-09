@@ -15,5 +15,25 @@ function selectionSort(arr) {
   return arr;
 }
 
+function selectionSort2(array) { // selection sort to stop iteration if array is already sorted.
+  for (let i = 0; i < array.length; i++) {
+    let minValueIndex = i;
+    let alreadySorted = 1;
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] < array[i])
+        minValueIndex = j;
+      if (array[j] < array[j - 1])
+        alreadySorted = 0;
+    }
+    if (alreadySorted)
+      break;
+    if (minValueIndex !== i)
+      [array[i], array[minValueIndex]] = [array[minValueIndex], array[i]];
+  }
+  return array;
+}
+
+
 const myArray = [0,4,22,45,12,15,17]
 selectionSort(myArray);
+selectionSort2(myArray)
