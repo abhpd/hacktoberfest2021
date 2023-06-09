@@ -1,0 +1,26 @@
+n=int(input())
+i=1
+while i<=n:
+    if i<=(n+1)//2:
+        space=0
+        while space<i-1:
+            print(" ",end="")
+            space=space+1
+        star=1
+        while star<=i:
+            print("*",end=" ")
+            star=star+1
+    elif i>=n//2+1:
+        s=space
+        while s>1:
+            print(" ",end="")
+            s=s-1
+        st=star-1
+        while st>1:
+            print("*",end=" ")
+            st=st-1
+        space-=1
+        star-=1
+   
+    print()
+    i=i+1
