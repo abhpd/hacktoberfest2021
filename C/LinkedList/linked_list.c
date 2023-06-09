@@ -9,6 +9,7 @@ void insert_pos();
 void delete_begin();
 void delete_end();
 void delete_pos();
+void reverse();
 /*-----------------------------*/
 struct node
 {
@@ -30,7 +31,8 @@ int main()      //main() starts
                 printf("\n 6.Delete from beginning");
                 printf("\n 7.Delete from the end");
                 printf("\n 8.Delete from specified position");
-                printf("\n 9.Exit");
+		        printf("\n 9.Reverse the Linked List");
+                printf("\n 10.Exit");
                 printf("\n--------------------------------------\n");
                 printf("Enter your choice:\t");
                 scanf("%d",&choice);
@@ -61,6 +63,9 @@ int main()      //main() starts
                                         delete_pos();
                                         break;
                         case 9:
+                                        reverse();
+                                        break;
+			            case 10:
                                         exit(0);
                                         break;
                         default:
@@ -290,5 +295,25 @@ void delete_pos()
                         free(ptr);
                 }
         }//end of else
+
 	display();
 }//end of delete_pos()
+void reverse(){
+    
+    if(start == NULL||start->next == NULL)
+    { 
+        display();
+        return;
+        
+    }
+    struct node* p = NULL, *q = start, *r = start->next;
+    while(r != NULL)
+    {
+        q->next = p;
+        p = q; q =r;
+        r = r->next;
+    }
+    q->next=p;
+    start = q;
+    display();
+}
