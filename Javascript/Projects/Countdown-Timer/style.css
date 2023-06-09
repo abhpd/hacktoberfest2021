@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Krona One', sans-serif;
+}
+h2{
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 3rem;
+}
+
+.coming-soon{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+} 
+.count-down{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.day,.hour,.minute,.second{
+    font-size: 3rem;  
+}
