@@ -1,0 +1,47 @@
+Minimum Degree of a Connected Trio in a Graph
+--------------------------------------------------------------------------------------
+You are given an undirected graph. You are given an integer n which is the number of nodes in the graph and an array edges, where each edges[i] = [ui, vi] indicates that there is an undirected edge between ui and vi.
+
+A connected trio is a set of three nodes where there is an edge between every pair of them.
+
+The degree of a connected trio is the number of edges where one endpoint is in the trio, and the other is not.
+
+Return the minimum degree of a connected trio in the graph, or -1 if the graph has no connected trios.
+---------------------------------------------------------------------------------------------------
+class Solution {
+public:
+    int minTrioDegree(int n, vector<vector<int>>& edges)
+    {
+        vector<int>degree(n+1,0);
+        int mini=INT_MAX;
+        vector<vector<int>> nums(n+1,vector<int>(n+1,0));
+        for(int i=0;i<edges.size();i++)
+        {
+            int a=edges[i][0];
+            int b=edges[i][1];
+            nums[a][b]=1;
+            nums[b][a]=1;
+            degree[a]++;
+            degree[b]++;
+        }
+        for(int i=1;i<nums.size();i++)
+        {
+            for(int j=i+1;j<nums.size();j++)
+            {
+                for(int k=j+1;k<nums.size();k++)
+                {
+                    if(nums[i][j]==1 and nums[j][k]==1 and nums[k][i]==1)
+                    {
+                        mini=min(mini,degree[i]+degree[j]+degree[k]-6);
+                    }
+                }
+            }
+        }
+        if(mini==INT_MAX)
+        {
+            return -1;
+        }
+        return mini;
+    }
+        
+};
