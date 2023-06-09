@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+overflow-x: hidden;   
+}
+.upper-nav{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid aliceblue;
+}
+.logo{
+
+width:30vw ;
+color: #ff7733;
+padding-left: 5vw;
+font-weight: 800;
+font-size: 20px;
+}
+.search{
+
+display: flex;
+width: 35vw;
+}
+.search input{
+    width:90%;
+    margin-left: 10%;
+    height: 40%;
+    margin-top: 1.3rem;
+    border-radius: 25px;
+    padding-left: 1rem;
+   
+
+}
+.search i{
+    position: absolute;
+    margin-left:30vw;
+    margin-top: 1.9rem;
+}
+
+.menu{
+    display: flex;
+    color: #ff7733;
+    width:35vw;
+   
+}
+.menu div{
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+}
+.lower-nav{
+    display: flex;
+    width: 100vw;
+    border-bottom: 2px solid aliceblue ;
+    padding-bottom: 1rem;
+}
+.lower-nav div{
+    margin-left: 5vw;
+    margin-top: 1rem;
+   font-weight: 700;
+}
+.main{
+    display: flex;
+    background: rgba(247, 223, 180, 0.205);
+    height: 79vh;
+}
+.content{
+    width: 50%;
+    padding-left: 10%;
+    padding-top: 6%;
+}
+.content h2{
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 40px;
+}
+.content p{
+    font-weight: 700;
+    line-height: 30px;
+}
+.content button{
+    height: 2rem;
+    margin-right: 1rem;
+    border: 1px solid aliceblue;
+    border-radius: 5px;
+    padding-left:1rem;
+    padding-right: 1rem;
+    font-weight: 600;
+    margin-top:1rem;
+    background: rgba(52, 122, 228, 0.973);
+    color: white;
+}
+.i{
+    width: 50%;
+    padding-top: 1.5rem;
+}
+.start{
+    display: flex;
+   
+}
+.s{
+    width: 100%;
+}
+.s h2 span{
+    color: #ff7733;
+}
+.ban{
+    background: #ff7733;
+    width: 100%;
+    height: 30vh;
+    clip-path: polygon(0% 8%,100% 0%,100% 100%,0% 95%);
+}
+.ban h2{
+    padding-left: 25%;
+    padding-top: 1rem;
+    font-weight: 900;
+    font-size: 30px;
+}
+.ban p{
+    text-align: center;
+    font-size: 24px;
+    line-height: 30px;
+    padding-left: 25%;
+    padding-right: 20%;
+    color:wheat;
+}
+.n{
+    color: #ff7733;
+}
+.form{
+    display: flex;
+}
+.form-content{
+    width: 30%;
+}
+.f-i img{
+    height: 80%  ;
+    padding-top: 1rem;
+    width: 100%;
+}
+.form-content{
+    padding:10%;
+
+}
+.fill{
+    border: 0.5px solid #e078433b ;
+    border-radius: 5px;
+    padding: 10%;
+}
+.fill h3{
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 40px;
+}
+.fill h4{
+    margin-bottom: 4rem;
+    border-bottom: 0.5px solid #e078433b ;
+    padding-bottom: 2.5rem;
+}
+.fill button{
+    height:2rem;
+    border-radius: 5px;
+    width: 7rem;
+    background:#ff77339f;
+    color:black;
+}
+.last{
+    display: flex;
+   background: whitesmoke;
+}
+.c{
+   width:  50vw;
+   padding-left: 10%;
+   line-height: 40px;
+}
+.num{
+    width:20vw;
+    line-height: 40px;
+}
+.b button{
+    margin-top: 2rem;
+    width: 8rem;
+    height: 2.5rem;
+    background: #ff7733;
+    color: whitesmoke;
+    border-radius: 3px;
+   
+}
+.aq{
+    border-bottom: 1px solid whitesmoke;
+}
+@media(max-width:772px){
+    
+    .logo{
+        padding-left: 1.2vw;
+        width: 25vw;
+        font-size: 15px;
+    }
+    .search{
+        display: none;
+    }
+    .menu div{
+        margin-top: 1.5rem;
+        margin-left: 1rem;
+    }
+    .lower-nav{
+        display: none;
+    }
+    .res{
+        display: none;
+    }
+    .main{
+        flex-direction: column;
+       
+    }
+   
+    .i img{
+        width: 100vw;
+    }
+    .know{
+        display: none;
+    }
+    .s{
+        width: 100vw;
+        padding-left: 0.2rem;
+       
+    }
+    .s p{
+        width: 100%;
+    }
+    .content{
+        width: 90%;
+    }
+    .start{
+        flex-direction: column;
+    }
+    .form{
+        flex-direction: column;
+       
+    }
+    .form-content{
+        width: 100vw;
+        padding: 0%;
+
+    }
+    .fill{
+        width: 100vw;
+        border: none;
+    }
+    .fill h4{
+        border-bottom: none;
+    }
+    .fill h3{
+        width: 90%;
+    }
+    .last{
+        flex-direction: column;
+    }
+    .num{
+        padding-left: 2rem;
+    }
+    .b{
+        padding-left: 2rem;
+    }
+    .ban h2{
+       font-size: 20px;
+       padding-left: 0.5rem;
+    }
+    .ban p{
+        font-size: 15px;
+        width: 100%;
+        padding-left: 0.2rem;
+    }
+    
+}
