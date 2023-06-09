@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: rgb(248, 248, 248);
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.controls {
+  padding: 30px;
+  text-align: center;
+  align-items: center;
+  font-size: 1rem;
+  width: 30%;
+}
+.controls h1 {
+  font-size: 1.6rem;
+  text-align: center;
+  width: auto;
+}
+#input {
+  padding: 10px;
+  width: 80%;
+  margin: 30px auto 10px;
+  vertical-align: middle;
+}
+#list {
+  padding: 10px 30px;
+  margin: 20px 20px;
+  align-items: center;
+  width: 20%;
+}
+.mycheck {
+  list-style: none;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100%;
+  margin: 10px 0;
+}
+.mycheck label {
+  margin-left: 10px;
+}
+
+.visual {
+  opacity: 1 !important;
+  border-radius: 10px;
+}
+#message {
+  margin-top: 10px;
+  padding: 20px;
+  font-size: 1.3rem;
+  color: rgb(255, 135, 135);
+}
+#addTodo,
+#removeTodo {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  background-color: rgb(3, 187, 3);
+  border: 0.2px solid rgb(119, 119, 119);
+  border-radius: 5px;
+  margin: 10px;
+  color: white;
+}
+#removeTodo {
+  background-color: rgb(255, 101, 101);
+}
