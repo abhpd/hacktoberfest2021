@@ -34,8 +34,14 @@ public class Plus Minus {
         System.out.printf("%1.6f \n ", negativeCount / n); 
         System.out.printf("%1.6f \n ", zeroCount / n); 
         System.out.println(); 
+        totalSum();
+        System.out.println();
     } 
-  
+   
+    public static float totalSum(){
+       float sum = positiveCount + negativeCount + zeroCount;
+       return sum;
+    }
    
  
     private static final Scanner scanner = new Scanner(System.in);
