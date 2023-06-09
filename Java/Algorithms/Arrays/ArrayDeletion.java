@@ -1,10 +1,4 @@
 
-/**
- * Author:  ARUN BALAJI R
- * Date:    02 July 2021 (Friday)
- */
-
-
 import java.util.*;
 public class ArrayDeletion{
 	public static void main(String args[]){
