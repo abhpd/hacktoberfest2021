@@ -1,7 +1,7 @@
 
 /**
- * Author:  ARUN BALAJI R
- * Date:    02 July 2021 (Friday)
+ * Author:  Aliza Dixit
+ * Date:    16/09/2021
  */
 
 
@@ -10,18 +10,16 @@ public class ArrayInsert{
 	public static void main(String args[]){
 		Solution s = new Solution();
 		int arr[] = new int[5];
-		
-		s.insertAtEnd(arr,2);
-		s.insertAtEnd(arr,3);
-		s.insertAtEnd(arr,4);
-		s.insertAtEnd(arr,5);
+		for(int i=0;i<arr.size();i++){
+		 int n = kb.nextInt(s.insertAtEnd(arr,i));
+		}
 		
 		s.printArray(arr);
 
-		s.insertAtStart(arr,1);
+		s.insertAtStart(arr,2);
 		
 		s.printArray(arr);
-		s.insertAtPos(arr,2,20);
+		s.insertAtPos(arr,1,20);
 		s.printArray(arr);
 		
 	}
