@@ -1,32 +1,55 @@
-// bubble sort
-// Edit: Modified to pass fucntion as a fucntion parameter
-#include<stdio.h>
-
-bool compare(int a, int b) {
-	return a > b;
+// Optimized implementation of Bubble sort
+#include <bits/stdc++.h>
+using namespace std;
+void swap(int *xp, int *yp)
+{
+	int temp = *xp;
+	*xp = *yp;
+	*yp = temp;
 }
 
-// Bubble Sort
-void bubblesort(int arr[], int n, bool (*cmp)(int, int)) {
-	for (int j = n - 1; j > 0; j--) {
-		for (int i = 0; i < j; i++) {
-			if (cmp(arr[i + 1], arr[i])) {
-				int temp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = temp;
-			}
+// An optimized version of Bubble Sort
+void bubbleSort(int arr[], int n)
+{
+int i, j;
+bool swapped;
+for (i = 0; i < n-1; i++)
+{
+	swapped = false;
+	for (j = 0; j < n-i-1; j++)
+	{
+		if (arr[j] > arr[j+1])
+		{
+		swap(&arr[j], &arr[j+1]);
+		swapped = true;
 		}
 	}
+
+	// IF no two elements were swapped by inner loop, then break
+	if (swapped == false)
+		break;
+}
 }
 
-int main() {
-	int x;
-	scanf("%d", &x);
-	int arr[13] = {5, 4, 9, 123, 58, 37, 324, 444, 699, 347, -1, 0, 200};
-	int n = sizeof(arr) / sizeof(arr[0]);
-
-	bubblesort(arr, n, compare);
-
-	for (int i = 0; i < n; i++)
-		printf("%d ", arr[i]);
+/* Function to print an array */
+void printArray(int arr[], int size)
+{
+	int i;
+	for (i = 0; i < size; i++)
+		cout <<" "<< arr[i];
+	cout <<" n";
 }
+
+// Driver program to test above functions
+int main()
+{
+	int arr[] = {64, 34, 25, 12, 22, 11, 90};
+	int n = sizeof(arr)/sizeof(arr[0]);
+	bubbleSort(arr, n);
+	cout <<"Sorted array: \n";
+	printArray(arr, n);
+	return 0;
+}
+
+
+

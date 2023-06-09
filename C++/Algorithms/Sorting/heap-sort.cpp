@@ -1,78 +1,66 @@
-// Program to perform Heap Sort in C
-#include <iostream> 
-using namespace std; 
+// C++ program for implementation of Heap Sort
+#include <iostream>
 
-// Function to swap the the position of two elements
-void swap(int *a, int *b) 
+using namespace std;
+
+// To heapify a subtree rooted with node i which is
+// an index in arr[]. n is size of heap
+void heapify(int arr[], int n, int i)
 {
-  int temp = *a;
-  *a = *b;
-  *b = temp;
+	int largest = i; // Initialize largest as root
+	int l = 2 * i + 1; // left = 2*i + 1
+	int r = 2 * i + 2; // right = 2*i + 2
+
+	// If left child is larger than root
+	if (l < n && arr[l] > arr[largest])
+		largest = l;
+
+	// If right child is larger than largest so far
+	if (r < n && arr[r] > arr[largest])
+		largest = r;
+
+	// If largest is not root
+	if (largest != i) {
+		swap(arr[i], arr[largest]);
+
+		// Recursively heapify the affected sub-tree
+		heapify(arr, n, largest);
+	}
 }
 
-void heapify(int arr[], int n, int i) 
+// main function to do heap sort
+void heapSort(int arr[], int n)
 {
-  int largest = i;
-  int left = 2 * i + 1;
-  int right = 2 * i + 2;
+	// Build heap (rearrange array)
+	for (int i = n / 2 - 1; i >= 0; i--)
+		heapify(arr, n, i);
 
-  // check if left node is larger then i 
-  if (left < n && arr[left] > arr[largest])
-    largest = left;
+	// One by one extract an element from heap
+	for (int i = n - 1; i > 0; i--) {
+		// Move current root to end
+		swap(arr[0], arr[i]);
 
-  // check if right node is larger then i 
-  if (right < n && arr[right] > arr[largest])
-    largest = right;
-
-  // Swap and heapify
-  if (largest != i) 
-  {
-    swap(&arr[i], &arr[largest]);
-    heapify(arr, n, largest);
-  }
+		// call max heapify on the reduced heap
+		heapify(arr, i, 0);
+	}
 }
 
-void heapSort(int arr[], int n) 
+/* A utility function to print array of size n */
+void printArray(int arr[], int n)
 {
-  // Build max-heap
-  for (int i = n / 2 - 1; i >= 0; i--)
-    heapify(arr, n, i);
-
-  for (int i = n - 1; i >= 0; i--) 
-  {
-    //Move the root node at the end
-    swap(&arr[0], &arr[i]);
-
-    //Heapify the remaining tree
-    heapify(arr, i, 0);
-  }
+	for (int i = 0; i < n; ++i)
+		cout << arr[i] << " ";
+	cout << "\n";
 }
 
-// Print an array
-void printArray(int arr[], int n) 
+// Driver code
+int main()
 {
-  for (int i = 0; i < n; ++i)
-    cout<<arr[i]<<" ";
-  cout<<endl;
-}
+	int arr[] = { 12, 11, 13, 5, 6, 7 };
+	int n = sizeof(arr) / sizeof(arr[0]);
 
+	heapSort(arr, n);
 
-int main() 
-{
-  int n;
-  cout<<"Enter size of array : ";
-  cin>>n;
-  int arr[n];
-  int i;
-  cout<< "Enter array elements one by one : ";
-  for(i=0; i<n; i++)
-  {
-    cin>>arr[i];
-  }
-
-  heapSort(arr, n);
-
-  cout<< "Array after heap-sort : ";
-  printArray(arr, n);
-  return 0;
+	cout << "Sorted array is \n";
+	printArray(arr, n);
 }
