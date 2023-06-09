@@ -1,13 +1,16 @@
 
 class RainWater{
 
+// Function to return the maximum
+// water that can be stored
 public static int maxWater(int[] arr, int n)
 {
 	
+	// To store the maximum water
+	// that can be stored
 	int res = 0;
 
-	// For every element of the array
-	// except first and last element
+	
 	for(int i = 1; i < n - 1; i++)
 	{
 		
@@ -31,6 +34,7 @@ public static int maxWater(int[] arr, int n)
 	return res;
 }
 
+
 public static void main(String[] args)
 {
 	int[] arr = { 0, 1, 0, 2, 1, 0,
@@ -40,5 +44,4 @@ public static void main(String[] args)
 	System.out.print(maxWater(arr,n));
 }
 }
-
 
