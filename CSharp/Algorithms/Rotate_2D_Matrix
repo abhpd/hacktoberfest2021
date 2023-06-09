@@ -1,0 +1,17 @@
+ public static int[][] rotate(int[][] a) {
+       int n = a.length;
+       int halfLength = n/2;
+
+       int boundary = (n % 2 == 0) ? halfLength : halfLength + 1;
+
+       for(int i=0;i<boundary;i++) {  
+         for(int j=i,last = n-1; j<(n-1)-i; j++) {
+               int temp = a[i][j];
+               a[i][j] = a[last-j][i];
+               a[last-j][i] = a[last-i][last-j];
+               a[last-i][last-j] = a[j][last-i];
+               a[j][last-i] = temp;
+           }
+       }
+       return a;
+   }
