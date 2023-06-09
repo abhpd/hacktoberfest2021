@@ -1,0 +1,175 @@
+import java.util.HashSet;
+
+
+public class HashSetTest {
+
+	public static void main(String[] args) {
+		
+  System.out.println("adding books..............................");
+		Book book1 = new Book(1234, "Power Electronics", "P S Bhimbra", 1, 1000.0, 100);
+		Book book2 = new Book(1224, "Power System", "P S Bhimbra", 1, 1000.0, 100);
+		Book book3 = new Book(1214, "Baic Electronics", "P S Bhimbra", 1, 1000.0, 400);
+		Book book4 = new Book(1254, "Control System", "P S Bhimbra", 1, 1000.0, 1000);
+		Book book5 = new Book(1244, "Machines-I", "P S Bhimbra", 1, 1000.0, 200);
+		Book book6 = new Book(1264, "Machine-II", "P S Bhimbra", 1, 1000.0, 200);
+		Book book7 = new Book(1274, "Basic Electrical Engineering", "P S Bhimbra", 1, 1000.0, 50);
+		Book book8 = new Book(1284, "Mathematics", "P S Bhimbra", 1, 1000.0, 300);
+		Book book9 = new Book(1274, "Basic Electrical Engineering", "P S Bhimbra", 1, 1000.0, 50);
+		Book book10 = new Book(1284, "Mathematics", "P S Bhimbra", 1, 1000.0, 300);
+		Book book11= new Book();
+	
+	    System.out.println("book 10 print "+ book10);
+	    Book book12= book11;
+	    System.out.println("Hash set ready....");
+		HashSet<Book> books = new HashSet<Book>();
+		System.out.println("Books can be added here ....");
+		System.out.println("Adding the first element....");
+		books.add(book1);
+		books.add(book2);
+		books.add(book3);
+		books.add(book4);
+		books.add(book5);
+		books.add(book6);
+		books.add(book7);
+		books.add(book8);
+		books.add(book9);
+		books.add(book10);
+		books.add(book11);
+		books.add(book12);
+		System.out.println("All the books are added.....");
+	
+		for (Book bookobj : books) {
+			System.out.println("BOOK  NAME : "+bookobj);
+		}
+	
+	}
+
+}
+class Book {
+	
+	private int bookid;
+	private String bookname;
+	private String author;
+	private int edition;
+	private double price;
+	private int numOfPages;
+
+	public Book(int bookid) {
+		super();
+		this.bookid = bookid;
+	}
+	public Book(int bookid, String bookname, String author, int edition, double price, int numOfPages) {
+		super();
+		this.bookid = bookid;
+		this.bookname = bookname;
+		this.author = author;
+		this.edition = edition;
+		this.price = price;
+		this.numOfPages = numOfPages;
+		
+	}
+	public Book() {
+		
+	}
+	
+
+	@Override
+
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((author == null) ? 0 : author.hashCode());
+		result = prime * result + bookid;
+		result = prime * result + ((bookname == null) ? 0 : bookname.hashCode());
+		result = prime * result + edition;
+		result = prime * result + numOfPages;
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) { // book11 , book12
+		if (this == obj)
+			return true;// object is present it wont get added
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;// false meaning object will get added
+		Book other = (Book) obj;
+		if (author == null) {
+			if (other.author != null)
+				return false;
+		} else if (!author.equals(other.author))
+			return false;
+		if (bookid != other.bookid)
+			return false;
+		if (bookname == null) {
+			if (other.bookname != null)
+				return false;
+		} else if (!bookname.equals(other.bookname))
+			return false;
+		if (edition != other.edition)
+			return false;
+		if (numOfPages != other.numOfPages)
+			return false;
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
+			return false;
+		return true;
+	}
+	public int getBookid() {
+		return bookid;
+	}
+
+	public void setBookid(int bookid) {
+		this.bookid = bookid;
+	}
+
+	public String getBookname() {
+		return bookname;
+	}
+
+	public void setBookname(String bookname) {
+		this.bookname = bookname;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public int getEdition() {
+		return edition;
+	}
+
+	public void setEdition(int edition) {
+		this.edition = edition;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public int getNumOfPages() {
+		return numOfPages;
+	}
+
+	public void setNumOfPages(int numOfPages) {
+		this.numOfPages = numOfPages;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [bookid=" + bookid + ", bookname=" + bookname + ", author=" + author + ", edition=" + edition
+				+ ", price=" + price + ", numOfPages=" + numOfPages + "]";
+	}
+	
+	
+}
