@@ -1,6 +1,6 @@
 def bubble_sort(array):
-	'''Function that takes a list and performs
-	bubble sort recusrively'''
+	"""Function that takes a list and performs
+	bubble sort recusrively"""
 
 	for i, num in enumerate(array):
 		try:

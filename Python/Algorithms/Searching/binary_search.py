@@ -1,7 +1,7 @@
 # Binary Search in python
-def binarySearch(arr, l, r ,value):
+def binarySearch(arr, l, r, value):
     while l <= r:
-        mid = (l + r) / 2
+        mid = int((l + r) / 2)
 
         if value == arr[mid]:
             return mid
@@ -14,7 +14,8 @@ def binarySearch(arr, l, r ,value):
 
     return -1
 
-arr = [5,10,12,14,17,18,19]
+
+arr = [5, 10, 12, 14, 17, 18, 19]
 length = len(arr)
 value = 17
 index = binarySearch(arr, 0, length - 1, value)

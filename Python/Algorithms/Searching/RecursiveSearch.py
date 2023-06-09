@@ -14,7 +14,7 @@ n = len(arr)
 x = 3
 index = recSearch(arr, 0, n-1, x) 
 if index != -1: 
-	print "Element", x,"is present at index %d" %(index) 
+	print("Element", x,"is present at index %d" %(index))
 else: 
-	print "Element %d is not present" %(x) 
+	print("Element %d is not present" %(x))
 

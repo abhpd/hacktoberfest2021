@@ -1,4 +1,4 @@
-#selection sort
+# selection sort
 def selection_sort(alist):
     for i in range(0, len(alist) - 1):
         smallest = i
