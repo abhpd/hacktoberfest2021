@@ -1,0 +1,60 @@
+#include<stdio.h>
+int left(int i)
+{
+    return 2*i;
+}
+
+int right(int i)
+{
+    return 2*i+1;
+}
+
+void swap(int *a,int *b)
+{
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+}
+
+void Max_Heapify(int *a,int i,int n)
+{
+    int l,r,largest;
+    l=left(i);
+    r=right(i);
+    if((l<=n)&&(a[i]<a[l]))
+    largest=l;
+    else
+    largest=i;
+    if((r<=n)&&(a[r]>a[largest]))
+    largest=r;
+    if(largest!=i)
+    {
+        swap(&a[i],&a[largest]);
+        Max_Heapify(a,largest,n);
+    }
+}
+void BuildMaxHeap(int *a,int n)
+{
+    for(int i=n/2;i>=1;i--)
+    Max_Heapify(a,i,n);
+}
+
+void HeapSort(int *a,int n)
+{
+    BuildMaxHeap(a,n);
+    for(int i=n;i>1;i--)
+    {
+        swap(&a[n],&a[0]);
+        n--;
+        Max_Heapify(a,0,n);
+    }
+}
+
+int main()
+{
+    int a[]={1,23,12,9,30,2,50,52,87,14,76};
+    int n=11;
+    HeapSort(a,n);
+    for(int i=0;i<n;i++)
+    printf("%d ",a[i]);
+}
