@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+void swap(int *a, int *b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+void Bsort(int parr[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - 1 - i; j++)
+        {
+            if (parr[j] > parr[j + 1])
+                swap(&parr[j], &parr[j + 1]);
+        }
+    }
+}
+int main()
+{
+    int w;
+    int n;
+    cout << "Enter the maximum weight: " << endl;
+    cin >> w;
+    cout << "Enter the no of items: " << endl;
+    cin >> n;
+    int arr[20];
+    int parr[20];
+    cout << "Enter the weight of n items and also its priority " << endl;
+    cout << "First enter the weight of item and then its priority:" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        cin >> parr[i];
+    }
+    int cparr[20];
+    for (int i = 0; i < n; i++)
+    {
+        cparr[i] = parr[i];
+    }
+    Bsort(parr, n);
+    int sum = 0;
+    int no = 0;
+    for (int i = n - 1; i > 0; i--)
+    {
+        int ele = parr[i];
+        for (int j = 0; j < n; j++)
+        {
+            if (cparr[j] == ele)
+            {
+                sum += arr[j];
+                no++;
+                if (sum > w)
+                {
+                    sum -= arr[j];
+                    no--;
+                }
+            }
+        }
+    }
+    cout << "The no of items should be deloaded is : " << n - no << endl;
+    return 0;
+}
